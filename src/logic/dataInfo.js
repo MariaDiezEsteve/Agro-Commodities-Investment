@@ -41,5 +41,5 @@ async function getData(){
 
 getData()
 
-export default {prodts, url, isError, isLoading} 
+export default {prodts, url, isError, isLoading, getData} 
 

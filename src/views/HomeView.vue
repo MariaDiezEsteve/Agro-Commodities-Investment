@@ -20,7 +20,8 @@
     console.log("aa",clave,data.prodts[clave])
   }
 
-     
+
+
 </script>
 
 <style lang="css" scoped> puse css porque sass esta dando error luego reviso
