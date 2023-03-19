@@ -1,62 +1,32 @@
+
+
 <template>
-  <h1></h1>
+  <h1>{{titulo}}</h1>
+  <h2>{{data}}</h2> <!-- se muestra el arreglo de objetos que contiene el objeto prodts y el objeto url -->
+  <h2>{{data.prodts}}</h2> <!-- se muestra solo el objeto de prodts-->
+
 </template>
 
 
 <script setup>
+// al poner import algo se crea un objeto con ese nombre que contiene
+// todo lo que este en el export defaul del js 
+  import data from '@/logic/dataInfo' 
 
-  import axios from "axios"
-  import { ref } from "vue"
+  let titulo="prueba"
 
+  for (let clave in data.prodts){
 
-  const prodts= {
-    wheat : ref(null),
-    sugar : ref(null),
-    cotton : ref(null),
-    coffee : ref(null),
-    corn : ref(null),
-
+    console.log("aa",clave,data.prodts[clave])
   }
 
-  const url={
-    wheat: "https:www.alphavantage.co/query?function=WHEAT&interval=monthly&apikey=demo",
-    sugar: "https://www.alphavantage.co/query?function=SUGAR&interval=monthly&apikey=demo",
-    corn: "https://www.alphavantage.co/query?function=CORN&interval=monthly&apikey=demo",
-    cotton: "https://www.alphavantage.co/query?function=COTTON&interval=monthly&apikey=demo",
-    coffee: "https://www.alphavantage.co/query?function=COFFEE&interval=monthly&apikey=demo"
-  }
-  
-
-  //  const getData = async () => {
-
-  //     let response = await axios.get(url.wheat)
-  //     wheat.value = await response.data
-
-  //     console.log("wheat",wheat.value)
-  //  }
-  //  getData();
-
-
-    async function getData (url) {
-
-      let response = await axios.get(url)
-      .catch(error => console.log("El error es:",error))
-
-      return response.data
-  
-    }
-
-
-    let urls = Object.values(url)
-    let i=0
-  
-    for (let clave in prodts){
-      console.log(clave,"--",prodts[clave].value=await getData(urls[i]));
-      i++
-    }
      
 </script>
 
-<style lang="sass" scoped>
+<style lang="css" scoped> puse css porque sass esta dando error luego reviso
+
+  h1{
+    color:blue;
+  }
 
 </style>

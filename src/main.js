@@ -10,28 +10,8 @@ import router from './router'
 
 createApp(App).use(router).mount('#app')
 
-// QT70XFV8RWVYA560
+// QT70XFV8RWVYA560  //esto que es??
 
-// import axios from "axios"
-// import { ref } from "vue"
 
-// export default{
-// setup(){
-//     const wheat = ref(null)
-//     console.log(wheat)
-
-//     const getData = async () => {
-//         const response = await axios.get("https://www.alphavantage.co/query?function=SUGAR&interval=monthly&apikey=demo")
-//         wheat.value = await response.data
-//     }
-    
-//     getData();
-    
-    
-//     return{
-//         wheat
-//     }
-// }
-// }
 
 
