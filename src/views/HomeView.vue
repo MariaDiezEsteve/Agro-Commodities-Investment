@@ -6,7 +6,6 @@
   <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
   <div v-if="!data.isError && !data.isLoading" >
     <h2>Loading es: {{isLoading}}</h2>
-    <h2>Error es: {{data.isError}}</h2>
     <h2>{{data.prodts}}</h2>
   </div> 
 
