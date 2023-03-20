@@ -13,11 +13,13 @@ Hay que tener en cuenta que se debe sembrar el 20% de la superficie como refugio
         <p class="card-text"><small class="text-muted">15/3/2023</small></p>
       </div>
     </div>
-
-
-    
   </div>
 </div>
+
+
+
+
+
   </template>
   
   <script setup>
