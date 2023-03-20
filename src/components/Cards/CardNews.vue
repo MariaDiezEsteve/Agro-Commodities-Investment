@@ -22,9 +22,24 @@ Hay que tener en cuenta que se debe sembrar el 20% de la superficie como refugio
 
   </template>
   
-  <script setup>
+  <script>
+  
+  
+  export default {
+    props: {
+      imagen: String,
+      titulo: String,
+      descripcion:String,
+      enlace: String,
+    },
 
-
+    // setup(props) {
+    //  const imagen = []
+    //   const titulo =
+    //   const descripcion = 
+    //   const enlace =
+    // }
+  }
  </script>
   
   
