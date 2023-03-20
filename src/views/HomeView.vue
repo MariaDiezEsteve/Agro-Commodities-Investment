@@ -29,8 +29,9 @@ let data = ref(onMounted(async () => {
   
 </script>
 
-<style lang="css" scoped> 
-/* puse css porque sass esta dando error luego reviso */
+<style lang="scss" scoped> 
+/* si tiene error con sass poner en la consola: npm install sass-loader node-sass –save-dev.
+si es mac o linux y si es windows:  npm install sass-loader node-sass*/
   h1{
     color:blue;
   }

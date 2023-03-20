@@ -8,7 +8,7 @@ import bootstrap from 'bootstrap/dist/js/bootstrap.js'
 
 createApp(App).use(router,bootstrap).mount('#app')
 
-// QT70XFV8RWVYA560  //esto que es??
+// QT70XFV8RWVYA560  // esto es la clave para hacer mas peticiones a la api
 
 
 
