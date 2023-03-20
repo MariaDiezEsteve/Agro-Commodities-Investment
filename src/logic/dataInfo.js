@@ -7,7 +7,7 @@ async function getData(){
     let isLoading = true 
 
     const prodts= {
-        wheat : ref(null), //por que poner aqui ref?
+        wheat : ref(null),
         sugar : ref(null),
         cotton : ref(null),
         coffee : ref(null),
@@ -25,11 +25,10 @@ async function getData(){
       }
     
     for (let clave in url){
-        try{
-            console.log()
+        try{           
             let response = await axios.get(url[clave]);
-            prodts[clave] = response.data
-            //console.log("data",clave,prodts[clave])
+            prodts[clave] = await response.data
+            
         }catch (error) {
             console.log(error);
             isError = true
