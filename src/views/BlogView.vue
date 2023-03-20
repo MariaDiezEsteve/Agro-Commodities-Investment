@@ -1,8 +1,18 @@
 <template>
-  <h1></h1>
+  
 </template>
 
-<script setup>
+<script>
+import CardNews from '@/components/Cards/CardNews.vue';
+export default {
+  name: 'BlogView',
+  components: {
+    CardNews,
+    
+    
+  }
+}
+
 
 </script>
 
