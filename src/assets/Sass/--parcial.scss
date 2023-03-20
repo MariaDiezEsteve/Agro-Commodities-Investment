@@ -1,49 +1,59 @@
 
 //IMPORTANDO ESTILOS DE SASS DE BOOTSTRAP
-@import "./node_modules/bootstrap/scss/functions";
-@import "./node_modules/bootstrap/scss/mixins";
-@import "./node_modules/bootstrap/scss/variables";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/mixins";
+// @import "~bootstrap/scss/variables";
+@import "bootstrap/scss/variables";
+//@import 'bootstrap/dist/js/bootstrap.js';
 
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap');
 
 
 //VARIABLES
-    $wheat: #F8EE0B;
-    $corn:#FC5A5A;
-    $cotton: #010158;
-    $sugar:#1BA9EA;
-    $coffee:#3DD598;
+$wheat: #F8EE0B;
+$corn:#FC5A5A;
+$cotton: #010158;
+$sugar:#1BA9EA;
+$coffee:#3DD598;
 
 
 
-    $white_color: #f9f9f9;
-    $black_color: #010158;
-    $greyLight: #E7E8F2;
-    $greyDark: #343436;
-    $blueDark: #1C2333;
-    $bluePrimary: #5768E5;
-    $blueLight:#80CAEF;
-    $green: #09d13b;
-    $red:#f00b03;
+$white_color: #ffffff;
+$black_color: #000000;
+$greyLight: #E7E8F2;
+$greyDark: #343436;
+$blueDark: #1C2333;
+$bluePrimary: #5768E5;
+$blueLight:#80CAEF;
+$green: #09d13b;
+$red:#f00b03;
 
 
-    $h1: 27px;
-    $h2: 20px;
-    $h3: 17px;
-    $p: 16px;
+$h1Home: 2.5rem;
+$h1: 2.2rem;
 
-    $xs: 0;
-    $sm: 576px;
-    $md: 768px;
-    $lg: 992px;
-    $xl: 1200px;
-    $xxl: 1400px;
+$h2: 2rem;
+$h3: 1.2rem;
+$p: 1.15rem;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+  );
 
 
 
 //CLASES
+
+
+
 %iconos{
     font-size: 1em;
-    //color: $color_negro;
     cursor: pointer;
 }
 
@@ -51,73 +61,88 @@
     background-position: center;
     background-color: transparent;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 
-@mixin ico ($color:white, $wth: 30rem){
+@mixin ico ($color:$white_color){
+    @extend %iconos;
+    color: $color;
     
 }
 
+@mixin h1 ($color:$blueDark,$font-size: $h2){
+    color: $color;
+    font-size: $font-size;
+    font-weight: 600;
+    font-family: ubuntu;
+    
+}
+
+@mixin texto ($color:$blueDark,$font-size: $p,){
+    color: $color;
+    font-size: $font-size;   
+}
+
 //MIXINS
-@mixin button ($bg-color:$color_VerdeOsc, $wth: 30rem, $colorletra:$color_blanco){
+@mixin button ($bg-color:$blueDark, $wth: 8rem, $colorletra:$white_color){
     background-color: $bg-color;
     width: $wth;
     color: $colorletra ;
-    font-weight: $fontWGeneral;
-    border: $color_VerdeOsc solid;
+    border: $blueDark solid;
+    height: 2.5rem;
     margin-bottom: 0.7rem;
+    border-radius: 0.3rem;
+    font-size: 1.5rem;
 
     &:hover{
-        background-color: $color_verdeCl;
-        color: $color_negro ;
-        border: $color_VerdeOsc solid;
+        background-color: $blueLight;
+        color: $black_color;
+        border: $blueLight solid;
+        font-weight: 600;
     }
 }
 
-@mixin imgPerson ($url:url("./img/guitarra1.jpg"),$wth:80%,$hght: 15rem,$margin: 2rem){
+@mixin imgPerson ($url: url('../assets/images/profile.jpeg') ,$wth:10%,$hght: 10rem,$margin: 2rem){
     @extend %imagen;
     background-image: $url;
     width: $wth;
     height: $hght;
     margin: $margin;
-
-    background-position: center;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: contain;
+    border-radius: 50%;
 }
 
-@mixin drop($wth:80%,$hght: 15rem){
-    color: black;
-    background-color: white;
-
+@mixin drop($wth:6%){
+    color: $black_color;
+    background-color:$white_color ;
+    border: $black_color 1px solid;
+    border-radius: 0.2rem;
+    $hght: 15rem;
+    width: $wth;
 }
 
 *{
-    font-family:quicksand ubuntu;
-    font-size: $fontSizeGeneral;
-
+    font-family: quicksand;
+    font-size: 1.2rem;
     margin: 0;
     padding: 0;
 
-    header{
-
+        
         nav{
-        background-color:transparent;
-        font-weight: $fontWGeneral;
+            background-color:$blueDark;
+            width: 500px;
+            height: 500px;
 
         }
 
-        
-    }
-   
 }
 
 
 //BREAKPOINTS
 
 @include media-breakpoint-down(sm) {}
-@include media-breakpoint-down(md) {}
+@include media-breakpoint-down(md) {
+    nav{background-color: $green;} 
+ }
 @include media-breakpoint-down(lg) {}
 @include media-breakpoint-down(xl) {}
 
