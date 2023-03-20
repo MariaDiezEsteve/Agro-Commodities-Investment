@@ -26,24 +26,18 @@
     $red:#f00b03;
 
 
+    $h1: 27px;
+    $h2: 20px;
+    $h3: 17px;
+    $p: 16px;
 
-$fontSize:(
+    $xs: 0;
+    $sm: 576px;
+    $md: 768px;
+    $lg: 992px;
+    $xl: 1200px;
+    $xxl: 1400px;
 
-    h1: 27px,
-    h2: 20px,
-    h3: 17px,
-    p: 16px
-
-)
-
-$grid-breakpoints: (
-    xs: 0,
-    sm: 576px,
-    md: 768px,
-    lg: 992px,
-    xl: 1200px,
-    xxl: 1400px
-);
 
 
 //CLASES
