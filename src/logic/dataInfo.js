@@ -28,7 +28,10 @@ async function getData(){
         try{
             let response = await axios.get(url[clave]);
             prodts[clave] = await response.data
+<<<<<<< HEAD
            
+=======
+>>>>>>> developer
         }catch (error) {
             console.log(error);
             isError = true
