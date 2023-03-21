@@ -1,5 +1,6 @@
 <template>
-  <div class="card mb-3" style="max-width: 540px;">
+  <div class="card" v-for ="blogProduct in blogProducts" :key="blogProduct.id">
+  <div class="card mb-3">
   <div class="row g-0">
     <div class="col-md-4">
       <img src="@/assets/images/imagenes-blog/cafe.jpg" class="img-fluid rounded-start" alt="blogProduct.alt">
@@ -12,6 +13,7 @@
         <p class="card-text"><small class="text-muted">March 2023</small></p>
       </div>
     </div>
+  </div>
   </div>
 </div>
 
