@@ -51,26 +51,7 @@
 si es mac o linux y si es windows:  npm install sass-loader node-sass*/
 
 
-  #h1_home{
-    @include h1 ($color:$blueDark,$font-size: $h1Home);
-  }
 
-  h1{
-    @include h1 ($color:$blueDark,$font-size: $h1);
-  }
-
-  h2{
-    @include texto ($color:$blueDark,$font-size: $h2);
-    font-weight: 600;
-  }
-
-  h3{
-    @include texto ($color:$blueDark,$font-size: $h3);
-  }
-
-  p{
-    @include texto ($color:$greyDark,$font-size: $p);
-  }
 
   #image_person{
     @include imgPerson ($url: url('../assets/images/profile.jpeg'),$wth:5%,$hght: 5rem,$margin: 2rem);
