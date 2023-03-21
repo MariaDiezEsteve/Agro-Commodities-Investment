@@ -3,9 +3,9 @@
   <div class="card" v-for ="blogProduct in blogProducts" :key="blogProduct.id">
       <img :src="blogProduct.src" class="card-img-top" :alt="blogProduct.alt" />
       <div class="card-body">
-        <h5 class="card-title">{{ blogProduct.title }}</h5>
+        <h2 class="card-title">{{ blogProduct.title }}</h2>
         <p class="card-text">{{ blogProduct.description}}</p>
-        <router-link :to = "blogProduct.enlace">More information</router-link>
+        <button><router-link :to = "blogProduct.enlace">More information</router-link></button>
       </div>
     </div>
 
