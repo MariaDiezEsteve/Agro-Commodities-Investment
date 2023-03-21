@@ -1,5 +1,3 @@
-
-
 <template>
   <h1 id="h1_home">"esto es h1 Home"</h1>
   <h1>"esto es h1 normal"</h1>
