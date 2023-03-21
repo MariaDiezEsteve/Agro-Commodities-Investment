@@ -1,13 +1,28 @@
 <template>
-
-  <div class="card" v-for ="blogProduct in blogProducts" :key="blogProduct.id">
-      <img :src="blogProduct.src" class="card-img-top" :alt="blogProduct.alt" />
+  <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="@/assets/images/imagenes-blog/cafe.jpg" class="img-fluid rounded-start" alt="blogProduct.alt">
+    </div>
+    <div class="col-md-8">
       <div class="card-body">
-        <h2 class="card-title">{{ blogProduct.title }}</h2>
+        <h5 class="card-title">{{ blogProduct.title }}</h5>
+        <p class="card-text">{{ blogProduct.description }}</p>
+        <button><router-link :to = "blogProduct.enlace">More information</router-link></button>
+        <p class="card-text"><small class="text-muted">March 2023</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- <div class="card" v-for ="blogProduct in blogProducts" :key="blogProduct.id">
+      <img src="@/assets/images/imagenes-blog/cafe.jpg" class="card-img-left" :alt="blogProduct.alt" />
+      <div class="card-body">
+        <h2 class="card-title"></h2>
         <p class="card-text">{{ blogProduct.description}}</p>
         <button><router-link :to = "blogProduct.enlace">More information</router-link></button>
       </div>
-    </div>
+    </div> -->
 
 </template>
   
@@ -31,6 +46,10 @@
   
   
   <style lang="scss" scoped>
+ @import "@/assets/Sass/--parcial.scss";
 
-  
+  button{
+    @include button ($bg-color:$blueDark, $wth: 14rem, $colorletra:$white_color);
+  }
+ 
   </style>
