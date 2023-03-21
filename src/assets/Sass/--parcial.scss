@@ -164,6 +164,6 @@ $grid-breakpoints: (
     nav{background-color: $green;} 
  }
 @include media-breakpoint-down(lg) {}
-@include media-breakpoint-down(xl) {}
+@include media-breakpoint-down(xl) {} 
 
 
