@@ -93,7 +93,6 @@
   // Size of the numbers in cards
   .card-text {
     font-size: 1rem;
-
   }
 
   .positive {

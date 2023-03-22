@@ -1,12 +1,13 @@
-import { shallowMount } from '@vue/test-utils'
-import HelloWorld from '@/components/HelloWorld.vue'
+import { mount } from '@vue/test-utils' 
+import CardDetailsProduct from '@/components/Cards/CardDetailsProduct'
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message'
-    const wrapper = shallowMount(HelloWorld, {
-      props: { msg }
+describe('To do a few unit test', () => {
+  it('test to know if rate starts in 0', () => {
+    const wrapper = mount(<CardDetailsProduct />, {
+      props: {
+        data: Object
+      }
     })
-    expect(wrapper.text()).toMatch(msg)
-  })
+    expect(wrapper.exists()).toBe(true)
+})
 })
