@@ -48,7 +48,6 @@
 /* si tiene error con sass poner en la consola: npm install sass-loader node-sass –save-dev.
 si es mac o linux y si es windows:  npm install sass-loader node-sass*/
 
-
   #image_person{
     @include imgPerson ($url: url('../assets/images/profile.jpeg'),$wth:5%,$hght: 5rem,$margin: 2rem);
   }

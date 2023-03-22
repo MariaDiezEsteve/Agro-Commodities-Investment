@@ -1,10 +1,10 @@
 <template>
   <h1></h1>
-   <SideBar />
+   <SideBar1 />
 </template>
 
 <script setup>
-import SideBar from '@/components/Commons/SideBar.vue'
+import SideBar1 from '@/components/Commons/SideBar1.vue'
 
 </script>
 
