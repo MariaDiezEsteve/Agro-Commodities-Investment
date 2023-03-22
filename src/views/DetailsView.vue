@@ -1,11 +1,27 @@
 <template>
-    <h1>Agro Commodities Details</h1>
-    <p>This page shows the information details about the following commodities:</p>
-    <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
-    <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
-    <div v-if="!data.isError && !isLoading" >
-      <DetailsProducts :data = "data"/>
+
+<div class="d-flex flex-row container-sm">
+    <SideBar />
+    <div>
+      <h1>Agro Commodities Details</h1>
+      <p>This page shows the information details about the following commodities:</p>
+      <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
+      <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
+      <div v-if="!data.isError && !isLoading" >
+        <DetailsProducts :data = "data"/>
+      </div>
+      
     </div>
+
+  </div>
+
+
+
+
+
+
+
+    
     
 
   </template>
@@ -14,6 +30,8 @@
   import info from '@/DataInformation/dataInfo'
   import {ref,onMounted} from "vue";
   import DetailsProducts from '@/components/Cards/CardDetailsProduct.vue'
+  import SideBar from '@/components/Commons/SideBar.vue'
+
 
   let isLoading = ref(true) 
   let data =  ref(onMounted(async () => {
