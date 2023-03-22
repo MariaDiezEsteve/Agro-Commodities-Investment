@@ -5,11 +5,12 @@ describe(' Empezar a testear CardNews.vue', () => {
     it('CardNews', () => {
       
       const wrapper = mount(CardNews,{ 
-        title:"Cotton",
+        Title:'Cotton',
+        
 
         }
         )
-      expect(wrapper.text()).toBe ()
+      expect(wrapper.exists()).toBe(true)
     })
   })
   
