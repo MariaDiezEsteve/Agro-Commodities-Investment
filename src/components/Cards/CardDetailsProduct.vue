@@ -1,11 +1,12 @@
 <template>
     <h1></h1>
-  </template>
+</template>
   
-  <script setup>
+<script setup>
 
 </script>
-  
-  <style lang="sass" scoped>
-  
-  </style>
+
+
+<style scoped>
+
+</style>
