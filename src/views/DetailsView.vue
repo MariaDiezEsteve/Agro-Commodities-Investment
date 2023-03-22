@@ -11,7 +11,7 @@
   </template>
   
   <script setup>
-  import info from '@/logic/dataInfo'
+  import info from '@/DataInformation/dataInfo'
   import {ref,onMounted} from "vue";
   import DetailsProducts from '@/components/Cards/CardDetailsProduct.vue'
 
