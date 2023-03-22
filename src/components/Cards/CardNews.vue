@@ -54,12 +54,13 @@
   display: flex;
   justify-content: center;
   width: 65%;
+      img{
+
+    height: 100%;
+    }
  }
 
- img{
-
-  height: 100%;
- }
+ 
 
 
   button{
