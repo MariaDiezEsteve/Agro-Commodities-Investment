@@ -1,8 +1,7 @@
 <template>
 
-  <div class="d-flex flex-row container-sm">
-    <SideBar />
-    <div>
+    <SideBar class="col-2"/>
+    <div class="col-9 px-5" >
       <h1 id="h1_home">"esto es h1 Home"</h1>
       <h1>"esto es h1 normal"</h1>
 
@@ -27,10 +26,6 @@
       </select>
 
     </div>
-
-  </div>
-  
-  
 
 </template>
 
