@@ -1,7 +1,8 @@
 <template>
+  <div v-for="blogProduct in blogProducts"
+    :key="blogProduct.id">
   <div class="card d-block m-auto mb-3"
-    v-for="blogProduct in blogProducts"
-    :key="blogProduct.id"
+    
   >
     <div class="row d-flex justify-content-center g-0">
       <div class="col-md-4">
@@ -25,9 +26,8 @@
         </div>
 
       </div>
+      </div>
     </div>
-  </div>
-              <!-- iconos -->
     <div class="redes">
       <img class="redes-images" src="@/assets/images/ImagenesRss/whatssap.png" alt="">
       <img class="redes-images" src="@/assets/images/ImagenesRss/facebook.png" alt="">
@@ -35,7 +35,11 @@
       <img class="redes-images" src="@/assets/images/ImagenesRss/enlaces.png" alt="">
     </div>
 
+  </div>
 
+  
+              <!-- iconos -->
+    
   <!-- <div class="card" v-for ="blogProduct in blogProducts" :key="blogProduct.id">
       <img src="@/assets/images/imagenes-blog/cafe.jpg" class="card-img-left" :alt="blogProduct.alt" />
       <div class="card-body">
@@ -50,6 +54,16 @@
 const blogProducts = [
   {
     id: 1,
+    title: "Cotton",
+    description:
+      "When it comes to finding the best broker for CFD cotton trading, there are a few things to consider.Firstly, look at the fees and commissions that brokers charge. Different brokers will offer different fees and it is important to compare different brokers in order to find one that suits your budget... ",
+    src: "@/assets/images/imagenes-blog/algodon.jpg",
+    alt: "imagen algodón",
+    enlace: "../views/DetailsView.vue",
+    date: "March 2023",
+  },
+  {
+    id: 2,
     title: "Cotton",
     description:
       "When it comes to finding the best broker for CFD cotton trading, there are a few things to consider.Firstly, look at the fees and commissions that brokers charge. Different brokers will offer different fees and it is important to compare different brokers in order to find one that suits your budget... ",
