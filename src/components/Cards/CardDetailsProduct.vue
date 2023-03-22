@@ -6,6 +6,9 @@
 
 </script>
   
-  <style lang="sass" scoped>
+  <style lang="scss" scoped>
+    @import "@/assets/Sass/--parcial.scss";
+
+
   
   </style>
