@@ -11,8 +11,6 @@ import bootstrap from 'bootstrap/dist/js/bootstrap.js'
 import VueSidebarMenu from 'vue-sidebar-menu'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 createApp(App).use(router,bootstrap,VueSidebarMenu).mount('#app')
-require('@/plugins/fontawesome');
-
 
 // QT70XFV8RWVYA560  // esto es la clave para hacer mas peticiones a la api
 

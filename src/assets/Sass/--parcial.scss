@@ -130,7 +130,12 @@ $grid-breakpoints: (
         nav{
             background-color:$blueDark;
             width: 500px;
-            height: 500px;
+            height: 100vh;
+
+            #logo{
+              width:50%;
+              height:7rem;
+            }
 
         }
 
