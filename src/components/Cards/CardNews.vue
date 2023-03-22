@@ -27,12 +27,13 @@
       </div>
     </div>
   </div>
-
-<div>
-  <!-- Twitter -->
- <a class="btn text-white btn-floating m-1" style="background-color: #55acee" href="#!" role="button"><i class="fa fa-twitter"></i></a>
- 
-</div>
+              <!-- iconos -->
+    <div class="redes">
+      <img class="redes-images" src="@/assets/images/ImagenesRss/whatssap.png" alt="">
+      <img class="redes-images" src="@/assets/images/ImagenesRss/facebook.png" alt="">
+      <img class="redes-images" src="@/assets/images/ImagenesRss/twitter.png" alt="">
+      <img class="redes-images" src="@/assets/images/ImagenesRss/enlaces.png" alt="">
+    </div>
 
 
   <!-- <div class="card" v-for ="blogProduct in blogProducts" :key="blogProduct.id">
@@ -85,5 +86,17 @@ const blogProducts = [
 button {
   @include button($bg-color: $blueDark, $wth: 14rem, $colorletra: $white_color);
   font-size: 0;
+}
+
+.redes{
+  display: flex;
+  justify-content: start;
+  padding-left: 15rem ;
+  gap: 0.5rem;
+}
+.redes-images{
+  @extend %iconos;
+  width: 2%;
+
 }
 </style>
