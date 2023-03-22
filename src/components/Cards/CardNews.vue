@@ -21,6 +21,7 @@
           <p class="card-text px-5">
             <small class="text-muted">{{ blogProduct.date }}</small>
           </p>
+          <i></i>
         </div>
       </div>
     </div>
