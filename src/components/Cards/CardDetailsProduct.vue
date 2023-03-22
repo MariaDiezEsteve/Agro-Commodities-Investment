@@ -1,9 +1,9 @@
 <template>
   <!-- <h1>{{props.data.prodts}}</h1>  -->
   
-<div class="container">
-  <div v-for="prodt in data.prodts" :key="prodt.name" class="card">
-    <div class="card-body">
+<div class="row">
+  <div v-for="prodt in data.prodts" :key="prodt.name" class="flex card m2">
+    <div class="col card-body">
       {{ calculateRate(prodt) }}  <!-- Llamada a la función: Esto hace referencia a la función del cálculo rate para poder obtener los datos y mostrarlos en la línea 10-->
       {{ nameProduct(prodt) }}
       <h4 :class="classColorProduct">{{ nameColorProduct}}</h4>
@@ -76,7 +76,7 @@
 
   .card-details {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   .card {
@@ -102,12 +102,6 @@
   h4 {
     font-size: 1.5rem;
     font-weight: 600;
-  }
-
-  .container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    justify-content: center;
   }
 
   //Color Name Products

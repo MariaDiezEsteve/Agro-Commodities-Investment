@@ -1,5 +1,5 @@
 <template>
-    <nav class="d-flex flex-column flex-shrink-0 p-3 text-white" style="width: 280px;">
+    <nav class="d-flex flex-column flex-shrink-0 p-3 text-white">
         <router-link to="/" class="d-flex flex-column align-items-center text-white text-decoration-none">
             <img id="logo" src="@/assets/images/logoGif.gif" alt="">
             <h2 id="h2_nav">RawInvesting</h2>
