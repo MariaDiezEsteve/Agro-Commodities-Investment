@@ -135,9 +135,9 @@ $grid-breakpoints: (
         }
 
         #h1_home{
-            @include h1 ($color:$blueDark,$font-size: $h1Home);
+            @include h1 ($color:$white_color,$font-size: $h1Home);
           }
-        
+
           h1{
             @include h1 ($color:$blueDark,$font-size: $h1);
           }
@@ -145,6 +145,11 @@ $grid-breakpoints: (
           h2{
             @include texto ($color:$blueDark,$font-size: $h2);
             font-weight: 600;
+          }
+
+          #h2_nav{
+            @include texto ($color:$white_color,$font-size: $h2);
+            font-weight: 500;
           }
         
           h3{

@@ -3,13 +3,21 @@
 </template>
   
 <script setup>
+//import { url } from 'inspector';
 import { SidebarMenu } from 'vue-sidebar-menu'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 
+
+
 const menu = [
                 {
-                    header: 'Raw Investing',
+                    // header: 'Raw Investing',
+                    // icon: '@/assets/images/logoGif.gif'
                     // falta el icono de la marca
+                    href: '/',
+                    title: 'RawInvesting',
+                    icon: '@/assets/images/logoGif.gif'
+
                 },
                 {
                     href: '/',
