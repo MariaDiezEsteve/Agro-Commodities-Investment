@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import bootstrap from 'bootstrap/dist/js/bootstrap.js'
 import VueSidebarMenu from 'vue-sidebar-menu'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
-import '';
+
 
 createApp(App).use(router,bootstrap,VueSidebarMenu).mount('#app')
 

@@ -21,11 +21,19 @@
           <p class="card-text px-5">
             <small class="text-muted">{{ blogProduct.date }}</small>
           </p>
-          <i></i>
+          
         </div>
+
       </div>
     </div>
   </div>
+
+<div>
+  <!-- Twitter -->
+ <a class="btn text-white btn-floating m-1" style="background-color: #55acee" href="#!" role="button"><i class="fa fa-twitter"></i></a>
+ 
+</div>
+
 
   <!-- <div class="card" v-for ="blogProduct in blogProducts" :key="blogProduct.id">
       <img src="@/assets/images/imagenes-blog/cafe.jpg" class="card-img-left" :alt="blogProduct.alt" />
