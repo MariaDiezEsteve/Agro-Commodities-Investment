@@ -1,7 +1,7 @@
 <template>
 
     <SideBar class="col-2"/>
-    <div class="col-9 px-5" >
+    <div class="col-10 px-5" >
       <h1 id="h1_home">"esto es h1 Home"</h1>
       <h1>"esto es h1 normal"</h1>
 

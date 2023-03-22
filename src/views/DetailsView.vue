@@ -1,8 +1,6 @@
 <template>
-
-<!-- <div class="d-flex flex-row container-sm"> -->
     <SideBar class="col-2"/>
-    <div class="col-9 px-5">
+    <div class="col-10 px-5">
       <h1>Agro Commodities Details</h1>
       <p>This page shows the information details about the following commodities:</p>
       <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
@@ -10,10 +8,7 @@
       <div v-if="!data.isError && !isLoading" >
         <DetailsProducts :data = "data"/>
       </div>
-      
     </div>
-
-  <!-- </div> -->
   </template>
   
   <script setup>
@@ -36,6 +31,12 @@
   
   <style lang="scss" scoped>
     @import "@/assets/Sass/--parcial.scss";
+
+ 
+
+    #app{
+      width: 100%;
+    }
 
   
   </style>
