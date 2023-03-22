@@ -5,7 +5,7 @@
 
   <!-- <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
   <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
-  <div v-if="!data.isError && !data.isLoading" >
+  <div v-if="!data.isError && !isLoading" >
     <h2>Loading es: {{isLoading}}</h2>
     <h2>{{data.prodts}}</h2>
   </div>  -->
@@ -47,8 +47,6 @@
   @import "@/assets/Sass/--parcial.scss";
 /* si tiene error con sass poner en la consola: npm install sass-loader node-sass –save-dev.
 si es mac o linux y si es windows:  npm install sass-loader node-sass*/
-
-
 
 
   #image_person{
