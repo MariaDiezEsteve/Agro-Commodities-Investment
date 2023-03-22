@@ -8,16 +8,26 @@
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
+            <!-- <a href="#" class="nav-link active" aria-current="page">
                 <img src="@/assets/images/home.svg" style="width:2rem;height:2rem" alt="Photo Home">
                 Home
-            </a>
+            </a> -->
+            <router-link to="/" class="nav-link text-white" >
+              <img src="@/assets/images/home.svg" style="width:2rem;height:2rem" alt="Photo Home">
+              Home
+            </router-link> 
+
           </li>
           <li>
-            <a href="#" class="nav-link text-white">
+            <!-- <a href="#" class="nav-link text-white">
                 <img src="@/assets/images/chart.svg" style="width:2rem;height:2rem" alt="Photo Chart">
                 Product Details
-            </a>
+            </a> -->
+            <router-link to="/details" class="nav-link text-white">
+              <img src="@/assets/images/chart.svg" style="width:2rem;height:2rem" alt="Photo Chart">
+              Details
+            </router-link>
+
           </li>
           <li>
             <a href="#" class="nav-link text-white">
@@ -32,10 +42,15 @@
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link text-white">
+            <!-- <a href="#" class="nav-link text-white">
                 <img src="@/assets/images/contact.svg" style="width:2rem;height:2rem" alt="Photo Contact Us">
               Contact Us
-            </a>
+            </a> -->
+            <router-link to="/about" class="nav-link text-white">
+              <img src="@/assets/images/contact.svg" style="width:2rem;height:2rem" alt="Photo Contact Us">
+              About
+            </router-link>
+
           </li>
         </ul>
         <hr>
