@@ -34,10 +34,18 @@
   <style lang="scss" scoped>
     @import "@/assets/Sass/--parcial.scss";
 
- 
-
     #app{
       width: 100%;
+    }
+
+    h1{
+      margin: 1.5rem;
+      text-align: center;
+    }
+
+    p{
+      margin-bottom: 1rem;
+      text-align: center;
     }
 
   
