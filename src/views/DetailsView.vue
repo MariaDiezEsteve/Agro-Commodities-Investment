@@ -10,8 +10,6 @@
         <BarChart :data = "data"/>
       </div>
     </div>
-    
-
   </template>
   
   <script setup>
