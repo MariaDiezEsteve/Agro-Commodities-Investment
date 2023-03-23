@@ -13,7 +13,7 @@ describe(' Empezar a testear CardNews.vue', () => {
 
         }
         )
-      expect(wrapper.exists()).toBe(true)
+      expect(wrapper.exists()).toBeTruthy()
     })
   })
   
