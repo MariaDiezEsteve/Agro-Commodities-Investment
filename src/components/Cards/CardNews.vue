@@ -35,6 +35,8 @@
       <img class="redes-images" src="@/assets/images/ImagenesRss/enlaces.png" alt="">
     </div>
 
+    <CardNewsButton />
+
   </div>
 
   
@@ -51,6 +53,7 @@
 </template>
 
 <script setup>
+import  CardNewsButton from "@/components/Buttons/CardNewsButton.vue"
 const blogProducts = [
   {
     id: 1,
@@ -64,6 +67,8 @@ const blogProducts = [
   },
  
 ];
+
+
 </script>
 
 <style lang="scss" scoped>
