@@ -18,7 +18,8 @@
     "sass-loader": "^13.2.1",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
-    "vue-sidebar-menu": "^5.2.5"
+    "vue-sidebar-menu": "^5.2.5",
+    "vue-sidebar-menu-akahon": "^0.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

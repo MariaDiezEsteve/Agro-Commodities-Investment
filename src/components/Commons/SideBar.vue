@@ -1,4 +1,7 @@
 <template>
+  <!-- <div>
+      <VueSidebarMenuAkahon />
+  </div> -->
    <sidebar-menu :menu="menu"></sidebar-menu>
 </template>
   
@@ -39,9 +42,10 @@ const menu = [
             ]
 </script>
   
-  <style lang="sass" scoped>
-  
-  </style>
+<style lang="sass" scoped>
 
-  <!-- Si da error, incluir esta linea de codigo en la consola npm i vue-sidebar-menu --save -->
+</style>
+
+   <!-- Si da error, incluir esta linea de codigo en la consola npm i vue-sidebar-menu --save -->
+  
   
