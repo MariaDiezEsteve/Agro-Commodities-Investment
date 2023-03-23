@@ -15,7 +15,6 @@ async function getData(){
       
       }
       
-      
       const url={
         wheat: "https:www.alphavantage.co/query?function=WHEAT&interval=monthly&apikey=demo",
         sugar: "https://www.alphavantage.co/query?function=SUGAR&interval=monthly&apikey=demo",
