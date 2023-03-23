@@ -1,15 +1,15 @@
 <template>
   <!-- <h1>{{props.data.prodts}}</h1>  -->
   
-<div class="row">
+<div class="row justify-content-center">
   <div v-for="prodt in data.prodts" :key="prodt.name" class="flex card m2">
     <div class="col card-body">
       {{ calculateRate(prodt) }}  <!-- Llamada a la función: Esto hace referencia a la función del cálculo rate para poder obtener los datos y mostrarlos en la línea 10-->
       {{ nameProduct(prodt) }}
       <h4 :class="classColorProduct">{{ nameColorProduct}}</h4>
       <div class="card-details">
-        <p class="card-text">{{ parseFloat(prodt.data[0].value).toFixed(2) }}</p>
-        <p :class='classRate'> {{ rate }} %</p>
+        <p class="card-text"> ${{ parseFloat(prodt.data[0].value).toFixed(2) }}</p>
+        <p :class='classRate'> {{ rate }}% </p>
       </div>
     </div>
   </div>
@@ -80,19 +80,39 @@
   }
 
   .card {
-    width:15rem;
-    padding: 1.2rem;
+    width:12rem;
+    padding: 0.8rem;
+    margin: 0.5rem;
   }
 
   .card-title {
     padding-bottom: 1rem;
+    text-align: center; 
   }
+
+  // Size of the numbers in cards
+  .card-text {
+    font-size: 1rem;
+  }
+
   .positive {
     color: $green;
-    }
+    font-size: 1rem;
+  }
+    
+  .positive::after {
+    content: "\21E1";
+    font-size: 1rem;
+  }
 
   .negative {
   color:$red;
+  font-size: 1rem;
+  }
+
+  .negative::after {
+    content: "\21E3";
+    font-size: 1rem;
   }
 
   .zero {
@@ -125,5 +145,6 @@
   .coral {
     color: $corn;
   }
+
   
   </style>
