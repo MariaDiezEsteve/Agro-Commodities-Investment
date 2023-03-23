@@ -108,7 +108,55 @@ const policies=[
   }
 
   #menuIco{
-    margin-left: 13rem;
+    display: none;
+    //margin-left: 13rem;
   }
+
+  #logo{
+    width:45%;
+    height:6rem;
+  }
+
+
+  // $grid-breakpoints: (
+  //   xs: 0,
+  //   sm: 576px,
+  //   md: 768px,
+  //   lg: 992px,
+  //   xl: 1200px,
+  //   xxl: 1400px
+  // );
+
+  @include media-breakpoint-down(md) {
+
+    #menuIco{
+      display: block;
+      margin-left: 20rem;
+      font-weight: 900;
+    }
+
+    
+    
+  }
+
+  @include media-breakpoint-down(sm){
+    #logo{
+      height:6rem;
+      width: 35%;
+    }
+    nav{
+      background-color: $green;
+    }
+  }
+
+  // @include media-breakpoint-down(sm){
+  //   #logo{
+  //     height:6rem;
+  //     width: 35%;
+  //   }
+  //   nav{
+  //     background-color: $green;
+  //   }
+  // }
 
 </style>

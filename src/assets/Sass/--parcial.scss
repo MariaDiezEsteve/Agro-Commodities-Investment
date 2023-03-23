@@ -133,10 +133,7 @@ $grid-breakpoints: (
             position: sticky;
             top: 0; // required as well.
 
-            #logo{
-              width:45%;
-              height:6rem;
-            }
+            
 
         }
 
@@ -170,7 +167,7 @@ $grid-breakpoints: (
 
 @include media-breakpoint-down(sm) {}
 @include media-breakpoint-down(md) {
-    nav{background-color: $green;} 
+    
  }
 @include media-breakpoint-down(lg) {}
 @include media-breakpoint-down(xl) {} 
