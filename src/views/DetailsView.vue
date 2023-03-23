@@ -32,11 +32,5 @@
   <style lang="scss" scoped>
     @import "@/assets/Sass/--parcial.scss";
 
- 
-
-    #app{
-      width: 100%;
-    }
-
   
   </style>

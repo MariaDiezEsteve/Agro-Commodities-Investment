@@ -24,6 +24,18 @@
         <option value="value2" selected>Value 2</option>
         <option value="value3">Value 3</option>
       </select>
+      <h2>"Esto es h2"</h2>
+      <h3>"esto es h3"</h3>
+      <p>"esto es un parrafo"</p>
+
+      <div id="image_person"></div>
+      <button>Enter</button>
+      <br>
+      <select>
+        <option value="value1">Value 1</option>
+        <option value="value2" selected>Value 2</option>
+        <option value="value3">Value 3</option>
+      </select>
 
     </div>
 
