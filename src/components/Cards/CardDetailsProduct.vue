@@ -25,6 +25,7 @@
       data: Object
     })
 
+
     const rate = ref (0) 
 
     function calculateRate(prodt){
