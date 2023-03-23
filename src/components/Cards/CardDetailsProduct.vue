@@ -23,7 +23,6 @@
       data: Object
     })
 
-    console.log(props.data)
 
     const rate = ref (0) 
 
