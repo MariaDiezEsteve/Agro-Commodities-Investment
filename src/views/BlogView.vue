@@ -1,14 +1,21 @@
 <template>
-  <h1>Blog</h1>
+  <SideBar class="col-2"/>
+    <div class="col-10 px-5" >
+      <h1 class="text-center p-5">"Blog"</h1>
+      <CardNews />
+    </div>
 
-  <CardNews />
 </template>
 
 <script setup>
-import CardNews from '@/components/Cards/CardNews.vue';
+  import SideBar from '@/components/Commons/SideBar.vue'
+  import CardNews from '@/components/Cards/CardNews.vue';
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import "@/assets/Sass/--parcial.scss";
+
+
 
 </style>

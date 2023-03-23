@@ -27,8 +27,5 @@
     border: none;
   }
   }
-  
 
-  
-  
   </style>

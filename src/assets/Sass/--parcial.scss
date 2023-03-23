@@ -34,7 +34,8 @@ $h1Home: 2.5rem;
 $h1: 2.2rem;
 
 $h2: 2rem;
-$h3: 1.2rem;
+$h3: 1.5rem;
+$h4: 1.2rem;
 $p: 1.15rem;
 
 $grid-breakpoints: (
@@ -52,11 +53,6 @@ $grid-breakpoints: (
 
 
 
-%iconos{
-    font-size: 1em;
-    cursor: pointer;
-}
-
 %imagen{
     background-position: center;
     background-color: transparent;
@@ -64,9 +60,11 @@ $grid-breakpoints: (
     background-size: cover;
 }
 
-@mixin ico ($color:$white_color){
-    @extend %iconos;
+@mixin ico ($color:$white_color, $wth:2rem, $hgt:2rem){
     color: $color;
+    width:&$wth;
+    height:$hgt;
+    cursor: pointer;
     
 }
 
@@ -78,7 +76,7 @@ $grid-breakpoints: (
     
 }
 
-@mixin texto ($color:$blueDark,$font-size: $p,){
+@mixin texto ($color:$blueDark,$font-size: $p){
     color: $color;
     font-size: $font-size;   
 }
@@ -129,15 +127,20 @@ $grid-breakpoints: (
         
         nav{
             background-color:$blueDark;
-            width: 500px;
-            height: 500px;
+            //width: 500px;
+            height: 100vh;
+            position: -webkit-sticky;  // required for Safari
+            position: sticky;
+            top: 0; // required as well.
+
+            
 
         }
 
         #h1_home{
-            @include h1 ($color:$blueDark,$font-size: $h1Home);
+            @include h1 ($color:$white_color,$font-size: $h1Home);
           }
-        
+
           h1{
             @include h1 ($color:$blueDark,$font-size: $h1);
           }
@@ -146,14 +149,17 @@ $grid-breakpoints: (
             @include texto ($color:$blueDark,$font-size: $h2);
             font-weight: 600;
           }
+
+          #h2_nav{
+            @include texto ($color:$white_color,$font-size: $h2);
+            font-weight: 500;
+          }
         
           h3{
             @include texto ($color:$blueDark,$font-size: $h3);
           }
         
-          p{
-            @include texto ($color:$greyDark,$font-size: $p);
-          }
+          
 
 }
 
@@ -161,7 +167,7 @@ $grid-breakpoints: (
 
 @include media-breakpoint-down(sm) {}
 @include media-breakpoint-down(md) {
-    nav{background-color: $green;} 
+    
  }
 @include media-breakpoint-down(lg) {}
 @include media-breakpoint-down(xl) {} 

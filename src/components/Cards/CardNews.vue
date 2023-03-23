@@ -77,7 +77,7 @@ const blogProducts = [
 .card {
   display: flex;
   justify-content: center;
-  width: 65%;
+  width: 85%;
   
   img {
     height: 100%;
@@ -105,8 +105,6 @@ button {
   gap: 0.5rem;
 }
 .redes-images{
-  @extend %iconos;
-  width: 2%;
-
+  @include ico ($color:$white_color, $wth:2%, $hgt:2rem);
 }
 </style>
