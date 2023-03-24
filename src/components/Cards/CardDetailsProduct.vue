@@ -19,7 +19,7 @@
     import {defineProps, defineEmits, ref} from 'vue';
     import { computed } from "@vue/reactivity"
 
-  const props = defineProps({
+  defineProps({
       data: Object
     })
    
