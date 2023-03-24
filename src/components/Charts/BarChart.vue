@@ -11,7 +11,7 @@
     </div>
 
   </div>
-  
+  {{ nameProduct }}
 </template>
   
 <script setup>
@@ -24,8 +24,10 @@
 
 
 
-  const prop= defineProps({
-    data: Object
+  
+  const prop = defineProps({
+    data: Object,
+    nameProduct: String
   })
 
   onMounted(()=>{//muy importante el onMounted para coger cosas del template es aqui dentro
