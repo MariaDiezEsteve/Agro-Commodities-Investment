@@ -14,9 +14,11 @@
         <div class="card-body">
           <h5 class="card-title">{{ info.title }}</h5>
           <p class="card-text">{{ info.description }}</p>
+          <div class="btn-principal">
           <button >
             <router-link class="btn-router" :to="info.enlace">More information</router-link>
           </button>
+        </div>
           <p class="card-text px-5">
             <small class="text-muted">{{ info.date }}</small>
           </p>
@@ -86,9 +88,24 @@ defineProps({
     height: 100%;
   }
 }
+.card-title {
+  text-align: center;
+  font-weight: bold;
+  padding: 1rem;
+}
 .card-text{
   padding-left:2.5rem;
   padding-right:2.5rem;
+}
+.btn-principal{
+  display: flex;
+  justify-content: center;
+  padding-top: 0.8rem;
+  button {
+  @include button($bg-color: $blueDark, $wth: 14rem, $colorletra: $white_color);
+  font-size: 0;
+ 
+}
 }
 .btn-router{
   color: white;
@@ -96,16 +113,14 @@ defineProps({
   padding-bottom: 1rem;
 }
 
-button {
-  @include button($bg-color: $blueDark, $wth: 14rem, $colorletra: $white_color);
-  font-size: 0;
-}
+
 
 .redes{
   display: flex;
   justify-content: start;
-  padding-left: 15rem ;
+  padding-left: 5rem;
   gap: 0.5rem;
+  margin-bottom: 2rem;
 }
 .redes-images{
   @include ico ($color:$white_color, $wth:2%, $hgt:2rem);

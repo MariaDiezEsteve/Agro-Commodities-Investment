@@ -15,6 +15,7 @@
     display: flex;
     justify-content: center;
     gap:0.3rem;
+    padding-bottom: 2rem;
 
     .butn-card{
     padding: 0.1rem 3rem;
