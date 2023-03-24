@@ -1,6 +1,4 @@
-<template>
-  <!-- <h1>{{props.data.prodts}}</h1>  -->
-  
+<template> 
 <div class="row justify-content-center">
   <div v-for="prodt in data.prodts" :key="prodt.name" class="flex card m2">
     <div class="col card-body">
@@ -21,7 +19,7 @@
     import {defineProps,ref} from 'vue';
     import { computed } from "@vue/reactivity"
 
-    defineProps({
+  defineProps({
       data: Object
     })
 
