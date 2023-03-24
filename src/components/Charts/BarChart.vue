@@ -2,6 +2,7 @@
   <div>
     <canvas id="myChart"></canvas>
   </div>
+  {{ nameProduct }}
 </template>
   
 <script setup>
@@ -9,8 +10,11 @@
   import Chart from 'chart.js/auto'; //npm install chart.js
 
   const props = defineProps({
-    data: Object
+    data: Object,
+    nameProduct: String
   })
+
+  console.log("props name", props.nameProduct)
 
   let myChart;
   onMounted(()=>{ //muy importante el onMounted para coger cosas del template es aqui dentro

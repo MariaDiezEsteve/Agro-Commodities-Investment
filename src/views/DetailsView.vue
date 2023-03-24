@@ -6,8 +6,13 @@
       <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
       <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
       <div v-if="!data.isError && !isLoading" >
-        <DetailsProducts :data = "data"/>
-        <BarChart :data = "data"/>
+        <DetailsProducts 
+        :data = "data"
+        @nameOfProduct="getDataNameProducto"
+        />
+        <BarChart 
+        :data = "data"
+        :nameProduct="nameProduct"/>
       </div>
     </div>
   </template>
@@ -28,6 +33,14 @@
     }
 
   }))
+
+  const nameProduct = ref("")
+
+
+  const getDataNameProducto = (name) => {
+    nameProduct.value = name
+  }
+
   
   </script>
   
