@@ -1,8 +1,14 @@
 <template>
-    <h1></h1>
-  </template>
+  <div>
+    <h1>MEET OUR TEAM</h1>
+    
+  </div>
+     
+</template>
   
-  <script setup>
+<script setup>
+
+
 
 </script>
   
