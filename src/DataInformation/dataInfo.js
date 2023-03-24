@@ -27,7 +27,7 @@ async function getData(){
     for (let clave in url){
         try{
             let response = await axios.get(url[clave]);
-            prodts[clave] = await response.data
+            prodts[clave].value = await response.data
         }catch (error) {
             console.log(error);
             isError = true
