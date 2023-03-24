@@ -18,11 +18,11 @@
   })
 
   onMounted(()=>{//muy importante el onMounted para coger cosas del template es aqui dentro
-    graph()
+    productChart()
   });
 
 
-  let graph = () => { //esta funcion se dinamiza con un prop del producto seleccionado
+  let productChart = () => { //esta funcion se dinamiza con un prop del producto seleccionado
      let option = "years" //esto seria otro prop
 
      let optChart = "bar" //esto puede ser un drop y el usuario elegir como quiere ver el chart
