@@ -74,7 +74,19 @@
   }
 
   let averagePricesByYearRange = (year1,year2)=>{
-    return year1+year2 //provicionar para q no de error mientras no se ha implementado la funcion
+    let productData = prop.data.prodts.wheat.data
+    let sum=0,productDataYear=[], prices=[], avgs =[]
+    while (year1<(year2+1)) {
+      productDataYear = productData.filter(element => parseInt((element.date).slice(0,4)) == year1)  
+      prices = productDataYear.map(element =>  parseFloat((element.value)).toFixed(2));
+      sum = 0
+      for( let i=0; i<prices.length ; i++){
+        sum = sum + parseFloat(prices[i])
+      } 
+      avgs.push(sum/prices.length)
+      year1++
+    }
+    return avgs
   }
   
   </script>
