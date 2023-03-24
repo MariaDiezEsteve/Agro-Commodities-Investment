@@ -8,12 +8,13 @@
         <h1 id="h1_home">"esto es h1 Home"</h1>
         <h1>"esto es h1 normal"</h1>
 
-        <!-- <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
+        <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
         <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
-        <div v-if="!data.isError && !data.isLoading" >
-          <h2>Loading es: {{isLoading}}</h2>
-          <h2>{{data.prodts}}</h2>
-        </div>  -->
+        <div v-if="!data.isError && !isLoading" >
+          <!-- <h2>Loading es: {{isLoading}}</h2>
+          <h2>{{data.prodts}}</h2> -->
+          <InterectChart :data="data"/>
+        </div>
 
         <h2>"Esto es h2"</h2>
         <h3>"esto es h3"</h3>
@@ -54,6 +55,8 @@
   import {ref,onMounted} from "vue";
   import SideBar from '@/components/Commons/SideBar.vue'
   import ImgSlider from '@/components/Sliders/ImgSlider.vue'
+  import InterectChart from '@/components/Charts/InteractChart.vue'
+
 
   let isLoading = ref(true) 
 

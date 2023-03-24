@@ -1,10 +1,83 @@
 <template>
-    <h1></h1>
-  </template>
+    <canvas id="myChart"></canvas>
+</template>
   
-  <script setup>
+<script setup>
 
-</script>
+  import {defineProps,onMounted} from 'vue';
+  import Chart from 'chart.js/auto'; //npm install chart.js
+
+  const prop= defineProps({
+    data: Object
+  })
+
+  onMounted(()=>{//muy importante el onMounted para coger cosas del template es aqui dentro
+    graph()
+  });
+
+
+  let graph = () => { //esta funcion se dinamiza con un prop del producto seleccionado
+     let option = "years" //esto seria otro prop
+
+     let optChart = "line" //esto puede ser un drop y el usuario elegir como quiere ver el chart
+
+    let myChart;
+    const ctx = document.getElementById('myChart')
+    const  months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    const years = [2000, 2001, 2002, 2003, 2004] // hacer funcion q dado 2 años devuelva un arreglo con el rango de años
+    console.log("precios dataaaa", prop.data.prodts.wheat.data)
+      
+    const data = {
+      labels: option === "months" ? months : years,
+      datasets: [{
+        label: 'Wheat Price',  // porp del producto seleccionado + Price
+        data: option === "months" ? pricesPerMonthInAYear(2000) : averagePricesByYearRange (2000,2004) , //coger el año en un imput
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+        }
+      },
+      // {
+      //   label: 'Product Price',
+      //   data: option === "months" ? pricesPerMonthInAYear(2021) : averagePricesByYearRange (2000,2004) , //coger el año en un imput
+      //   fill: false,
+      //   borderColor: 'rgb(0, 0, 0)',
+      //   tension: 0,
+      //   options: {
+      //     responsive: true,
+      //     maintainAspectRatio: false,
+      //   }
+      // }
+    ]
+    }
+    const chartWithKey = Chart.getChart('myChart')
+    if (chartWithKey != undefined) {
+      chartWithKey.destroy()
+    }
+    myChart = new Chart(ctx, {
+      type: optChart,
+      data: data,
+    })
+
+    return myChart
+  }
+
+
+  let pricesPerMonthInAYear = (year)=>{
+    let productData = prop.data.prodts.wheat.data
+    productData = productData.filter(element => parseInt((element.date).slice(0,4)) == year)
+    productData = productData.map(element =>  parseFloat((element.value)).toFixed(2));
+    return productData
+  }
+
+  let averagePricesByYearRange = (year1,year2)=>{
+    return year1+year2 //provicionar para q no de error mientras no se ha implementado la funcion
+  }
+  
+  </script>
   
   <style lang="scss" scoped>
     @import "@/assets/Sass/--parcial.scss";
