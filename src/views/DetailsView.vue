@@ -6,11 +6,6 @@
       <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
       <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
       <div v-if="!data.isError && !isLoading" >
-<<<<<<< HEAD
-        <DetailsProducts :data = "data"/>
-        <!-- <DropDate/> -->
-        <BarChart :data = "data"/>
-=======
         <DetailsProducts 
         :data = "data"
         @nameOfProduct="getDataNameProducto"
@@ -18,7 +13,6 @@
         <BarChart 
         :data = "data"
         :nameProduct="nameProduct"/>
->>>>>>> ProDetails
       </div>
     </div>
   </template>

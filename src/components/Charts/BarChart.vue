@@ -48,7 +48,7 @@
     const dataChart = {
       labels: option === "months" ? months : years,
       datasets: [{
-        label: 'Wheat Price',  // porp del producto seleccionado + Price
+        label: prop.nameProduct +" "+'Price',  // porp del producto seleccionado + Price
         data: option === "months" ? pricesPerMonthInAYear(2000) : averagePricesByYearRange (2000,2006) , //coger el año de la interfaz
         fill: true, //
         borderColor: 'rgb(75, 192, 192)', //hacer funcion que dado producto devuelve un string con el rgb

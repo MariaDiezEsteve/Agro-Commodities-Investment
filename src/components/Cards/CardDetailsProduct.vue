@@ -23,7 +23,7 @@
       data: Object
     })
    
-   
+  
 
     const rate = ref (0) 
     // const name = ref("")
