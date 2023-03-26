@@ -22,9 +22,6 @@
   import DropChart from '@/components/Buttons/DropChart.vue'
   import CardYears from '@/components/Cards/CardYears.vue'
 
-
-
-  
   const prop = defineProps({
     data: Object,
     nameProduct: String
@@ -34,7 +31,7 @@
     productChart()
   });
 
-
+ 
   let productChart = () => { //esta funcion se dinamiza con un prop del producto seleccionado
     let option = "years" //esto seria otro prop
     let optChart = "bar" //esto puede ser un drop y el usuario elegir como quiere ver el chart
@@ -96,7 +93,7 @@
     }
     return avgs
   }
-  
+
 </script>
   
 <style lang="scss" scoped>
