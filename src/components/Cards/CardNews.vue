@@ -1,26 +1,24 @@
 <template>
-  <div v-for="blogProduct in blogProducts"
-    :key="blogProduct.id">
-  <div class="card d-block m-auto mb-3"
-    
-  >
+  <div v-for="info in information.getNews"
+    :key="info.id">
+  <div class="card d-block m-auto mb-3">
     <div class="row d-flex justify-content-center g-0">
       <div class="col-md-4">
         <img
-          src="@/assets/images/imagenes-blog/cotton.jpg"
+          :src="info.src"
           class="img-fluid rounded-start"
-          alt="blogProduct.alt"
+          :alt="info.alt"
         />
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">{{ blogProduct.title }}</h5>
-          <p class="card-text">{{ blogProduct.description }}</p>
+          <h5 class="card-title">{{ info.title }}</h5>
+          <p class="card-text">{{ info.description }}</p>
           <button >
-            <router-link class="btn-router" :to="blogProduct.enlace">More information</router-link>
+            <router-link class="btn-router" :to="info.enlace">More information</router-link>
           </button>
           <p class="card-text px-5">
-            <small class="text-muted">{{ blogProduct.date }}</small>
+            <small class="text-muted">{{ info.date }}</small>
           </p>
           
         </div>
@@ -34,7 +32,6 @@
       <img class="redes-images" src="@/assets/images/ImagenesRss/twitter.png" alt="">
       <img class="redes-images" src="@/assets/images/ImagenesRss/enlaces.png" alt="">
     </div>
-
   </div>
 
   
@@ -51,19 +48,30 @@
 </template>
 
 <script setup>
-const blogProducts = [
-  {
-    id: 1,
-    title: "Cotton",
-    description:
-      "When it comes to finding the best broker for CFD cotton trading, there are a few things to consider.Firstly, look at the fees and commissions that brokers charge. Different brokers will offer different fees and it is important to compare different brokers in order to find one that suits your budget... ",
-    src: "@/assets/images/imagenes-blog/algodon.jpg",
-    alt: "imagen algodón",
-    enlace: "../views/DetailsView.vue",
-    date: "March 2023",
-  },
+import {defineProps} from 'vue';
+
+defineProps({
+  information: Object
+})
+
+
+
+
+// const blogProducts = [
+//   {
+//     id: 1,
+//     title: "Cotton",
+//     description:
+//       "When it comes to finding the best broker for CFD cotton trading, there are a few things to consider.Firstly, look at the fees and commissions that brokers charge. Different brokers will offer different fees and it is important to compare different brokers in order to find one that suits your budget... ",
+//     src: "@/assets/images/imagenes-blog/algodon.jpg",
+//     alt: "imagen algodón",
+//     enlace: "../views/DetailsView.vue",
+//     date: "March 2023",
+//   },
  
-];
+// ];
+
+
 </script>
 
 <style lang="scss" scoped>
@@ -72,7 +80,7 @@ const blogProducts = [
 .card {
   display: flex;
   justify-content: center;
-  width: 65%;
+  width: 85%;
   
   img {
     height: 100%;
@@ -100,8 +108,6 @@ button {
   gap: 0.5rem;
 }
 .redes-images{
-  @extend %iconos;
-  width: 2%;
-
+  @include ico ($color:$white_color, $wth:2%, $hgt:2rem);
 }
 </style>

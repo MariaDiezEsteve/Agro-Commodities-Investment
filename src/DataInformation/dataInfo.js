@@ -16,7 +16,6 @@ async function getData(){
       
       }
       
-      
       const url={
         wheat: "https:www.alphavantage.co/query?function=WHEAT&interval=monthly&apikey=demo",
         sugar: "https://www.alphavantage.co/query?function=SUGAR&interval=monthly&apikey=demo",
@@ -28,7 +27,7 @@ async function getData(){
     for (let clave in url){
         try{
             let response = await axios.get(url[clave]);
-            prodts[clave] = await response.data
+            prodts[clave].value = await response.data
         }catch (error) {
             console.log(error);
             isError = true

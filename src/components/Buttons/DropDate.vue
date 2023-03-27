@@ -1,11 +1,16 @@
 <template>
-    <h1></h1>
-  </template>
+  <select>
+      <option value="months" selected>Months</option>
+      <option value="years">Years</option>
+  </select>
+</template>
   
 <script setup>
 
 </script>
   
-  <style lang="sass" scoped>
+  <style lang="scss" scoped>
+    @import "@/assets/Sass/--parcial.scss";
+
   
   </style>
