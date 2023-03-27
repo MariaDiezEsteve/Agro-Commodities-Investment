@@ -6,7 +6,6 @@
         <DropChart/>
       </div>
       <CardYears/>
-
       <canvas id="myChart"></canvas>
     </div>
 
@@ -21,7 +20,6 @@
   import DropDate from '@/components/Buttons/DropDate.vue'
   import DropChart from '@/components/Buttons/DropChart.vue'
   import CardYears from '@/components/Cards/CardYears.vue'
-
 
 
   
