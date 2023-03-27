@@ -23,9 +23,6 @@
   import DetailsProducts from '@/components/Cards/CardDetailsProduct.vue'
   import SideBar from '@/components/Commons/SideBar.vue'
   import BarChart from '@/components/Charts/BarChart.vue'
-  // import DropDate from '@/components/Buttons/DropDate.vue'
-
-
 
   let isLoading = ref(true) 
   let data =  ref(onMounted(async () => {
