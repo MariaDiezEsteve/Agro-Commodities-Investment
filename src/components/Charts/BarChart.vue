@@ -6,7 +6,6 @@
         <DropChart/>
       </div>
       <CardYears/>
-
       <canvas id="myChart"></canvas>
     </div>
 
@@ -15,14 +14,11 @@
 </template>
   
 <script setup>
-
-  import {defineProps,onMounted} from 'vue';
+  import {defineProps, onMounted} from 'vue';
   import Chart from 'chart.js/auto'; //npm install chart.js
   import DropDate from '@/components/Buttons/DropDate.vue'
   import DropChart from '@/components/Buttons/DropChart.vue'
   import CardYears from '@/components/Cards/CardYears.vue'
-
-
 
   
   const prop = defineProps({
@@ -30,13 +26,13 @@
     nameProduct: String
   })
 
-  onMounted(()=>{//muy importante el onMounted para coger cosas del template es aqui dentro
+  onMounted(()=>{
     productChart()
   });
 
 
   let productChart = () => { //esta funcion se dinamiza con un prop del producto seleccionado
-    let option = "years" //esto seria otro prop
+    let option = "months" //esto seria otro prop
     let optChart = "bar" //esto puede ser un drop y el usuario elegir como quiere ver el chart
 
     let myChart;
@@ -73,11 +69,10 @@
     return myChart
   }
 
-
   let pricesPerMonthInAYear = (year)=>{
     let productData = prop.data.prodts.wheat.data
     productData = productData.filter(element => parseInt((element.date).slice(0,4)) == year)
-    productData = productData.map(element =>  parseFloat((element.value)).toFixed(2));
+    productData = productData.map(element =>  parseFloat((element.value)).toFixed(2))
     return productData
   }
 
@@ -86,7 +81,7 @@
     let sum=0,productDataYear=[], prices=[], avgs =[]
     while (year1<(year2+1)) {
       productDataYear = productData.filter(element => parseInt((element.date).slice(0,4)) == year1)  
-      prices = productDataYear.map(element =>  parseFloat((element.value)).toFixed(2));
+      prices = productDataYear.map(element =>  parseFloat((element.value)).toFixed(2))
       sum = 0
       for( let i=0; i<prices.length ; i++){
         sum = sum + parseFloat(prices[i])

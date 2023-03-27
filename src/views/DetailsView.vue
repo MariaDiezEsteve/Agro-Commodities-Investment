@@ -8,7 +8,7 @@
       <div v-if="!data.isError && !isLoading" >
         <DetailsProducts 
         :data = "data"
-        @nameOfProduct="getDataNameProducto"
+        @nameOfProduct="getDataNameProduct"
         />
         <BarChart 
         :data = "data"
@@ -24,6 +24,7 @@
     import SideBar from '@/components/Commons/SideBar.vue'
     import BarChart from '@/components/Charts/BarChart.vue'
 
+  
     let isLoading = ref(true) 
     let data =  ref(onMounted(async () => {
       data.value = await info.getData()
@@ -31,22 +32,14 @@
         isLoading.value = false
       }
 
+    }))
 
-  let isLoading = ref(true) 
-  let data =  ref(onMounted(async () => {
-    data.value = await info.getData()
-    if( !data.value.isLoading){
-      isLoading.value = false
+    const nameProduct = ref("")
+
+
+    const getDataNameProduct = (name) => {
+      nameProduct.value = name
     }
-
-  }))
-
-  const nameProduct = ref("")
-
-
-  const getDataNameProducto = (name) => {
-    nameProduct.value = name
-  }
 
   
   </script>
@@ -70,3 +63,4 @@
 
   
   </style>
+
