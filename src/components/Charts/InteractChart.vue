@@ -93,7 +93,4 @@
   
   <style lang="scss" scoped>
     @import "@/assets/Sass/--parcial.scss";
-
-<style lang="scss" scoped>
-@import "@/assets/Sass/--parcial.scss";
 </style>
