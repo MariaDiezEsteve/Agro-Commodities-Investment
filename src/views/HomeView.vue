@@ -1,12 +1,14 @@
 <template>
 
-    <SideBar class="col-2"/>
-    <div class="col-10" >
+    <SideBar class=" col-lg-2  col-md-3"/>
+    <div class="col-lg-10 col-md-9" >
       <ImgSlider/>
 
       <div class="px-5">
         <h1 id="h1_home">"esto es h1 Home"</h1>
         <h1>"esto es h1 normal"</h1>
+
+        <InteractChart/>
 
         <!-- <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
         <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
@@ -54,6 +56,8 @@
   import {ref,onMounted} from "vue";
   import SideBar from '@/components/Commons/SideBar.vue'
   import ImgSlider from '@/components/Sliders/ImgSlider.vue'
+  import InteractChart from '@/components/Charts/InteractChart.vue'
+
 
   let isLoading = ref(true) 
 
