@@ -2,17 +2,15 @@
   <div class="d-flex justify-content-center pt-4">
     <div style="width: 60%">
       <div class="d-flex flex-row justify-content-between">
-        <DropDate  @rangeYears="rangeYears"/>
-        <DropChart/>
+        <DropDate @dateSelected="getDate"/>
+        <DropChart @typeSelected="getTypeChar"/>
       </div>
-      <CardYears/>
-      <div>
-        <canvas id="myChart"></canvas>
-      </div>
+      <CardDate @rangeYears="rangeYears"/>
+      <canvas id="myChart"></canvas>
     </div>
 
   </div>
-  {{ nameProduct }}
+  <!-- {{ nameProduct }} -->
 </template>
   
 <script setup>
@@ -21,15 +19,25 @@
   import Chart from 'chart.js/auto'; //npm install chart.js
   import DropDate from '@/components/Buttons/DropDate.vue'
   import DropChart from '@/components/Buttons/DropChart.vue'
-  import CardYears from '@/components/Cards/CardDate.vue'
-
+  import CardDate from '@/components/Cards/CardDate.vue'
 
   const prop = defineProps({
     data: Object,
     nameProduct: String
   })
 
-  console.log("22222222222222222222", prop.nameProduct)
+  const date = ref("years")
+  const typeChart = ref("bar")
+
+  const getDate = (selectedDate) => {
+    date.value = selectedDate
+    //console.log("en el padre",date.value)
+  }
+
+  const getTypeChar = (selectedType) => {
+    typeChart.value = selectedType
+    //console.log("en el padre type",typeChart.value)
+  }
 
   onMounted(()=>{//muy importante el onMounted para coger cosas del template es aqui dentro
     productChart()
@@ -102,8 +110,9 @@
 
   const rangeYears = (years) => {
     rangeYear.value = years
+    console.log("me corono", rangeYear.value)
+
   }
-  console.log("me corono", rangeYear.value)
 
 
   const getColor = (name) => {
