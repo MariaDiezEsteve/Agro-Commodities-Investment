@@ -2,31 +2,43 @@
   <div class="d-flex justify-content-center pt-4">
     <div style="width: 60%">
       <div class="d-flex flex-row justify-content-between">
-        <DropDate/>
-        <DropChart/>
+        <DropDate @dateSelected="getDate"/>
+        <DropChart @typeSelected="getTypeChar"/>
       </div>
       <CardDate/>
       <canvas id="myChart"></canvas>
     </div>
 
   </div>
-  {{ nameProduct }}
+  <!-- {{ nameProduct }} -->
 </template>
   
 <script setup>
 
-  import {defineProps,onMounted} from 'vue';
+  import {defineProps,onMounted, ref} from 'vue';
   import Chart from 'chart.js/auto'; //npm install chart.js
   import DropDate from '@/components/Buttons/DropDate.vue'
   import DropChart from '@/components/Buttons/DropChart.vue'
   import CardDate from '@/components/Cards/CardDate.vue'
-
 
   
   const prop = defineProps({
     data: Object,
     nameProduct: String
   })
+
+  const date = ref("years")
+  const typeChart = ref("bar")
+
+  const getDate = (selectedDate) => {
+    date.value = selectedDate
+    //console.log("en el padre",date.value)
+  }
+
+  const getTypeChar = (selectedType) => {
+    typeChart.value = selectedType
+    //console.log("en el padre type",typeChart.value)
+  }
 
   onMounted(()=>{//muy importante el onMounted para coger cosas del template es aqui dentro
     productChart()
