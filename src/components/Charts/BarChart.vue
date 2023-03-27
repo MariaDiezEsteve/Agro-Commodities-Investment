@@ -2,7 +2,7 @@
   <div class="d-flex justify-content-center pt-4">
     <div style="width: 60%">
       <div class="d-flex flex-row justify-content-between">
-        <DropDate/>
+        <DropDate  @rangeYears="rangeYears"/>
         <DropChart/>
       </div>
       <CardYears/>
@@ -15,14 +15,13 @@
   
 <script setup>
 
-  import {defineProps,onMounted} from 'vue';
+  import {defineProps,onMounted, ref} from 'vue';
   import Chart from 'chart.js/auto'; //npm install chart.js
   import DropDate from '@/components/Buttons/DropDate.vue'
   import DropChart from '@/components/Buttons/DropChart.vue'
   import CardYears from '@/components/Cards/CardDate.vue'
 
 
-  
   const prop = defineProps({
     data: Object,
     nameProduct: String
@@ -94,6 +93,13 @@
     }
     return avgs
   }
+
+  const rangeYear = ref([])
+
+  const rangeYears = (years) => {
+    rangeYear.value = years
+  }
+  console.log("me corono", rangeYear.value)
 
 </script>
   
