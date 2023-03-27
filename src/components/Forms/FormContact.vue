@@ -64,16 +64,11 @@ const formContact = [
     @include button(
       $bg-color: $blueDark,
       $wth: 11rem,
-      $colorletra: $white_color
+      $colorletra: $white_color,
     );
   }
 }
 
-.form-card{
 
-
-
-
-}
 
 </style>
