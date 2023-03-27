@@ -35,6 +35,7 @@ const teams = [
 .card-img {
   width: 5rem;
   border-radius: 100%;
+  margin-right: 1rem;
   
 }
 
