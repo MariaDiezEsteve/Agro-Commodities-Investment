@@ -5,7 +5,7 @@
         <DropDate @dateSelected="getDate"/>
         <DropChart @typeSelected="getTypeChar"/>
       </div>
-      <CardDate/>
+      <CardDate @rangeYears="rangeYears"/>
       <canvas id="myChart"></canvas>
     </div>
 
@@ -110,8 +110,9 @@
 
   const rangeYears = (years) => {
     rangeYear.value = years
+    console.log("me corono", rangeYear.value)
+
   }
-  console.log("me corono", rangeYear.value)
 
 </script>
   
