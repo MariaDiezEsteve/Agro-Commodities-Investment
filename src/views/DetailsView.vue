@@ -12,7 +12,8 @@
         />
         <BarChart 
         :data = "data"
-        :nameProduct="nameProduct"/>
+        :nameProduct="nameProduct"
+        @rangeYears="rangeYears"/>
       </div>
     </div>
   </template>
@@ -37,11 +38,16 @@
   }))
 
   const nameProduct = ref("")
-
+  const rangeYear = ref([])
 
   const getDataNameProducto = (name) => {
     nameProduct.value = name
   }
+
+  const rangeYears = (years) => {
+    rangeYear.value = years
+  }
+  console.log("me corono", rangeYear.value)
 
   
   </script>
