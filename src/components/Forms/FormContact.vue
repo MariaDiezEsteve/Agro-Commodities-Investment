@@ -1,5 +1,5 @@
 <template>
-    <h1></h1>
+    <h1>Contact Form</h1>
   </template>
   
   <script setup>
