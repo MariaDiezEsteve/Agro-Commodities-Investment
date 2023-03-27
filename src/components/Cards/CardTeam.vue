@@ -1,5 +1,5 @@
 <template>
-  <div v-for="team in teams" :key="team" class="p-5" :id="team.id">
+  <div v-for="team in teams" :key="team" class="p-5 card-inicio" :id="team.id">
     <div class="card-teams">
       <div class="imagtexto">
         <div class="imagen-general">
@@ -23,11 +23,51 @@ const teams = [
     src: "https://cdn.pixabay.com/photo/2017/10/25/16/54/african-lion-2888519_1280.jpg",
     alt: "commodities",
   },
+  {
+    id: "commodities",
+    name: "Zuceles Guedest",
+    discripion: "Hello, how are you?",
+    src: "https://cdn.pixabay.com/photo/2017/10/25/16/54/african-lion-2888519_1280.jpg",
+    alt: "commodities",
+  },
+  {
+    id: "commodities",
+    name: "Lucas Ibar",
+    discripion: "Hello, how are you?",
+    src: "https://cdn.pixabay.com/photo/2017/10/25/16/54/african-lion-2888519_1280.jpg",
+    alt: "commodities",
+  },
+  {
+    id: "commodities",
+    name: "Jessica Mosteiro",
+    discripion: "Hello, how are you?",
+    src: "https://cdn.pixabay.com/photo/2017/10/25/16/54/african-lion-2888519_1280.jpg",
+    alt: "commodities",
+  },
+  {
+    id: "commodities",
+    name: "Maria Diaz",
+    discripion: "Hello, how are you?",
+    src: "https://cdn.pixabay.com/photo/2017/10/25/16/54/african-lion-2888519_1280.jpg",
+    alt: "commodities",
+  },
+  {
+    id: "commodities",
+    name: "Gorka",
+    discripion: "Hello, how are you?",
+    src: "https://cdn.pixabay.com/photo/2017/10/25/16/54/african-lion-2888519_1280.jpg",
+    alt: "commodities",
+  },
 ];
 </script>
   
   <style lang="scss" scoped>
 @import "@/assets/Sass/--parcial.scss";
+
+.card-inicio{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 .imagtexto {
   display: flex;
   flex-direction: row;

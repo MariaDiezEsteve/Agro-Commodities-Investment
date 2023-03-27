@@ -16,7 +16,7 @@
 <script setup>
   import SideBar from '@/components/Commons/SideBar.vue'
   import CardNews from '@/components/Cards/CardNews.vue';
-  import CardTeam from '@/components/Cards/CardTeam.vue'
+  
 
   import  CardNewsButton from "@/components/Buttons/CardNewsButton.vue"
   import usInfo from '@/DataInformation/usInfo';
