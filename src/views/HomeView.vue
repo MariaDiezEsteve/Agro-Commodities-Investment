@@ -15,10 +15,11 @@
           <h2>{{data.prodts}}</h2> -->
           <InterectChart :data="data"/>
         </div>
-
-        <h2>"Esto es h2"</h2>
-        <h3>"esto es h3"</h3>
-        <p>"esto es un parrafo"</p>
+        <img v-if="reviews.isError" src="@/assets/images/error.jpeg" alt="error">
+        <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
+        <div v-if="!reviews.isError && !isLoading" >
+          <FormReview :reviews="reviews" />
+        </div>
 
         <div id="image_person"></div>
         <button>Enter</button>
@@ -52,10 +53,12 @@
 
 <script setup>
   import info from '@/DataInformation/dataInfo'
+  import reviewsInfo from '@/DataInformation/reviewInfo'
   import {ref,onMounted} from "vue";
   import SideBar from '@/components/Commons/SideBar.vue'
   import ImgSlider from '@/components/Sliders/ImgSlider.vue'
   import InterectChart from '@/components/Charts/InteractChart.vue'
+  import FormReview from '@/components/Forms/FormReview.vue';
 
 
   let isLoading = ref(true) 
@@ -67,6 +70,20 @@
       isLoading.value = false
     }
   })) 
+
+  //Reviews
+
+  let reviews = ref(onMounted(async () => {
+    reviews.value = await reviewsInfo.getReviewsInfo()
+
+    // console.log(review.value)
+    
+    if( !reviews.value.isLoading){
+      isLoading.value = false
+    }
+  })) 
+
+ 
   
 </script>
 
