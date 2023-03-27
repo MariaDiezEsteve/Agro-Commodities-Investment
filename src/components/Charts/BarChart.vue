@@ -21,7 +21,6 @@
   import DropChart from '@/components/Buttons/DropChart.vue'
   import CardDate from '@/components/Cards/CardDate.vue'
 
-  
   const prop = defineProps({
     data: Object,
     nameProduct: String
@@ -106,6 +105,13 @@
     }
     return avgs
   }
+
+  const rangeYear = ref([])
+
+  const rangeYears = (years) => {
+    rangeYear.value = years
+  }
+  console.log("me corono", rangeYear.value)
 
 </script>
   

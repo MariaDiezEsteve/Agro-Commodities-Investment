@@ -12,7 +12,8 @@
         />
         <BarChart 
         :data = "data"
-        :nameProduct="nameProduct"/>
+        :nameProduct="nameProduct"
+       />
       </div>
     </div>
   </template>
