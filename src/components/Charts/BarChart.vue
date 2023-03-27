@@ -19,7 +19,7 @@
   import Chart from 'chart.js/auto'; //npm install chart.js
   import DropDate from '@/components/Buttons/DropDate.vue'
   import DropChart from '@/components/Buttons/DropChart.vue'
-  import CardYears from '@/components/Cards/CardYears.vue'
+  import CardYears from '@/components/Cards/CardDate.vue'
 
 
   
