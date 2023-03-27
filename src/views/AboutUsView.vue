@@ -7,11 +7,17 @@
       <p>"esto es un parrafo"</p>
 
     </div>
+    <!-- <div>
+      <CardTeam />
+    </div> -->
+    
 
 </template>
 
 <script setup>
   import SideBar from '@/components/Commons/SideBar.vue'
+  
+
 
 
 </script>
