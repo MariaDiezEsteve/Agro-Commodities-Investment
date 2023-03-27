@@ -71,7 +71,7 @@
         data: date.value === "months" ? pricesPerMonthInAYear(2000) : averagePricesByYearRange (rangeYear.value[0],rangeYear.value[(rangeYear.value).length-1]) , //coger el año de la interfaz
         fill: typeChart.value == "bar" ? true : false, //
         borderColor: 'rgb(75, 192, 192)', //hacer funcion que dado producto devuelve un string con el rgb
-        backgroundColor:'rgba(248, 238, 11,0.7)', //lo mismo llamamos a la misma funcion
+        backgroundColor: getColor(prop.nameProduct), //lo mismo llamamos a la misma funcion
         tension: 0,
         options: {
           responsive: true,
@@ -118,8 +118,37 @@
 
 
 
+
+  const getColor = (name) => {
+    switch(name) {
+        case (name == "wheat"):
+            "rgba(248, 238, 11, 1)";
+            break;
+        case (name == "corn"):
+            "rgba(252, 90, 90, 1)";
+            break;
+        case (name == "cotton"):
+            "rgba(1, 1, 88, 1)";
+            break;
+        case (name == "sugar"):
+            "rgba(27, 169, 234, 1)";
+            break;
+        case (name == "coffee"):
+            "rgba(61, 213, 152, 1)";
+            break;
+        default:
+            break;
+    }
+
+  }
+  console.log("***************", getColor(prop.nameProduct))
+
+ 
+  
 </script>
   
 <style lang="scss" scoped>
   @import "@/assets/Sass/--parcial.scss";
+
+  
 </style>
