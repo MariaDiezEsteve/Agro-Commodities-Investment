@@ -1,5 +1,6 @@
-<template>
-  <div v-for="team in teams" :key="team" class="p-5 card-inicio" :id="team.id">
+<template >
+  <div class="card-grid">
+  <div v-for="team in teams" :key="team" class="p-5" :id="team.id">
     <div class="card-teams">
       <div class="imagtexto">
         <div class="imagen-general">
@@ -12,6 +13,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
   
 <script setup>
@@ -64,7 +66,7 @@ const teams = [
   <style lang="scss" scoped>
 @import "@/assets/Sass/--parcial.scss";
 
-.card-inicio{
+.card-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -78,5 +80,6 @@ const teams = [
   margin-right: 1rem;
   
 }
+
 
 </style>

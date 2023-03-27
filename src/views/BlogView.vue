@@ -8,7 +8,6 @@
           <CardNews  :information="information"/>
         </div>
         <CardNewsButton />
-        <CardTeam />
     </div>
   
 </template>
