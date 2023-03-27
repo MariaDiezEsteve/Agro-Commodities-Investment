@@ -9,11 +9,13 @@
         <DetailsProducts 
         :data = "data"
         @nameOfProduct="getDataNameProducto"
+        @click="onClick"
         />
-        <BarChart 
+        <BarChart v-if="click==true"
         :data = "data"
         :nameProduct="nameProduct"
-       />
+        {{ click.value = false }}
+       /> 
       </div>
     </div>
   </template>
@@ -34,11 +36,16 @@
 
   }))
 
-  const nameProduct = ref("")
+
+  let nameProduct = ref("")
 
 
   const getDataNameProducto = (name) => {
     nameProduct.value = name
+  }
+  let click = ref(false)
+  let onClick=()=>{
+    click.value = true
   }
 
 
