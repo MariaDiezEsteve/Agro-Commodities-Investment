@@ -1,6 +1,9 @@
 <template>
-    <h1></h1>
-  </template>
+  <select>
+      <option value="months" selected>Months</option>
+      <option value="years">Years</option>
+  </select>
+</template>
   
 <script setup>
 
