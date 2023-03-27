@@ -5,7 +5,7 @@
         <DropDate/>
         <DropChart/>
       </div>
-      <CardYears/>
+      <CardDate/>
       <canvas id="myChart"></canvas>
     </div>
 
@@ -18,7 +18,8 @@
   import Chart from 'chart.js/auto'; //npm install chart.js
   import DropDate from '@/components/Buttons/DropDate.vue'
   import DropChart from '@/components/Buttons/DropChart.vue'
-  import CardYears from '@/components/Cards/CardYears.vue'
+  import CardDate from '@/components/Cards/CardDate.vue'
+
 
   
   const prop = defineProps({
@@ -30,7 +31,7 @@
     productChart()
   });
 
-
+ 
   let productChart = () => { //esta funcion se dinamiza con un prop del producto seleccionado
     let option = "months" //esto seria otro prop
     let optChart = "bar" //esto puede ser un drop y el usuario elegir como quiere ver el chart
@@ -91,7 +92,7 @@
     }
     return avgs
   }
-  
+
 </script>
   
 <style lang="scss" scoped>
