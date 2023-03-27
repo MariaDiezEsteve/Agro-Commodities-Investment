@@ -1,11 +1,11 @@
 <template>
     <div>
         <div id="months" class="mb-4 mt-2">
-            <label class="mx-1" for="">Entre el año : </label>
-            <input type="text" value="" style="width: 5rem; height: 1.5rem;">
+            <label class="mx-1" for="">Enter the year : </label>
+            <input type="text" value="" style="width: 5rem; height: 1.5rem;" @keydown.enter="getYear($event.target.value)">
         </div>
         <div id="years" class="mb-4 mt-2" >
-            <label class="mx-1" for="">Entre los años del rango : </label>
+            <label class="mx-1" for="">Enter the range of years : </label>
             <input class="mx-2" type="text"  placeholder="year1" style="width: 5rem; height: 1.5rem;" v-model="year1" @keydown.enter="lookValue()">
             <input type="text" placeholder="year2" style="width: 5rem; height: 1.5rem;" v-model="year2" @keydown.enter="lookValue()">
         </div>
@@ -26,19 +26,14 @@ const year2 = ref(null)
 //está variable está para la función averageYear
 let years = ref([])
 
+let year = ref([])
+
 function lookValue(){
-    
-
-    console.log("year1",year1.value)
-    console.log("year2",year2.value)
-
+    // console.log("year1",year1.value)
+    // console.log("year2",year2.value)
    if(year1.value != null && year2.value != null){
         years = averageYear(year1.value, year2.value)
-        //getYears (aYears)
-
-        console.log("m", years)
         getYears(years)
-        console.log("eiiiiiii", years)
     } 
 
 }
@@ -55,21 +50,21 @@ let averageYear = (year1, year2) => {
   return rangeYears
 }
 
-const emit = defineEmits(["rangeYears"])
+const emit = defineEmits(["rangeYears", "year"])
 
+
+//rango de años
 const getYears = (years) => {
-
-    if(years != null){
         emit ("rangeYears", years)
         console.log("YEARS",years)
-    }
-   
 }
 
-// getYears(aYears)
-// console.log("eiiiiiii", aYears)
 
-
+//año de los meses
+const getYear = () => {
+    emit ("year", year)
+    console.log("YEAR en el hijo",year)
+}
 
 </script>
 

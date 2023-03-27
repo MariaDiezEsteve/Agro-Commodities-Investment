@@ -31,35 +31,45 @@
 
   const getDate = (selectedDate) => {
     date.value = selectedDate
+    productChart()    
+
     //console.log("en el padre",date.value)
   }
 
   const getTypeChar = (selectedType) => {
     typeChart.value = selectedType
+    productChart()
+
     //console.log("en el padre type",typeChart.value)
   }
 
-  onMounted(()=>{//muy importante el onMounted para coger cosas del template es aqui dentro
+  let rangeYear = ref([2000, 2001, 2002, 2003, 2004,2005, 2006])
+
+  let rangeYears = (years) => {
+    rangeYear.value = years
+    console.log("me corono", rangeYear.value)
     productChart()
+
+  }
+
+  onMounted(()=>{//muy importante el onMounted para coger cosas del template es aqui dentro
+       productChart()    
   });
 
  
   let productChart = () => { //esta funcion se dinamiza con un prop del producto seleccionado
-    let option = "years" //esto seria otro prop
-    let optChart = "bar" //esto puede ser un drop y el usuario elegir como quiere ver el chart
 
     let myChart;
     const ctx = document.getElementById('myChart')
     const  months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    const years = [2000, 2001, 2002, 2003, 2004,2005, 2006] // hacer funcion q dado 2 años devuelva un arreglo con el rango de años
     console.log("precios dataaaa", prop.data.prodts.wheat.data)
       
     const dataChart = {
-      labels: option === "months" ? months : years,
+      labels: date.value === "months" ? months : rangeYear.value,
       datasets: [{
         label: prop.nameProduct +" "+'Price',  // porp del producto seleccionado + Price
-        data: option === "months" ? pricesPerMonthInAYear(2000) : averagePricesByYearRange (2000,2006) , //coger el año de la interfaz
-        fill: true, //
+        data: date.value === "months" ? pricesPerMonthInAYear(2000) : averagePricesByYearRange (rangeYear.value[0],rangeYear.value[(rangeYear.value).length-1]) , //coger el año de la interfaz
+        fill: typeChart.value == "bar" ? true : false, //
         borderColor: 'rgb(75, 192, 192)', //hacer funcion que dado producto devuelve un string con el rgb
         backgroundColor:'rgba(248, 238, 11,0.7)', //lo mismo llamamos a la misma funcion
         tension: 0,
@@ -75,7 +85,7 @@
       chartWithKey.destroy()
     }
     myChart = new Chart(ctx, {
-      type: optChart,
+      type: typeChart.value,
       data: dataChart,
     })
 
@@ -106,13 +116,7 @@
     return avgs
   }
 
-  const rangeYear = ref([])
 
-  const rangeYears = (years) => {
-    rangeYear.value = years
-    console.log("me corono", rangeYear.value)
-
-  }
 
 </script>
   
