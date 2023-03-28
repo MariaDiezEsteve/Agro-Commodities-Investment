@@ -1,4 +1,4 @@
-  <template>
+<template>
     <SideBar class="col-2"/>
     <div class="col-10 px-5">
       <h1>Agro Commodities Details</h1>
@@ -20,15 +20,14 @@
     import SideBar from '@/components/Commons/SideBar.vue'
     import BarChart from '@/components/Charts/BarChart.vue'
 
-  
-    let isLoading = ref(true) 
-    let data =  ref(onMounted(async () => {
-      data.value = await info.getData()
-      if( !data.value.isLoading){
-        isLoading.value = false
-      }
+  let isLoading = ref(true) 
+  let data =  ref(onMounted(async () => {
+    data.value = await info.getData()
+    if( !data.value.isLoading){
+      isLoading.value = false
+    }
 
-    }))
+  }))
 
   </script>
   
@@ -51,4 +50,3 @@
 
   
   </style>
-
