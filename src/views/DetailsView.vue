@@ -6,13 +6,10 @@
       <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
       <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
       <div v-if="!data.isError && !isLoading" >
-        <DetailsProducts 
-        :data = "data"
-        @nameOfProduct="getDataNameProduct"
-        />
-        <BarChart 
-        :data = "data"
-        :nameProduct="nameProduct"/>
+        <BarChart :data = "data"/> 
+
+        
+        
       </div>
     </div>
   </template>
@@ -20,7 +17,6 @@
   <script setup>
     import info from '@/DataInformation/dataInfo'
     import {ref,onMounted} from "vue";
-    import DetailsProducts from '@/components/Cards/CardDetailsProduct.vue'
     import SideBar from '@/components/Commons/SideBar.vue'
     import BarChart from '@/components/Charts/BarChart.vue'
 
@@ -34,14 +30,7 @@
 
     }))
 
-    const nameProduct = ref("")
 
-
-    const getDataNameProduct = (name) => {
-      nameProduct.value = name
-    }
-
-  
   </script>
   
   <style lang="scss" scoped>
