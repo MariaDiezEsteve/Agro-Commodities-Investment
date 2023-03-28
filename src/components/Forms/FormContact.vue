@@ -1,6 +1,6 @@
 <template>
  
-    <div class="form-card m-4">
+    <div class="form-card container m-4 col-auto m-5 w-50 " >
       <div class="card-body">
         <h5 class="card-title">Contact Form</h5>
         <p class="card-text">
@@ -9,14 +9,14 @@
       </div>
 
       <div class="  cuadro row">
-        <div class="col-4 px-5">
+        <div class=" mt-4 mr-1 col-6 px-5">
           <input
             type="text"
             class="form-control p-2"
             placeholder="Enter your name"
           />
         </div>
-        <div class="col-6">
+        <div class="  mr-1 mt-4 col-5">
           <input
             type="text"
             class="form-control p-2"
@@ -24,7 +24,7 @@
           />
         </div>
 
-        <div class="mb-3 ps-5 col-10">
+        <div class="mb-4 ps-5 col-11">
           <label for="exampleFormControlTextarea1" class="form-label"></label>
           <textarea
             class="form-control"
@@ -78,10 +78,14 @@ const formContact = [
    .cuadro { 
 
 // border: solid grey  0.2px; 
-box-shadow: 0px 0px 2px 1px black;
+box-shadow: 0px 0px 1px 1px black;
+
   
    };
 
+.form-card{
 
+align-content: center;
+}
 </style>
 
