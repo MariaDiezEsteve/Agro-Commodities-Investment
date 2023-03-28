@@ -56,19 +56,12 @@ const formContact = [
 ];
 </script> -->
 
-<<<<<<< HEAD
-  </script>
+
   
   <style lang="scss" scoped>
-<<<<<<< HEAD
+
     @import "@/assets/Sass/--parcial.scss";
 
-=======
-  @import "@/assets/Sass/--parcial.scss";
-=======
-<style lang="scss" scoped>
-@import "@/assets/Sass/--parcial.scss";
->>>>>>> daa27a38b839d754d46af2d2e402f67d732b774b
 
 .buttones {
   a {
@@ -79,14 +72,5 @@ const formContact = [
     );
   }
 }
-
-
-
-<<<<<<< HEAD
-  
->>>>>>> e2bf79586cd4cd231fc07f84f0df2f8e85dc5da7
-  
-  </style>
-=======
 </style>
->>>>>>> daa27a38b839d754d46af2d2e402f67d732b774b
+
