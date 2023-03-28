@@ -9,22 +9,22 @@
       </div>
 
       <div class="row">
-        <div class="col">
+        <div class="col-4 px-5">
           <input
             type="text"
-            class="form-control"
+            class="form-control p-2"
             placeholder="Enter your name"
           />
         </div>
-        <div class="col">
+        <div class="col-6">
           <input
             type="text"
-            class="form-control"
+            class="form-control p-2"
             placeholder="Enter your email address"
           />
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3 ps-5 col-10">
           <label for="exampleFormControlTextarea1" class="form-label"></label>
           <textarea
             class="form-control"
