@@ -7,19 +7,26 @@
         <p class="opinion">Review:</p>
         <p class="card-text"> {{ review.opinion }}</p>
         <button>Edit Review</button>
+        <button>Delete Review</button>
       </div>
-    </div>
-    <FormCreate />
+    </div>   
   </div>
 </template>
   
   <script setup>
   import {defineProps } from 'vue'
-  import FormCreate from '@/components/Forms/FormCreate.vue'
+
   
   defineProps({
     reviews: Object
   });
+
+
+
+  // EDIT REVIEW
+
+
+
 
   </script>
   

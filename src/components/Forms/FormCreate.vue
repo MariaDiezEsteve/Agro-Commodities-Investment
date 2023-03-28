@@ -1,7 +1,8 @@
 <template>
   <div class="reviews">
-      <img v-if="isError" src="@/assets/images/error.jpeg" alt="error">
-        <div v-if="!isError" >
+    <img v-if="reviews.isError" src="@/assets/images/error.jpeg" alt="error">
+    <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
+        <div v-if="!reviews.isError && !isLoading" >
             <form @submit.prevent>
               <div>
               <label for="name">Name: </label>
@@ -18,19 +19,39 @@
               <input type="text" id="opinion" v-model="formData.opinion" required/>
               <!-- <p v-if="isAlert" class="alert">You need to fill this input with your opinion</p> -->
             </div>
-               <input type="submit" value="Create Review" @click="emptyLabel"/> 
+            <input type="submit" value="Create Review" @click="emptyLabel"/> 
+            <button @click="eee">eee</button> 
+            <!-- Falta poner una función aquí para incluir los datos -->
             </form>
         </div>
     </div>
+    <div>
+        <FormReview :reviews="reviews" />
+    </div>
+
+
   </template>
   
   <script setup>
-  import {defineProps, reactive  } from 'vue'
+  import { reactive, ref, onMounted } from 'vue'
   import axios from 'axios'
-  defineProps({
-    reviews: Object
-  });
+  import FormReview from '@/components/Forms/FormReview.vue';
+  import reviewsInfo from '@/DataInformation/reviewInfo'
 
+
+  let isLoading = ref(true) 
+  
+  let reviews = ref(onMounted(async () => {
+    reviews.value = await reviewsInfo.getReviewsInfo()
+
+    console.log("esto es la mierda", reviews.value)
+    
+    if( !reviews.value.isLoading){
+      isLoading.value = false
+    }
+  })) 
+
+ 
   const formData = reactive({
     name: "",
     email: "",
@@ -38,6 +59,7 @@
   })
 
   let isError = false
+
  
   // let isAlert = ref(false)
 

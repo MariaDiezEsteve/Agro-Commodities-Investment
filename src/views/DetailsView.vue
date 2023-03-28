@@ -7,9 +7,6 @@
       <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
       <div v-if="!data.isError && !isLoading" >
         <BarChart :data = "data"/> 
-
-        
-        
       </div>
     </div>
   </template>
