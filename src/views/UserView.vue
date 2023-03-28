@@ -1,13 +1,18 @@
 <template>
   <SideBar class="col-2"/>
-    <div class="col-10 px-5" >
-     
+    <div class="col-10" >
+      <div class="img"></div>
 
+     <div class="px-5">
       <img v-if="questions.isError" src="@/assets/images/error.jpeg" alt="error">
       <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
       <div v-if="!questions.isError && !isLoading" >
        <CardPredictionVue :questions="questions"/> 
       </div> 
+
+     </div>
+
+      
 
     </div>
 </template>
@@ -33,6 +38,13 @@
 
 <style lang="scss" scoped>
   @import "@/assets/Sass/--parcial.scss";
+
+  .img{
+    @extend %imagen;
+    background-image:linear-gradient(to left, rgba(15, 51, 135, 0.6), rgb(15, 51, 135,0.3)),
+        url("@/assets/images/Agri3.jpg");
+    height: 250px;
+  }
 
 
 </style>
