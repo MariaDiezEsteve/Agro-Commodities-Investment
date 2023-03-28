@@ -1,5 +1,5 @@
 <template>
-  
+ 
     <div class="form-card m-4">
       <div class="card-body">
         <h5 class="card-title">Contact Form</h5>
@@ -8,7 +8,7 @@
         </p>
       </div>
 
-      <div class="row">
+      <div class="  cuadro row">
         <div class="col">
           <input
             type="text"
@@ -60,14 +60,23 @@ const formContact = [
 @import "@/assets/Sass/--parcial.scss";
 
 .buttones {
+  display:flex;
+    justify-content: center;
   a {
     @include button(
       $bg-color: $blueDark,
       $wth: 11rem,
       $colorletra: $white_color,
-    );
-  }
+    ); 
 }
+   }
+  
+   .cuadro { 
+
+// border: solid grey  0.2px; 
+box-shadow: 0px 0px 2px 1px black;
+  
+   };
 
 
 
