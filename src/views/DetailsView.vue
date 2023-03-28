@@ -6,8 +6,13 @@
       <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
       <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
       <div v-if="!data.isError && !isLoading" >
-        <DetailsProducts :data = "data"/>
-        <BarChart :data = "data"/>
+        <DetailsProducts 
+        :data = "data"
+        @nameOfProduct="getDataNameProducto"
+        />
+        <BarChart 
+        :data = "data"
+        :nameProduct="nameProduct"/>
       </div>
     </div>
   </template>
@@ -18,6 +23,8 @@
   import DetailsProducts from '@/components/Cards/CardDetailsProduct.vue'
   import SideBar from '@/components/Commons/SideBar.vue'
   import BarChart from '@/components/Charts/BarChart.vue'
+  // import DropDate from '@/components/Buttons/DropDate.vue'
+
 
 
   let isLoading = ref(true) 
@@ -28,6 +35,14 @@
     }
 
   }))
+
+  const nameProduct = ref("")
+
+
+  const getDataNameProducto = (name) => {
+    nameProduct.value = name
+  }
+
   
   </script>
   

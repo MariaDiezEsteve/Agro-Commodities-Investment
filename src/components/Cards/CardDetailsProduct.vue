@@ -1,12 +1,12 @@
 <template> 
 <div class="row justify-content-center">
   <div v-for="prodt in data.prodts" :key="prodt.name" class="flex card m2">
-    <div class="col card-body">
+    <div class="col card-body" @click="getNameProduct((prodt.name).slice(16))">
       {{ calculateRate(prodt) }}  <!-- Llamada a la función: Esto hace referencia a la función del cálculo rate para poder obtener los datos y mostrarlos en la línea 10-->
       {{ nameProduct(prodt) }}
       <h4 :class="classColorProduct">{{ nameColorProduct}}</h4>
       <div class="card-details">
-        <p class="card-text"> ${{ parseFloat(prodt.data[0].value).toFixed(2) }}</p>
+        <p class="card-text"> ${{  }}</p>
         <p :class='classRate'> {{ rate }}% </p>
       </div>
     </div>
@@ -16,19 +16,25 @@
   </template>
   
   <script setup>
-    import {defineProps,ref} from 'vue';
+    import {defineProps, defineEmits, ref} from 'vue';
     import { computed } from "@vue/reactivity"
 
   defineProps({
       data: Object
     })
-
+   
+  
 
     const rate = ref (0) 
+    // const name = ref("")
 
     function calculateRate(prodt){
       rate.value = parseFloat(((prodt.data[0].value)-(prodt.data[1].value)) / (prodt.data[1].value)).toFixed(3)
     }
+  
+    // function calculateName(prodt){
+    //   name.value = parseFloat(prodt.data[0].value).toFixed(2)
+    // }
 
     
     const classRate = computed(() => {
@@ -65,6 +71,13 @@
       }
       return colorProduct;
     });
+
+    //To get the information about name of product to send to the parent
+    const emit = defineEmits(["nameOfProduct"])
+
+    const getNameProduct = (name) => {
+          emit("nameOfProduct", name)     
+    }
   
 
   </script>

@@ -1,20 +1,33 @@
 <template>
   <div class="d-flex justify-content-center pt-4">
-    <div style="width: 60%;">
+    <div style="width: 60%">
+      <div class="d-flex flex-row justify-content-between">
+        <DropDate/>
+        <DropChart/>
+      </div>
+      <CardYears/>
+
       <canvas id="myChart"></canvas>
     </div>
 
   </div>
-  
+  {{ nameProduct }}
 </template>
   
 <script setup>
 
   import {defineProps,onMounted} from 'vue';
   import Chart from 'chart.js/auto'; //npm install chart.js
+  import DropDate from '@/components/Buttons/DropDate.vue'
+  import DropChart from '@/components/Buttons/DropChart.vue'
+  import CardYears from '@/components/Cards/CardYears.vue'
 
-  const prop= defineProps({
-    data: Object
+
+
+  
+  const prop = defineProps({
+    data: Object,
+    nameProduct: String
   })
 
   onMounted(()=>{//muy importante el onMounted para coger cosas del template es aqui dentro
@@ -23,9 +36,8 @@
 
 
   let productChart = () => { //esta funcion se dinamiza con un prop del producto seleccionado
-     let option = "years" //esto seria otro prop
-
-     let optChart = "bar" //esto puede ser un drop y el usuario elegir como quiere ver el chart
+    let option = "years" //esto seria otro prop
+    let optChart = "bar" //esto puede ser un drop y el usuario elegir como quiere ver el chart
 
     let myChart;
     const ctx = document.getElementById('myChart')
@@ -33,14 +45,14 @@
     const years = [2000, 2001, 2002, 2003, 2004,2005, 2006] // hacer funcion q dado 2 años devuelva un arreglo con el rango de años
     console.log("precios dataaaa", prop.data.prodts.wheat.data)
       
-    const data = {
+    const dataChart = {
       labels: option === "months" ? months : years,
       datasets: [{
-        label: 'Wheat Price',  // porp del producto seleccionado + Price
+        label: prop.nameProduct +" "+'Price',  // porp del producto seleccionado + Price
         data: option === "months" ? pricesPerMonthInAYear(2000) : averagePricesByYearRange (2000,2006) , //coger el año de la interfaz
-        fill: true,
-        borderColor: 'rgb(75, 192, 192)',
-        backgroundColor:'rgba(248, 238, 11,0.7)',
+        fill: true, //
+        borderColor: 'rgb(75, 192, 192)', //hacer funcion que dado producto devuelve un string con el rgb
+        backgroundColor:'rgba(248, 238, 11,0.7)', //lo mismo llamamos a la misma funcion
         tension: 0,
         options: {
           responsive: true,
@@ -55,7 +67,7 @@
     }
     myChart = new Chart(ctx, {
       type: optChart,
-      data: data,
+      data: dataChart,
     })
 
     return myChart
