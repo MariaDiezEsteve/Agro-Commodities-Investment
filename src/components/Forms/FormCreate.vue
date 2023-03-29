@@ -1,8 +1,8 @@
 <template>
-  <div class="reviews">
-    <img v-if="reviews.isError" src="@/assets/images/error.jpeg" alt="error">
+  <div>
+    <img v-if="reviewsData.isError" src="@/assets/images/error.jpeg" alt="error">
     <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
-        <div v-if="!reviews.isError && !isLoading" >
+        <div v-if="!reviewsData.isError && !isLoading" >
             <form @submit.prevent>
               <div>
               <label for="name">Name: </label>
@@ -19,14 +19,16 @@
               <input type="text" id="opinion" v-model="formData.opinion" required/>
               <!-- <p v-if="isAlert" class="alert">You need to fill this input with your opinion</p> -->
             </div>
+
             <input type="submit" value="Create Review" @click="emptyLabel"/> 
-            <button @click="eee">eee</button> 
+            <button @click="reviews">eee</button> 
             <!-- Falta poner una función aquí para incluir los datos -->
             </form>
         </div>
     </div>
     <div>
-        <FormReview :reviews="reviews" />
+        <FormReview :reviewsData="reviewsData" :reviews="reviews"
+        />
     </div>
 
 
@@ -40,16 +42,18 @@
 
 
   let isLoading = ref(true) 
-  
-  let reviews = ref(onMounted(async () => {
-    reviews.value = await reviewsInfo.getReviewsInfo()
+  let  reviewsData = ref(onMounted(()=>{ reviews() }))
 
-    console.log("esto es la mierda", reviews.value)
+ async function reviews () {
+    reviewsData.value = await reviewsInfo.getReviewsInfo()
+
+    // console.log("data", reviewsData.value)
     
-    if( !reviews.value.isLoading){
+    if( !reviewsData.value.isLoading){
       isLoading.value = false
     }
-  })) 
+    return reviewsData.value
+  }
 
  
   const formData = reactive({
@@ -67,17 +71,20 @@
 
   const emptyLabel = () => {
     if(formData.name != "" && formData.email != "" && formData.opinion != "") { 
-      createReview()
+      createReview() 
     }
+    
 }
 
-  const createReview = async () => {
+  const createReview = () => {
         try{
-            await axios.post("http://localhost:3000/reviews", {
+            axios.post("http://localhost:3000/reviews", {
               name: formData.name,
               email:formData.email,
               opinion:formData.opinion 
-            })  
+            }) 
+            reviews()
+ 
           }catch (error) {
               console.log(error);
               isError = true
