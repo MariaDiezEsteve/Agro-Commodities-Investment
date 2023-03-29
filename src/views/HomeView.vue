@@ -15,9 +15,6 @@
           <h2>{{data.prodts}}</h2> -->
           <InterectChart :data="data"/>
         </div>
-        <!-- <img v-if="reviews.isError" src="@/assets/images/error.jpeg" alt="error">
-        <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
-        <div v-if="!reviews.isError && !isLoading" > -->
           <FormCreate />
         </div>
       </div>
