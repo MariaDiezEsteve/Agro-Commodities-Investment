@@ -13,7 +13,13 @@
       <div v-else>
         <CardYearOfMonths @yearOfMonths="getYear" />
       </div>
+      <div class="d-flex justify-content-around">
+
       <canvas id="myChart"></canvas>
+      <PieChart :data = "data" />
+
+    </div>
+
     </div>
 
   </div>
@@ -27,8 +33,9 @@
   import DropChart from '@/components/Buttons/DropChart.vue'
   import CardDate from '@/components/Cards/CardDate.vue'
   import CardYearOfMonths from '@/components/Cards/CardYearOfMonths.vue'
-
   import CardDetailsProduct from '../Cards/CardDetailsProduct.vue';
+  import PieChart from '@/components/Charts/PieChart.vue'
+
 
 
   const prop = defineProps({
