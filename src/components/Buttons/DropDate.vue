@@ -21,7 +21,6 @@
   const emit = defineEmits(["dateSelected"])
 
   let getSelectedDate = (selectedDate) => {
-    //console.log("evento",selectedDate)
     emit("dateSelected",selectedDate)     
   }
 

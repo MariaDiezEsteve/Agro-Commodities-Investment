@@ -14,11 +14,13 @@
   </div>
 </div>
 
+
   </template>
   
   <script setup>
     import {defineProps, defineEmits, ref} from 'vue';
     import { computed } from "@vue/reactivity"
+
 
   defineProps({
       data: Object
@@ -75,7 +77,7 @@
     const emit = defineEmits(["nameOfProduct"])
 
     const getNameProduct = (name) => {
-          emit("nameOfProduct", name)     
+          emit("nameOfProduct", name)  
     }
   
 
