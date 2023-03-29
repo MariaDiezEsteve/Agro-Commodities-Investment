@@ -43,7 +43,7 @@
     productChart()    
   }
 
-  const nameProduct = ref("Sugar")
+  let nameProduct = ref("Sugar")
   const getNameProduct = (name) => {
     nameProduct.value = name
     productChart()    
@@ -111,20 +111,22 @@
     return myChart
     }
 
-
   let pricesPerMonthInAYear = (year)=>{
-    let productData = prop.data.prodts.wheat.data
+    let productData = searchProduct (nameProduct)
     productData = productData.filter(element => parseInt((element.date).slice(0,4)) == year)
-    productData = productData.map(element =>  parseFloat((element.value)).toFixed(2));
+    productData = productData.map(element =>  parseFloat((element.value)).toFixed(2))
     return productData
   }
 
+
   let averagePricesByYearRange = (year1,year2)=>{
-    let productData = prop.data.prodts.wheat.data
+    
+    let productData =  searchProduct (nameProduct)
+  
     let sum=0,productDataYear=[], prices=[], avgs =[]
     while (year1<(year2+1)) {
       productDataYear = productData.filter(element => parseInt((element.date).slice(0,4)) == year1)  
-      prices = productDataYear.map(element =>  parseFloat((element.value)).toFixed(2));
+      prices = productDataYear.map(element =>  parseFloat((element.value)).toFixed(2))
       sum = 0
       for( let i=0; i<prices.length ; i++){
         sum = sum + parseFloat(prices[i])
@@ -135,7 +137,31 @@
     return avgs
   }
 
+  function searchProduct (nameProduct){
+    
+    let inicial = nameProduct.value.slice(0,1)
+    inicial = inicial.toLowerCase()
+    let nameP = inicial + nameProduct.value.slice(1)
 
+    let dataProduct = 0
+
+    let keys = Object.keys(prop.data.prodts)
+    let values = Object.values(prop.data.prodts)
+    let found = false
+    let i = 0
+    while(!found && i < keys.length){
+
+      if(keys[i] == nameP){
+        dataProduct = values[i].data
+        found = true
+      }
+      else{
+        i++
+      }
+
+    }
+    return dataProduct
+  }
 
 
   const getColor = (name) => {
