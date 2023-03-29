@@ -7,7 +7,6 @@
         <div v-if="!information.isError && !isLoading" >
           <CardNews  :information="information"/>
         </div>
-        <CardNewsButton />
     </div>
   
 </template>
@@ -17,7 +16,7 @@
   import CardNews from '@/components/Cards/CardNews.vue';
   
 
-  import  CardNewsButton from "@/components/Buttons/CardNewsButton.vue"
+
   import usInfo from '@/DataInformation/usInfo';
   import {ref,onMounted} from "vue";
 
