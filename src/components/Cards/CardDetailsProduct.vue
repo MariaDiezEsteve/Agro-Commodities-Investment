@@ -4,14 +4,16 @@
     <div class="col card-body" @click="getNameProduct((prodt.name).slice(16))">
       {{ calculateRate(prodt) }}  <!-- Llamada a la función: Esto hace referencia a la función del cálculo rate para poder obtener los datos y mostrarlos en la línea 10-->
       {{ nameProduct(prodt) }}
+      {{ calculateName(prodt) }}
       <h4 :class="classColorProduct">{{ nameColorProduct}}</h4>
       <div class="card-details">
-        <p class="card-text"> ${{  }}</p>
+        <p class="card-text"> ${{ name }}</p>
         <p :class='classRate'> {{ rate }}% </p>
       </div>
     </div>
   </div>
 </div>
+
 
   </template>
   
@@ -19,22 +21,21 @@
     import {defineProps, defineEmits, ref} from 'vue';
     import { computed } from "@vue/reactivity"
 
+
   defineProps({
       data: Object
     })
-   
-  
 
     const rate = ref (0) 
-    // const name = ref("")
+    const name = ref("")
 
     function calculateRate(prodt){
       rate.value = parseFloat(((prodt.data[0].value)-(prodt.data[1].value)) / (prodt.data[1].value)).toFixed(3)
     }
   
-    // function calculateName(prodt){
-    //   name.value = parseFloat(prodt.data[0].value).toFixed(2)
-    // }
+     function calculateName(prodt){
+       name.value = parseFloat(prodt.data[0].value).toFixed(2)
+     }
 
     
     const classRate = computed(() => {
@@ -76,7 +77,7 @@
     const emit = defineEmits(["nameOfProduct"])
 
     const getNameProduct = (name) => {
-          emit("nameOfProduct", name)     
+          emit("nameOfProduct", name)  
     }
   
 

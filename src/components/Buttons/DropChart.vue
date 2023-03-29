@@ -1,11 +1,30 @@
 <template>
-    <select>
-        <option value="line" selected>Line</option>
-        <option value="bar">Bar</option>
-    </select>
+    <select @change="getTypeChart($event.target.value)">
+    <option v-for="element in elements" :key="element.value" :value="element.value"  :selected="true">{{ element.text }}  </option>
+  </select>
   </template>
     
   <script setup>
+
+    import {defineEmits} from 'vue';
+
+    const elements = [
+    {
+        value: 'line',
+        text: 'line'
+    },
+    {
+        value: 'bar',
+        text: 'bar'
+    },
+    ]
+
+    const emit = defineEmits(["typeSelected"])
+
+    let getTypeChart = (selectedType) => {
+    //console.log("evento",selectedType)
+    emit("typeSelected",selectedType)     
+    }
   
   </script>
     
