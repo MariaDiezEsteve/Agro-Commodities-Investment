@@ -1,6 +1,6 @@
 <template>
- 
-    <div class="form-card black container  m-4 col-auto m-5 w-50 " >
+ <div class="black">
+    <div class="form-card  container  m-4 col-auto m-5 w-50 " >
       <div class="card-body">
         <h5 class="card-title">Contact Form</h5>
         <p class="card-text">
@@ -8,7 +8,7 @@
         </p>
       </div>
 
-      <div class="  cuadro row ">
+      <div class="cuadro row ">
         <div class=" mt-4 mr-1 col-6 px-5">
           <input
             type="text"
@@ -39,6 +39,7 @@
         </div>
       </div>
     </div>
+  </div>
  
   <!-- FORMULARIO -->
 </template>
@@ -75,20 +76,13 @@ const formContact = [
 }
    }
   
-   .cuadro { 
+    .cuadro { 
+      // border: solid grey  0.2px; 
+      box-shadow: 0px 0px 1px 1px black;
+      align-items: center;
+      justify-content: center;
+        };
 
-// border: solid grey  0.2px; 
-box-shadow: 0px 0px 1px 1px black;
-
-  
-   };
-
-.black{
-
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-}
-</style>
+        
+      </style>
 
