@@ -7,8 +7,8 @@
             <div class="card-body">
               <h3 class="card-title"> {{ review.name }}</h3>
               <p class="opinion">Review:</p>
-              <p class="card-text"> {{ review.opinion }}</p>
-              <button>Edit Review</button>
+              <input type="text" :value="review.opinion" class=" inputReview card-text" disabled> 
+              <button @click="deleteDisable">Edit Review</button>
               <button @click="deleteReview(review.id)">Delete Review</button>
             </div>
           </div>
@@ -43,6 +43,18 @@
     } 
   }
 
+  let deleteDisable = () => {
+    let inputReview = document.getElementsByClassName("inputReview")
+    console.log("inputReview", inputReview)
+   // inputReview.setAttribute.disabled=false
+   inputReview.forEach(element => {
+    element.enabled =true
+  })
+  //  inputReview.disabled=false
+  //  inputReview.enabled=true
+    console.log("holaaa", inputReview.disabled)
+
+  }
 
   </script>
   

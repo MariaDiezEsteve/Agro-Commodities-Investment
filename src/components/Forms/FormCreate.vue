@@ -19,10 +19,8 @@
               <input type="text" id="opinion" v-model="formData.opinion" required/>
               <!-- <p v-if="isAlert" class="alert">You need to fill this input with your opinion</p> -->
             </div>
-
             <input type="submit" value="Create Review" @click="emptyLabel"/> 
-            <button @click="reviews">eee</button> 
-            <!-- Falta poner una función aquí para incluir los datos -->
+        
             </form>
         </div>
     </div>
@@ -43,6 +41,8 @@
 
   let isLoading = ref(true) 
   let  reviewsData = ref(onMounted(()=>{ reviews() }))
+
+
 
  async function reviews () {
     reviewsData.value = await reviewsInfo.getReviewsInfo()
