@@ -107,7 +107,7 @@
       type: typeChart.value,
       data: dataChart,
     })
-
+    console.log("mounted")
     return myChart
     }
 
