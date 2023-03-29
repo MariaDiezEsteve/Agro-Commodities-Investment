@@ -5,18 +5,28 @@
       <p>This page shows the information details about the following commodities:</p>
       <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
       <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
-      <div v-if="!data.isError && !isLoading" >
+      <div class="d-flex flex-row flex-wrap-wrap" v-if="!data.isError && !isLoading" >
         <DetailsProducts 
         :data = "data"
         @nameOfProduct="getDataNameProducto"
         @click="onClick"
         />
-        <BarChart v-if="click==true"
+        <!-- <BarChart v-if="click==true"
         :data = "data"
         :nameProduct="nameProduct"
         {{ click.value = false }}
-       /> 
+       />  -->
+       <!-- <PieChart 
+        :data = "data"
+        /> -->
+
       </div>
+
+      <div>
+          
+       
+        </div>
+     
     </div>
   </template>
   
@@ -25,7 +35,8 @@
   import {ref,onMounted} from "vue";
   import DetailsProducts from '@/components/Cards/CardDetailsProduct.vue'
   import SideBar from '@/components/Commons/SideBar.vue'
-  import BarChart from '@/components/Charts/BarChart.vue'
+  // import BarChart from '@/components/Charts/BarChart.vue'
+  // import PieChart from '@/components/Charts/PieChart.vue'
 
   let isLoading = ref(true) 
   let data =  ref(onMounted(async () => {
