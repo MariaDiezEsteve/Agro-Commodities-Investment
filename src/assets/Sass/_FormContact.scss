@@ -1,0 +1,12 @@
+
+card {     
+    display: flex;
+    justify-content: center;
+    width: 65%;
+        }
+
+
+button{
+    @include button ($bg-color:$blueDark, $wth: 10rem, $colorletra:$white_color);
+}
+

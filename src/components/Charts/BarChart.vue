@@ -2,18 +2,26 @@
   <CardDetailsProduct :data = "data" @nameOfProduct="getNameProduct"/>
 
   <div class="d-flex justify-content-center pt-4">
-    <div style="width: 60%">
-      <div class="d-flex flex-row justify-content-between">
-        <DropDate @dateSelected="getDate"/>
+    <div style="width: 80%">
+      <div class="d-flex flex-row justify-content-left">
+        <DropDate class="mx-4" @dateSelected="getDate"/>
         <DropChart @typeSelected="getTypeChar"/>
       </div>
       <div v-if="date=='years'">
-        <CardDate @rangeYears="rangeYears"/>
+        <CardDate class="mx-3" @rangeYears="rangeYears"/>
       </div>
       <div v-else>
         <CardYearOfMonths @yearOfMonths="getYear" />
       </div>
-      <canvas id="myChart"></canvas>
+      <div class="d-flex justify-content-around">
+        <div style="width: 90%;">
+          <canvas id="myChart"></canvas>
+        </div>
+      
+        <PieChart :data = "data" />
+
+    </div>
+
     </div>
 
   </div>
@@ -27,8 +35,9 @@
   import DropChart from '@/components/Buttons/DropChart.vue'
   import CardDate from '@/components/Cards/CardDate.vue'
   import CardYearOfMonths from '@/components/Cards/CardYearOfMonths.vue'
-
   import CardDetailsProduct from '../Cards/CardDetailsProduct.vue';
+  import PieChart from '@/components/Charts/PieChart.vue'
+
 
 
   const prop = defineProps({
@@ -43,7 +52,7 @@
     productChart()    
   }
 
-  const nameProduct = ref("Sugar")
+  let nameProduct = ref("Sugar")
   const getNameProduct = (name) => {
     nameProduct.value = name
     productChart()    
@@ -107,24 +116,26 @@
       type: typeChart.value,
       data: dataChart,
     })
-
+    console.log("mounted")
     return myChart
     }
 
-
   let pricesPerMonthInAYear = (year)=>{
-    let productData = prop.data.prodts.wheat.data
+    let productData = searchProduct (nameProduct)
     productData = productData.filter(element => parseInt((element.date).slice(0,4)) == year)
-    productData = productData.map(element =>  parseFloat((element.value)).toFixed(2));
+    productData = productData.map(element =>  parseFloat((element.value)).toFixed(2))
     return productData
   }
 
+
   let averagePricesByYearRange = (year1,year2)=>{
-    let productData = prop.data.prodts.wheat.data
+    
+    let productData =  searchProduct (nameProduct)
+  
     let sum=0,productDataYear=[], prices=[], avgs =[]
     while (year1<(year2+1)) {
       productDataYear = productData.filter(element => parseInt((element.date).slice(0,4)) == year1)  
-      prices = productDataYear.map(element =>  parseFloat((element.value)).toFixed(2));
+      prices = productDataYear.map(element =>  parseFloat((element.value)).toFixed(2))
       sum = 0
       for( let i=0; i<prices.length ; i++){
         sum = sum + parseFloat(prices[i])
@@ -135,7 +146,31 @@
     return avgs
   }
 
+  function searchProduct (nameProduct){
+    
+    let inicial = nameProduct.value.slice(0,1)
+    inicial = inicial.toLowerCase()
+    let nameP = inicial + nameProduct.value.slice(1)
 
+    let dataProduct = 0
+
+    let keys = Object.keys(prop.data.prodts)
+    let values = Object.values(prop.data.prodts)
+    let found = false
+    let i = 0
+    while(!found && i < keys.length){
+
+      if(keys[i] == nameP){
+        dataProduct = values[i].data
+        found = true
+      }
+      else{
+        i++
+      }
+
+    }
+    return dataProduct
+  }
 
 
   const getColor = (name) => {

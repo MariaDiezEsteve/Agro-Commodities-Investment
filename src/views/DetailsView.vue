@@ -1,4 +1,4 @@
-<template>
+  <template>
     <SideBar class="col-2"/>
     <div class="col-10 px-5">
       <h1>Agro Commodities Details</h1>
@@ -7,7 +7,7 @@
       <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
       <div v-if="!data.isError && !isLoading" >
         <BarChart :data = "data"/> 
-        <PieChart :data = "data" />
+        <!-- <PieChart :data = "data" /> -->
       </div>
     </div>
   </template>
@@ -17,16 +17,18 @@
   import {ref,onMounted} from "vue";
   import SideBar from '@/components/Commons/SideBar.vue'
   import BarChart from '@/components/Charts/BarChart.vue'
-  import PieChart from '@/components/Charts/PieChart.vue'
+  // import PieChart from '@/components/Charts/PieChart.vue'
 
-  let isLoading = ref(true) 
-  let data =  ref(onMounted(async () => {
-    data.value = await info.getData()
-    if( !data.value.isLoading){
-      isLoading.value = false
-    }
+  
+    let isLoading = ref(true) 
+    let data =  ref(onMounted(async () => {
+      data.value = await info.getData()
+      if( !data.value.isLoading){
+        isLoading.value = false
+      }
 
-  }))
+    }))
+
 
   </script>
   
@@ -49,3 +51,4 @@
 
   
   </style>
+
