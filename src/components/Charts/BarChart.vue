@@ -3,8 +3,8 @@
 
   <div class="d-flex justify-content-center pt-4">
     <div style="width: 60%">
-      <div class="d-flex flex-row justify-content-between">
-        <DropDate @dateSelected="getDate"/>
+      <div class="d-flex flex-row justify-content-start">
+        <DropDate  @dateSelected="getDate"/>
         <DropChart @typeSelected="getTypeChar"/>
       </div>
       <div v-if="date=='years'">

@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 30%;">
+  <div style="width: 40%;">
     <canvas id="myPieChart"></canvas>  
   </div>
  </template>
