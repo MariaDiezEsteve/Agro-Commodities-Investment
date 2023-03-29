@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 20%;">
+  <div style="width: 30%;">
     <canvas id="myPieChart"></canvas>  
   </div>
  </template>
@@ -21,51 +21,27 @@
     pieChart()
   });
 
-  // var ctx= document.getElementById("myChart");
-  //       var myChart= new Chart(ctx,{
-  //           type:"pie",
-  //           data:{
-  //               labels:['col1','col2','col3'],
-  //               datasets:[{
-  //                       label:'Num datos',
-  //                       data:[10,9,15],
-  //                       backgroundColor:[
-  //                           'rgb(66, 134, 244,0.5)',
-  //                           'rgb(74, 135, 72,0.5)',
-  //                           'rgb(229, 89, 50,0.5)'
-  //                       ]
-  //               }]
-  //           },
-  //           options:{
-  //               scales:{
-  //                   yAxes:[{
-  //                           ticks:{
-  //                               beginAtZero:true
-  //                           }
-  //                   }]
-  //               }
-  //           }
-  //       });
 
 
   let pieChart = () => { 
    
     let myChart;
     const ctx = document.getElementById('myPieChart')
-    const years = ["Corn", "Wheat", "Sugar", "Cotton", "Coffee"]
+    const commodities = ["Wheat", "Sugar", "Cotton", "Coffee","Corn"]
       
     const dataChart = {
-      labels:years,
+      labels:commodities,
       datasets: [{
-        label:'Price',  
+        label:'%',  
         data: [10, 20, 25, 5, 40],
         fill: true, //
-        borderColor: 'rgb(75, 192, 192)', //hacer funcion que dado producto devuelve un string con el rgb
-        backgroundColor: 'rgb(75, 192, 192)', //lo mismo llamamos a la misma funcion
+        borderColor: ["rgba(248, 238, 11, 1)","rgba(27, 169, 234, 1)","rgba(1, 1, 88, 1)","rgba(61, 213, 152, 1)","rgba(252, 90, 90, 1)"], 
+        backgroundColor: ["rgba(248, 238, 11, 1)","rgba(27, 169, 234, 1)","rgba(1, 1, 88, 1)","rgba(61, 213, 152, 1)","rgba(252, 90, 90, 1)"], 
         tension: 0,
         options: {
           responsive: true,
-          maintainAspectRatio: false,
+          maintainAspectRatio: false,       
+
         }
       }
     ]
@@ -77,10 +53,12 @@
     myChart = new Chart(ctx, {
       type: "doughnut",
       data: dataChart,
+
     })
 
     return myChart
   }
+
 
 </script>
   
