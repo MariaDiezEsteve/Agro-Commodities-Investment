@@ -2,21 +2,23 @@
   <CardDetailsProduct :data = "data" @nameOfProduct="getNameProduct"/>
 
   <div class="d-flex justify-content-center pt-4">
-    <div style="width: 60%">
-      <div class="d-flex flex-row justify-content-between">
-        <DropDate @dateSelected="getDate"/>
+    <div style="width: 80%">
+      <div class="d-flex flex-row justify-content-left">
+        <DropDate class="mx-4" @dateSelected="getDate"/>
         <DropChart @typeSelected="getTypeChar"/>
       </div>
       <div v-if="date=='years'">
-        <CardDate @rangeYears="rangeYears"/>
+        <CardDate class="mx-3" @rangeYears="rangeYears"/>
       </div>
       <div v-else>
         <CardYearOfMonths @yearOfMonths="getYear" />
       </div>
       <div class="d-flex justify-content-around">
-
-      <canvas id="myChart"></canvas>
-      <PieChart :data = "data" />
+        <div style="width: 90%;">
+          <canvas id="myChart"></canvas>
+        </div>
+      
+        <PieChart :data = "data" />
 
     </div>
 
