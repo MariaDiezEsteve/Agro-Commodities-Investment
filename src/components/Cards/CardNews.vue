@@ -1,6 +1,6 @@
 <template>
-  <div v-for="info in information.getNews"
-    :key="info.id">
+  <div v-for="info in information.getNews" 
+    :key="info.id" :class="info.getNews">
   <div class="card d-block m-auto mb-3">
     <div class="row d-flex justify-content-center g-0">
       <div class="col-md-4">
@@ -51,6 +51,7 @@
 
 <script setup>
 import {defineProps} from 'vue';
+
 
 defineProps({
   information: Object
