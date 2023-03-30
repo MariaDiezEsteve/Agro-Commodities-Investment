@@ -1,45 +1,62 @@
 <template>
-
   <h1>Invest in your life</h1>
 
-  <button>
-    <img
-      src="@/assets/images/IconosUserView/trigoBlanco-removebg-preview.png"
-    />
-    Wheat
-  </button>
-
-  <button>
-    <img
-      src="@/assets/images/IconosUserView/azucarBlanco-removebg-preview.png"
-    />
-    Sugar
-  </button>
-
-  <button>
-    <img
-      src="@/assets/images/IconosUserView/algodonCapBlanco-removebg-preview.png"
-    />
-    Cotton
-  </button>
-
-  <button>
-    <img src="@/assets/images/IconosUserView/cafeBlanco-removebg-preview.png" />
-    Coffe
-  </button>
-
-  <button>
-    <img src="@/assets/images/IconosUserView/maizBlanco-removebg-preview.png" />
-    Corn
-  </button>
+  <ul class="d-flex flex-column">
+    <li
+      class="d-flex flex-row justify-content-start"
+      v-for="(but, prop, index) in buts"
+      :key="but"
+      @click="buttonSelected(index)"
+    >
+      <label class="off d-flex flex-row" :for="index">
+        <img :src="images[index]" /> {{ prop }}
+        <input
+          style="width: 1rem; margin-left: 1rem"
+          :id="index"
+          type="checkbox"
+        />
+      </label>
+    </li>
+  </ul>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+let prod = ref("wheat");
+let buts = {
+  wheat: ref(false),
+  sugar: ref(false),
+  corn: ref(false),
+  cotton: ref(false),
+  coffee: ref(false),
+};
+
+let images = [
+  require("@/assets/images/IconosUserView/trigoBlanco-removebg-preview.png"),
+  require("@/assets/images/IconosUserView/azucarBlanco-removebg-preview.png"),
+  require("@/assets/images/IconosUserView/algodonCapBlanco-removebg-preview.png"),
+  require("@/assets/images/IconosUserView/cafeBlanco-removebg-preview.png"),
+  require("@/assets/images/IconosUserView/maizBlanco-removebg-preview.png"),
+];
+
+let buttonSelected = (id) => {
+  console.log("id", id);
+  prod.value = Object.keys(buts)[id];
+  console.log("prod.value ", prod.value);
+
+  if (buts[prod.value].value == false) {
+    buts[prod.value].value = true;
+  } else {
+    buts[prod.value].value = false;
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 @import "@/assets/Sass/--parcial.scss";
 
-button {
+.off {
   @include button($bg-color: $blueDark, $wth: 14rem, $colorletra: $white_color);
   display: flex;
   margin-left: 3rem;

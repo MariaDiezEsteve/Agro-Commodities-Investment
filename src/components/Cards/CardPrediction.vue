@@ -53,6 +53,7 @@ let idData = ref(0);
 function showAnswer(id) {
   idData.value = id - 1;
   click.value = true;
+  quest.value = prop.questions.getQuestions[idData.value].question
 
   console.log("imprime aquí", idData.value);
   console.log("imprime", click);
@@ -66,7 +67,7 @@ function showAnswer(id) {
 @import "@/assets/Sass/--parcial.scss";
 
 button {
-  @include button($bg-color: $blueDark, $wth: 30rem, $colorletra: $white_color);
+  @include button($bg-color: $blueDark, $wth: 38rem, $colorletra: $white_color);
   // @include drop($wth: 14rem);
 }
 li {
