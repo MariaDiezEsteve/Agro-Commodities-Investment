@@ -1,10 +1,14 @@
 <template>
-  <div>
-    <h1 class="title-h1">Reviews</h1>
+    <div class="allForm">
+    <div>
+      <h2>Our Reviews</h2>
+        <FormReview :reviewsData="reviewsData" :reviews="reviews"
+        />
+    </div>
     <img v-if="reviewsData.isError" src="@/assets/images/error.jpeg" alt="error">
     <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
-        <div v-if="!reviewsData.isError && !isLoading" >
-          <h3 class="title">Create a new review</h3>
+        <div v-if="!reviewsData.isError && !isLoading" class="fahter-position">
+          <h2 class="title">Create a new review</h2>
             <form @submit.prevent>
               <div>
               <input type="text" id="name" v-model="formData.name" placeholder="Name" required/> <!-- @keyup="guanaja" -->
@@ -19,15 +23,9 @@
               <!-- <p v-if="isAlert" class="alert">You need to fill this input with your opinion</p> -->
             </div>
             <input class="submit" type="submit" value="Create Review" @click="emptyLabel"/> 
-        
             </form>
         </div>
     </div>
-    <div>
-        <FormReview :reviewsData="reviewsData" :reviews="reviews"
-        />
-    </div>
-
 
   </template>
   
@@ -82,7 +80,7 @@
               email:formData.email,
               opinion:formData.opinion 
             }) 
-            reviews()
+            location.reload()
  
           }catch (error) {
               console.log(error);
@@ -105,21 +103,23 @@
     font-size: 0.7rem;
     padding-left: 4rem;
    }
-   .title-h1{
-      margin: 1rem;   
-   }
+
+    h2{
+        margin: 1rem;   
+    }
+
     form{
-      width:300px;
+      width: 75%;
       padding:16px;
       border-radius:10px;
-      margin:auto;
-      background-color: $greyLight;
+      border: 1px solid $blueDark;
       text-align: center;
+      margin-left: 1rem;
+      margin-top: 2rem
     }
 
    .title{
-    margin: 1.5rem;
-    text-align: center;
+    margin: 1rem;
    }
 
    input, textarea{
@@ -138,6 +138,15 @@
         @include button($bg-color: $blueDark, $wth: 14rem, $colorletra: $white_color);
         font-size: 1.2rem;
 
+   }
+
+   .allForm{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   }
+
+   .fahter-position{
+    position: relative;
    }
 
   </style>
