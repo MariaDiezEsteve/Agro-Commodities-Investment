@@ -16,15 +16,15 @@ it("test  href",()=>{
    
     const wrapper = mount(FormContact)
     const msg = wrapper.get("a")
-    console.log(msg)
-    expect(wrapper.html()).toMatch("Send Message")
+    // console.log(msg)
+    expect(msg.text()).toContain("Send Message")
 })
 it("test a p",()=>{
    
     const wrapper = mount(FormContact)
     const msg = wrapper.get("p")
-    console.log(msg)
-    expect(wrapper.html()).toMatch("If you want to contact us you can do it with this contact form")
+    // console.log(msg)
+    expect(msg.text()).toBe("If you want to contact us you can do it with this contact form")
 })
 
 })
