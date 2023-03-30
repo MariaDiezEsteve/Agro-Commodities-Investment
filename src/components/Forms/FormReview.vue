@@ -204,7 +204,18 @@
     position: absolute;
     right: 0rem;
     left: 60%;
-    top: 85rem;
+    top: 84rem;
     z-index:10;
    }
+
+
+   @include media-breakpoint-down(lg) {
+    input{
+    width: 20px;
+    
+   }
+
+   
+
+  }
   </style>
