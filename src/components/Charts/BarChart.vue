@@ -1,8 +1,8 @@
 <template>
   <CardDetailsProduct :data = "data" @nameOfProduct="getNameProduct"/>
 
-  <div class="d-flex justify-content-center pt-4">
-    <div style="width: 80%">
+  <div class="d-flex justify-content-center pt-4 mt-5">
+    <div style="width: 90%">
       <div class="d-flex flex-row justify-content-left">
         <DropDate class="mx-4" @dateSelected="getDate"/>
         <DropChart @typeSelected="getTypeChar"/>
@@ -13,8 +13,8 @@
       <div v-else>
         <CardYearOfMonths @yearOfMonths="getYear" />
       </div>
-      <div class="d-flex justify-content-around">
-        <div style="width: 90%;">
+      <div class="d-flex justify-content-around gap-4">
+        <div class="barChartDiv">
           <canvas id="myChart"></canvas>
         </div>
       
@@ -205,6 +205,11 @@
   
 <style lang="scss" scoped>
   @import "@/assets/Sass/--parcial.scss";
+
+  .barChartDiv {
+    width: 100%;
+
+  }
 
   
 </style>
