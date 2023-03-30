@@ -1,7 +1,11 @@
 import { createApp } from 'vue'
 
 import App from './App.vue'
-import router from './router'
+import router from './router' 
+
+// Importar materialLize
+import 'materialize-css';
+import 'materialize-css/dist/css/materialize.min.css';
 
 /* debes poner en tu consola npm i bootstrap y no te dara error*/
 import 'bootstrap/dist/css/bootstrap.css'
