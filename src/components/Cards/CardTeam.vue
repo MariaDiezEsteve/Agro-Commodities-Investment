@@ -22,7 +22,7 @@ const teams = [
     id: "commodities",
     name: "Nasreddin Oufallah",
     discripion: "Hello, how are you?",
-    src: "https://cdn.pixabay.com/photo/2017/10/25/16/54/african-lion-2888519_1280.jpg",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo4CraqT0j5PeydL0CIIuXWaaB70P9SUJnujBX2Mr-xw8vjHqIAc4A1Dd1WwREAz-mQd4&usqp=CAU",
     alt: "commodities",
   },
   {
