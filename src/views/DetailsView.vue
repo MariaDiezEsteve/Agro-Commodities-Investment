@@ -1,6 +1,6 @@
   <template>
-    <SideBar class="col-2"/>
-    <div class="col-10 px-5">
+    <SideBar class="col-lg-2  col-md-3  col-sm-3"/>
+    <div class="col-lg-10 col-md-9 col-sm-9 px-5" >
       <h1>Agro Commodities Details</h1>
       <p>This page shows the information details about the following commodities:</p>
       <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
