@@ -1,5 +1,4 @@
 <template>
-  <h1>Invest in your life !</h1>
 
   <ul class="d-flex flex-column">
     <li
@@ -69,8 +68,8 @@ let buttonSelected = (id) => {
   @include button($bg-color: $blueDark, $wth: 10rem, $colorletra: $white_color);
   display: flex;
   margin-left: 3rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
 }
 
 h1 {
