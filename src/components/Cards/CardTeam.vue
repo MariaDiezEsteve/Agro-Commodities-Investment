@@ -9,6 +9,8 @@
         <div class="card-general">
           <h2 class="card-title">{{ team.name }}</h2>
           <p class="card-text">{{ team.discripion }}</p>
+          <a class="card-team">{{ team.enlace}}</a>
+          <a class="linkedin-team">{{ team.linkedin }}</a>
         </div>
       </div>
     </div>
@@ -23,8 +25,9 @@ const teams = [
     name: "Nasreddin Oufallah",
     discripion: "FullStack Development",
     src: require("@/assets/Avatar/myAvatar.png"),
-    enlace:"https://www.linkedin.com/in/nasreddin-oufallah/",
-    alt: "Development",
+    enlace:"https://www.linkedin.com/in/nasreddin-oufallah/"
+
+
     
   },
   {
@@ -32,17 +35,19 @@ const teams = [
     name: "Zuceles Guedes",
     discripion: "FullStack Development",
     src: "https://i.pinimg.com/originals/d0/e6/59/d0e659125145e110eee3d64013050812.png",
-    enlace:"https://www.linkedin.com/in/zguedest/",
-    alt: "Backend",
+    
+    enlace:"https://www.linkedin.com/in/zguedest/"
+    
   
   },
-  {
+  { 
     id: "3",
     name: "Lucas Ibar",
     discripion: "FullStack Development",
     src: require("@/assets/Avatar/lucas.png"),
     enlace:"https://www.linkedin.com/in/lucas-ibar-basaldua/",
-    alt: "FrontEnd",
+
+    alt: "frontend",
   },
   {
     id: "4",
@@ -50,6 +55,7 @@ const teams = [
     discripion: " FullStack Development",
     src: "https://i.pinimg.com/originals/82/ab/35/82ab3533ee71daf256f23c1ccf20ad6f.jpg",
     enlace: "https://www.linkedin.com/in/lucas-ibar-basaldua/",
+   
     alt: "FullStack Developer",
   },
   {
@@ -58,7 +64,8 @@ const teams = [
     discripion: "FullStack Development",
     src: "https://i.pinimg.com/originals/42/ae/ce/42aece2eb0533ac8656fa06945f56081.png",
     enlace:"https://www.linkedin.com/in/mariadiezesteve/",
-    alt: "FullStack",
+     
+     alt: "fullstack",
   },
   {
     id: "6",
@@ -66,6 +73,7 @@ const teams = [
     discripion: "FullStack Development",
     src: "https://img.freepik.com/vector-premium/ilustracion-joven-estilo-hombre-guapo-barba-dibujos-animados-avatar-perfil-hipster_15870-758.jpg?w=2000",
     enlace:"https://www.linkedin.com/in/gorka-ibarrondo-busturia-21a317259/",
+     
     alt: "commodities" ,
   },
 ];
