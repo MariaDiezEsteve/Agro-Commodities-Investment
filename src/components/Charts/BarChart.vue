@@ -35,7 +35,7 @@
   import DropChart from '@/components/Buttons/DropChart.vue'
   import CardDate from '@/components/Cards/CardDate.vue'
   import CardYearOfMonths from '@/components/Cards/CardYearOfMonths.vue'
-  import CardDetailsProduct from '../Cards/CardDetailsProduct.vue';
+  import CardDetailsProduct from '../Cards/CardDetailsProduct.vue'
   import PieChart from '@/components/Charts/PieChart.vue'
 
 
@@ -126,6 +126,7 @@
     productData = productData.map(element =>  parseFloat((element.value)).toFixed(2))
     return productData
   }
+  
 
 
   let averagePricesByYearRange = (year1,year2)=>{

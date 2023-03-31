@@ -1,7 +1,7 @@
 <template>
   
-  <SideBar class=" col-lg-2  col-md-3"/>
-  <div class="col-lg-10 col-md-9" >
+  <SideBar class="col-lg-2  col-md-3  col-sm-3"/>
+  <div class="col-lg-10 col-md-9 col-sm-9 px-5" >
     <h1>About Us</h1>
     <FormContact/>
     <CardTeam />
