@@ -137,5 +137,11 @@
       width: 35%;
     }
 
+    @include media-breakpoint-down(sm) {
+
+    .pieChartDiv {
+      width: 90%;
+    }
+}
   
   </style>
