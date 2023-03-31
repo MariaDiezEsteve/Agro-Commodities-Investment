@@ -1,18 +1,18 @@
 <template>
-    <SideBar class="col-2"/>
-    <div class="col-10 px-5" >
-      <h1>"esto es h1 en el About"</h1>
-      <h2>"Esto es h2"</h2>
-      <h3>"esto es h3"</h3>
-      <p>"esto es un parrafo"</p>
-
-    </div>
+  
+  <SideBar class="col-lg-2  col-md-3  col-sm-3"/>
+  <div class="col-lg-10 col-md-9 col-sm-9 px-5" >
+    <h1>About Us</h1>
+    <FormContact/>
+    <CardTeam />
+  </div>
 
 </template>
 
 <script setup>
-  import SideBar from '@/components/Commons/SideBar.vue'
-
+import SideBar from '@/components/Commons/SideBar.vue'
+import FormContact from '@/components/Forms/FormContact.vue';
+import CardTeam from "@/components/Cards/CardTeam.vue"
 
 </script>
 

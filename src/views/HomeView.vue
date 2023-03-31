@@ -1,7 +1,7 @@
 <template>
 
-    <SideBar class=" col-lg-2  col-md-3"/>
-    <div class="col-lg-10 col-md-9" >
+    <SideBar class="col-lg-2  col-md-3  col-sm-1"/>
+    <div class="col-lg-10 col-md-9 col-sm-11" >
       <ImgSlider/>
 
       <div class="px-5">
@@ -15,47 +15,26 @@
           <h2>{{data.prodts}}</h2> -->
           <InterectChart :data="data"/>
         </div>
-
-        <h2>"Esto es h2"</h2>
-        <h3>"esto es h3"</h3>
-        <p>"esto es un parrafo"</p>
-
-        <div id="image_person"></div>
-        <button>Enter</button>
-        <br>
-        <select>
-          <option value="value1">Value 1</option>
-          <option value="value2" selected>Value 2</option>
-          <option value="value3">Value 3</option>
-        </select>
-        <h2>"Esto es h2"</h2>
-        <h3>"esto es h3"</h3>
-        <p>"esto es un parrafo"</p>
-
-        <div id="image_person"></div>
-        <button>Enter</button>
-        <br>
-        <select>
-          <option value="value1">Value 1</option>
-          <option value="value2" selected>Value 2</option>
-          <option value="value3">Value 3</option>
-        </select>
-
+        <!-- <img v-if="reviews.isError" src="@/assets/images/error.jpeg" alt="error">
+        <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
+        <div v-if="!reviews.isError && !isLoading" > -->
+          <FormCreate />
+        </div>
       </div>
 
-      
-
-    </div>
 
 </template>
 
 
 <script setup>
   import info from '@/DataInformation/dataInfo'
-  import {ref,onMounted} from "vue";
+  // import reviewsInfo from '@/DataInformation/reviewInfo'
+  import {ref, onMounted} from "vue";
   import SideBar from '@/components/Commons/SideBar.vue'
   import ImgSlider from '@/components/Sliders/ImgSlider.vue'
   import InterectChart from '@/components/Charts/InteractChart.vue'
+  
+  import FormCreate from '@/components/Forms/FormCreate.vue'
 
 
   let isLoading = ref(true) 
@@ -67,6 +46,20 @@
       isLoading.value = false
     }
   })) 
+
+  //Reviews
+
+  // let reviews = ref(onMounted(async () => {
+  //   reviews.value = await reviewsInfo.getReviewsInfo()
+
+  //   // console.log(review.value)
+    
+  //   if( !reviews.value.isLoading){
+  //     isLoading.value = false
+  //   }
+  // })) 
+
+ 
   
 </script>
 
