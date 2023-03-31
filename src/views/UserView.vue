@@ -7,7 +7,8 @@
 
 
       <div class="px-5">
-        <SelectProdButtonVue />
+        <!-- <SelectProdButtonVue /> -->
+        <InteractChart />
 
         <img
           v-if="questions.isError"
@@ -26,7 +27,8 @@
 import CardPredictionVue from "@/components/Cards/CardPrediction.vue";
 import predictionInfo from "@/DataInformation/predictionInfo";
 import SideBar from "@/components/Commons/SideBar.vue";
-import SelectProdButtonVue from "@/components/Buttons/SelectProdButton.vue";
+// import SelectProdButtonVue from "@/components/Buttons/SelectProdButton.vue";
+import InteractChart from "@/components/Charts/InteractChart.vue";
 
 import { ref, onMounted } from "vue";
 

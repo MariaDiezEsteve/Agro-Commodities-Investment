@@ -1,4 +1,6 @@
 <template>
+    <SelectProdButton />
+
     <div style="width: 80%">
       <div class="d-flex flex-row justify-content-left">
         <DropDate class="mx-4" @dateSelected="getDate"/>
@@ -22,6 +24,8 @@
   import DropChart from '@/components/Buttons/DropChart.vue'
   import CardDate from '@/components/Cards/CardDate.vue'
   import CardYearOfMonths from '@/components/Cards/CardYearOfMonths.vue'
+  import SelectProdButton from "@/components/Buttons/SelectProdButton.vue";
+
 
   const prop= defineProps({
     data: Object
