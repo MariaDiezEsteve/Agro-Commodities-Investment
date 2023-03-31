@@ -1,5 +1,5 @@
 <template>
-  <h1>Invest in your life</h1>
+  <h1>Invest in your life !</h1>
 
   <ul class="d-flex flex-column">
     <li
