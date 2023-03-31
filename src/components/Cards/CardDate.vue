@@ -3,7 +3,7 @@
         <div id="years" class="mb-4 mt-2" >
             <label class="mx-1" for="">Enter the range of years : </label>
             <input class="mx-2" type="text"  placeholder="year1" style="width: 5rem; height: 1.5rem;" v-model="year1" @keydown.enter="lookValue()">
-            <input type="text" placeholder="year2" style="width: 5rem; height: 1.5rem;" v-model="year2" @keydown.enter="lookValue()">
+            <input class="rangeYearsInput2" type="text" placeholder="year2" style="width: 5rem; height: 1.5rem;" v-model="year2" @keydown.enter="lookValue()">
         </div>
     </div>
 </template>
@@ -56,5 +56,14 @@ const getYears = (years) => {
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/Sass/--parcial.scss";
+
+
+@include media-breakpoint-down(sm) {
+    .rangeYearsInput2 {
+        margin-left: 0.5rem;
+    }
+  }
+  
 
 </style>
