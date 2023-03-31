@@ -134,10 +134,8 @@
    }
 
   .submit{
-    
         @include button($bg-color: $blueDark, $wth: 14rem, $colorletra: $white_color);
         font-size: 1.2rem;
-
    }
 
    .allForm{
@@ -149,4 +147,64 @@
     position: relative;
    }
 
+    // RESPONSIVE TABLET
+
+   @include media-breakpoint-down(lg) {
+  
+    h2 {
+      font-size: 2rem;
+    }
+    .allForm{
+      display: block;
+   }
+   .fahter-position{
+    position: static;
+   }
+   form{
+      width: 100%;
+      padding: 3px;
+      margin-left: 0rem;
+    }
+    .submit{
+        @include button($bg-color: $blueDark, $wth: 14rem, $colorletra: $white_color);
+        font-size: 1.2rem;
+   }
+  }
+
+    // RESPONSIVE MOBILE
+
+   @include media-breakpoint-down(sm){
+    h2 {
+      font-size: 1.2rem;
+    }
+    .allForm{
+      display: block;
+   }
+   .fahter-position{
+    position: static;
+   }
+
+   form{
+      width: 100%;
+      padding: 3px;
+      margin-left: 0rem;
+    }
+
+    input, textarea{
+    width:75%;
+   }
+
+   input::placeholder, textarea::placeholder{
+    font-size: 0.75rem;
+   }
+   .submit{
+        @include button($bg-color: $blueDark, $wth: 10rem, $colorletra: $white_color);
+        font-size: 1.2rem;
+   }
+
+
+
+
+   }
+  
   </style>
