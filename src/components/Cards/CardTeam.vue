@@ -32,8 +32,8 @@ const teams = [
     name: "Zuceles Guedes",
     discripion: "FullStack Development",
     src: "https://i.pinimg.com/originals/d0/e6/59/d0e659125145e110eee3d64013050812.png",
-    enlace:"https://www.linkedin.com/in/zguedest/,
-    alt: "BackEnd",
+    enlace:"https://www.linkedin.com/in/zguedest/",
+    alt: "Backend",
   
   },
   {
