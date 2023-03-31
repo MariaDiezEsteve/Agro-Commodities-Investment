@@ -1,21 +1,24 @@
 <template>
   <SideBar class="col-lg-2  col-md-3  col-sm-3"/>
-    <div class="col-lg-10 col-md-9 col-sm-9 px-5" >
+
+    <div class="col-lg-10 col-md-9 col-sm-9" >
+    
       <div class="img"></div>
 
-      <SelectProdButtonVue />
 
-    <div class="px-5">
-      <img
-        v-if="questions.isError"
-        src="@/assets/images/error.jpeg"
-        alt="error"
-      />
-      <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading" />
-      <div v-if="!questions.isError && !isLoading">
-        <CardPredictionVue class="pb-4" :questions="questions" />
+      <div class="px-5">
+        <SelectProdButtonVue />
+
+        <img
+          v-if="questions.isError"
+          src="@/assets/images/error.jpeg"
+          alt="error"
+        />
+        <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading" />
+        <div v-if="!questions.isError && !isLoading">
+          <CardPredictionVue class="pb-4" :questions="questions" />
+        </div>
       </div>
-    </div>
   </div>
 </template>
 

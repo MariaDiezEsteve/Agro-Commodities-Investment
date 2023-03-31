@@ -69,31 +69,8 @@
         
       const data = {
         labels: date.value === "months" ? months : rangeYear.value,
-        datasets: [{
-          label: nameProduct.value +" "+'Price',
-          data: date.value === "months" ? pricesPerMonthInAYear(yearOfMonths.value) : averagePricesByYearRange (rangeYear.value[0],rangeYear.value[(rangeYear.value).length-1]),
-          fill: typeChart.value == "bar" ? true : false, 
-          borderColor: getColor(nameProduct.value), 
-          backgroundColor: getColor(nameProduct.value),
-          tension: 0,
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-          }
-        }
-      // {
-      //   label: 'Product Price',
-      //   data: option === "months" ? pricesPerMonthInAYear(2021) : averagePricesByYearRange (2000,2004) , //coger el año en un imput
-      //   fill: false,
-      //   borderColor: 'rgb(0, 0, 0)',
-      //   tension: 0,
-      //   options: {
-      //     responsive: true,
-      //     maintainAspectRatio: false,
-      //   }
-      // }
-    ]
-    }
+        datasets: crateDataChart()
+      }
     const chartWithKey = Chart.getChart('myChart')
     if (chartWithKey != undefined) {
       chartWithKey.destroy()
@@ -106,20 +83,22 @@
     return myChart
   }
 
-  function crateDataChart(){
+  function crateDataChart(nameProduct){
 
     let dataChart =  [{
-          label: nameProduct.value +" "+'Price',
+          label: nameProduct +" "+'Price',
           data: date.value === "months" ? pricesPerMonthInAYear(yearOfMonths.value) : averagePricesByYearRange (rangeYear.value[0],rangeYear.value[(rangeYear.value).length-1]),
           fill: typeChart.value == "bar" ? true : false, 
-          borderColor: getColor(nameProduct.value), 
-          backgroundColor: getColor(nameProduct.value),
+          borderColor: getColor(nameProduct), 
+          backgroundColor: getColor(nameProduct),
           tension: 0,
           options: {
             responsive: true,
             maintainAspectRatio: false,
           }
     }]
+
+    return dataChart
 
 
   }
