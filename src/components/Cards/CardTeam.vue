@@ -10,6 +10,7 @@
           <h2 class="card-title">{{ team.name }}</h2>
           <p class="card-text">{{ team.discripion }}</p>
           <a class="card-team">{{ team.enlace}}</a>
+          <a class="linkedin-team">{{ team.linkedin }}</a>
         </div>
       </div>
     </div>
@@ -24,9 +25,9 @@ const teams = [
     name: "Nasreddin Oufallah",
     discripion: "FullStack Development",
     src: require("@/assets/Avatar/myAvatar.png"),
-    
-    enlace:"https://www.linkedin.com/in/nasreddin-oufallah/",
-    alt: "development",
+    enlace:"https://www.linkedin.com/in/nasreddin-oufallah/"
+
+
     
   },
   {
@@ -35,17 +36,17 @@ const teams = [
     discripion: "FullStack Development",
     src: "https://i.pinimg.com/originals/d0/e6/59/d0e659125145e110eee3d64013050812.png",
     
-   
-    alt: "backend",
+    enlace:"https://www.linkedin.com/in/zguedest/"
+    
   
   },
-  {
+  { 
     id: "3",
     name: "Lucas Ibar",
     discripion: "FullStack Development",
     src: require("@/assets/Avatar/lucas.png"),
     enlace:"https://www.linkedin.com/in/lucas-ibar-basaldua/",
-  
+
     alt: "frontend",
   },
   {
