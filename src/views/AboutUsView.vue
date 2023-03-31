@@ -1,7 +1,7 @@
 <template>
   
-  <SideBar class=" col-lg-2  col-md-3"/>
-  <div class="col-lg-10 col-md-9" >
+  <SideBar class=" col-2"/>
+  <div class="col-10" >
     <h1>About Us</h1>
     <FormContact/>
 
