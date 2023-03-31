@@ -13,7 +13,7 @@
       />
       <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading" />
       <div v-if="!questions.isError && !isLoading">
-        <CardPredictionVue :questions="questions" />
+        <CardPredictionVue class="pb-4" :questions="questions" />
       </div>
     </div>
   </div>
