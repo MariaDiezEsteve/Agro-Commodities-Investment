@@ -9,20 +9,16 @@
       @click="buttonSelected(index)"
     >
       <label class="off d-flex flex-row aling-items-center" :for="index">
-        <img :src="images[index]" style="margin-top: 0.3rem;" />
-        <p style=" width: 3rem;margin-right: 1.3rem; margin-top: 0.3rem;">{{ prop }}</p> 
-        <input
-          style="width: 1rem"
-          :id="index"
-          type="checkbox"
-        />
+        <img :src="images[index]" style="margin-top: 0.3rem" />
+        <p>{{ prop }}</p>
+        <input :id="index" type="checkbox" />
       </label>
     </li>
   </ul>
 </template>
 
 <script setup>
-import { ref, defineEmits} from "vue";
+import { ref, defineEmits } from "vue";
 
 let prod = ref("wheat");
 let buts = {
@@ -41,8 +37,7 @@ let images = [
   require("@/assets/images/IconosUserView/maizBlanco-removebg-preview.png"),
 ];
 
- const emit = defineEmits(["buttonsValues"])
- 
+const emit = defineEmits(["buttonsValues"]);
 
 let buttonSelected = (id) => {
   console.log("id", id);
@@ -55,10 +50,7 @@ let buttonSelected = (id) => {
     buts[prod.value].value = false;
   }
 
-   emit("buttonsValues",buts) 
-
-
-  
+  emit("buttonsValues", buts);
 };
 </script>
 
@@ -85,4 +77,16 @@ img {
   padding-right: 1rem;
   padding-left: 1rem;
 }
+
+p {
+  width: 3rem;
+  margin-right: 1.3rem;
+  margin-top: 00.3rem;
+}
+
+input{
+  width: 1rem;
+}
 </style>
+
+
