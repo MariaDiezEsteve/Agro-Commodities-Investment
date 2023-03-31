@@ -51,5 +51,11 @@
      margin: 1rem 0.3rem;
    }
   }
+
+  @include media-breakpoint-down(lg) {
+   h1 {
+     margin: 1.5rem 0.3rem;
+   }
+  }
   </style>
 
