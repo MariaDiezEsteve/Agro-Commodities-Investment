@@ -60,13 +60,13 @@
   // }
 
   onMounted(()=>{
-    /* eslint-disable no-unused-vars */
+    
    const myChart = new Chart (
       document.getElementById('myPieChart'),
       config
 
-
     );
+    console.log(myChart);
   });
 
 
@@ -140,8 +140,15 @@
     @include media-breakpoint-down(sm) {
 
     .pieChartDiv {
-      width: 90%;
+      width: 85%;
     }
 }
-  
+    @include media-breakpoint-down(lg) {
+        .pieChartDiv {
+          width: 110%;
+          margin-bottom: 2rem;
+        }
+
+    }
+
   </style>
