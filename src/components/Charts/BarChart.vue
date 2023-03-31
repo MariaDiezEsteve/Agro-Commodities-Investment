@@ -1,19 +1,27 @@
-<template>
+<template class="backgroundDiv">
   <CardDetailsProduct :data = "data" @nameOfProduct="getNameProduct"/>
 
-  <div class="d-flex justify-content-center pt-4">
-    <div style="width: 60%">
-      <div class="d-flex flex-row justify-content-between">
-        <DropDate @dateSelected="getDate"/>
+  <div class="d-flex justify-content-center pt-4 mt-5">
+    <div style="width: 90%">
+      <div class=" d-flex flex-row justify-content-left">
+        <DropDate class="mx-4" @dateSelected="getDate"/>
         <DropChart @typeSelected="getTypeChar"/>
       </div>
       <div v-if="date=='years'">
-        <CardDate @rangeYears="rangeYears"/>
+        <CardDate class="mx-3" @rangeYears="rangeYears"/>
       </div>
       <div v-else>
         <CardYearOfMonths @yearOfMonths="getYear" />
       </div>
-      <canvas id="myChart"></canvas>
+      <div class="graphicsDiv d-flex justify-content-around gap-4">
+        <div class="barChartDiv">
+          <canvas id="myChart"></canvas>
+        </div>
+      
+        <PieChart :data = "data" />
+
+    </div>
+
     </div>
 
   </div>
@@ -27,8 +35,9 @@
   import DropChart from '@/components/Buttons/DropChart.vue'
   import CardDate from '@/components/Cards/CardDate.vue'
   import CardYearOfMonths from '@/components/Cards/CardYearOfMonths.vue'
-
   import CardDetailsProduct from '../Cards/CardDetailsProduct.vue';
+  import PieChart from '@/components/Charts/PieChart.vue'
+
 
 
   const prop = defineProps({
@@ -107,7 +116,7 @@
       type: typeChart.value,
       data: dataChart,
     })
-
+    console.log("mounted")
     return myChart
     }
 
@@ -197,5 +206,23 @@
 <style lang="scss" scoped>
   @import "@/assets/Sass/--parcial.scss";
 
+  .barChartDiv {
+    width: 100%;
+
+  }
+ 
+  @include media-breakpoint-down(sm) {
+
+    .graphicsDiv {
+      direction: flex;
+      flex-wrap: wrap;
+      
+  }
+ 
+  .barChartDiv {
+    width: 155%;
+
+  }
+ }
   
 </style>

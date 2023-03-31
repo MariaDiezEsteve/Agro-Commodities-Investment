@@ -7,7 +7,7 @@
       <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
       <div v-if="!data.isError && !isLoading" >
         <BarChart :data = "data"/> 
-        <PieChart :data = "data" />
+        <!-- <PieChart :data = "data" /> -->
       </div>
     </div>
   </template>
@@ -17,7 +17,7 @@
   import {ref,onMounted} from "vue";
   import SideBar from '@/components/Commons/SideBar.vue'
   import BarChart from '@/components/Charts/BarChart.vue'
-  import PieChart from '@/components/Charts/PieChart.vue'
+  // import PieChart from '@/components/Charts/PieChart.vue'
 
   
     let isLoading = ref(true) 
