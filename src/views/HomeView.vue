@@ -1,7 +1,7 @@
 <template>
 
-    <SideBar class="col-lg-2  col-md-3  col-sm-1"/>
-    <div class="col-lg-10 col-md-9 col-sm-11" >
+    <SideBar class="col-2"/>
+    <div class="col-10" >
       <ImgSlider/>
 
       <div class="px-5">

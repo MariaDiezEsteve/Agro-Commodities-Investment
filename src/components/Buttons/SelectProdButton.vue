@@ -8,10 +8,11 @@
       :key="but"
       @click="buttonSelected(index)"
     >
-      <label class="off d-flex flex-row" :for="index">
-        <img :src="images[index]" /> {{ prop }}
+      <label class="off d-flex flex-row aling-items-center" :for="index">
+        <img :src="images[index]" style="margin-top: 0.3rem;" />
+        <p style=" width: 3rem;margin-right: 1.3rem; margin-top: 0.3rem;">{{ prop }}</p> 
         <input
-          style="width: 1rem; margin-left: 1rem"
+          style="width: 1rem"
           :id="index"
           type="checkbox"
         />
@@ -65,7 +66,7 @@ let buttonSelected = (id) => {
 @import "@/assets/Sass/--parcial.scss";
 
 .off {
-  @include button($bg-color: $blueDark, $wth: 14rem, $colorletra: $white_color);
+  @include button($bg-color: $blueDark, $wth: 10rem, $colorletra: $white_color);
   display: flex;
   margin-left: 3rem;
   margin-top: 1rem;
@@ -81,7 +82,7 @@ img {
   align-self: start;
   display: flex;
   flex-direction: row;
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 </style>

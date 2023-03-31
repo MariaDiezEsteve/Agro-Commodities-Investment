@@ -137,10 +137,10 @@ const policies=[
 
   @include media-breakpoint-down(sm) {
 
-    nav{
-      width: 1%;
-      //z-index: 1000;
-    }
+    // nav{
+    //   width: 1%;
+    //   z-index: 1000;
+    // }
 
     #menuIco{
       display: block;
