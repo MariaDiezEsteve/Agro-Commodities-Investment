@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, defineEmits} from "vue";
 
 let prod = ref("wheat");
 let buts = {
@@ -40,6 +40,9 @@ let images = [
   require("@/assets/images/IconosUserView/maizBlanco-removebg-preview.png"),
 ];
 
+ const emit = defineEmits(["buttonsValues"])
+ 
+
 let buttonSelected = (id) => {
   console.log("id", id);
   prod.value = Object.keys(buts)[id];
@@ -50,6 +53,11 @@ let buttonSelected = (id) => {
   } else {
     buts[prod.value].value = false;
   }
+
+   emit("buttonsValues",buts) 
+
+
+  
 };
 </script>
 
