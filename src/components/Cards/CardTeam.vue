@@ -9,8 +9,11 @@
         <div class="card-general">
           <h2 class="card-title">{{ team.name }}</h2>
           <p class="card-text">{{ team.discripion }}</p>
-          <a class="card-team">{{ team.enlace}}</a>
-          <a class="linkedin-team">{{ team.linkedin }}</a>
+          <!-- <a class="card-team">{{ team.enlace}}</a> -->
+          <a class="card-team" :href="team.enlace"><img :src="team.src1" /></a>
+
+          
+          <!-- <a class="linkedin-team">{{ team.src1 }}</a> -->
         </div>
       </div>
     </div>
@@ -25,6 +28,7 @@ const teams = [
     name: "Nasreddin Oufallah",
     discripion: "FullStack Development",
     src: require("@/assets/Avatar/myAvatar.png"),
+    src1: require("@/assets/Avatar/myAvatar.png"),
     enlace:"https://www.linkedin.com/in/nasreddin-oufallah/"
 
 
