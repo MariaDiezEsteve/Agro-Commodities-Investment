@@ -12,7 +12,7 @@
           <!-- <a class="card-team">{{ team.enlace}}</a> -->
           
           <a class="card-team" :href="team.enlace"><img class="card-image" :src="team.src1" /></a>
-          <a class="card-team" :href="team.enlace"><img class="card-image" :src="team.src2" /></a>
+          <a class="card-team" :href="team.enlace1"><img class="card-image" :src="team.src2" /></a>
 
 
           
@@ -33,7 +33,8 @@ const teams = [
     src: require("@/assets/Avatar/myAvatar.png"),
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
-    enlace:"https://www.linkedin.com/in/nasreddin-oufallah/"
+    enlace:"https://www.linkedin.com/in/nasreddin-oufallah/",
+    enlace1:""
 
 
     
@@ -45,7 +46,9 @@ const teams = [
     src: "https://i.pinimg.com/originals/d0/e6/59/d0e659125145e110eee3d64013050812.png",
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
-    enlace:"https://www.linkedin.com/in/zguedest/"
+    enlace:"https://www.linkedin.com/in/zguedest/",
+    enlace1:""
+
     
   
   },
@@ -57,6 +60,8 @@ const teams = [
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace:"https://www.linkedin.com/in/lucas-ibar-basaldua/",
+    enlace1:"",
+
     alt: "frontend",
   },
   {
@@ -67,6 +72,7 @@ const teams = [
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace: "https://www.linkedin.com/in/lucas-ibar-basaldua/",
+    enlace1:"",
    
     alt: "FullStack Developer",
   },
@@ -78,7 +84,7 @@ const teams = [
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace:"https://www.linkedin.com/in/mariadiezesteve/",
-     
+    enlace1:"",
      alt: "fullstack",
   },
   {
@@ -89,7 +95,7 @@ const teams = [
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace:"https://www.linkedin.com/in/gorka-ibarrondo-busturia-21a317259/",
-     
+    enlace1:"",
     alt: "commodities" ,
   },
 ];
