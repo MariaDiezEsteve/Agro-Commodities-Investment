@@ -6,7 +6,7 @@
         <th v-for="month in months" :key="month"> {{ month }}</th>
       </tr>
         <tr v-for="year in years" :key="year">
-          <td >{{year}}</td>
+          <th class="pt-5">{{year}}</th>
         </tr>
       </thead>
     </table>
