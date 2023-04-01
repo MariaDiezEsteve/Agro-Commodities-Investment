@@ -1,11 +1,19 @@
 <template>
   <nav class="d-flex flex-column flex-shrink-0 p-3 text-white">
-      <img id="menuIco" src="@/assets/images/menu.svg">
-
-        <router-link to="/" class="d-flex flex-column align-items-center text-white text-decoration-none">
+          <input type="checkbox" id="check_menu">
+          <label for="check_menu" class="checkbtn_menu">
+              <!-- <i class="fas fa-bars"></i> -->
+              <img id="menuIco" src="@/assets/images/menu.svg">
+          </label>
+          
+          <router-link to="/" class="d-flex flex-column align-items-center text-white text-decoration-none">
             <img id="logo" src="@/assets/images/logoGif.gif" alt="Logo RawInvesting">
             <h2 id="h2_nav" class="mb-3">RawInvesting</h2>
-        </router-link>
+          </router-link>
+          
+      
+
+       
     
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
@@ -107,7 +115,7 @@ const policies=[
     @include texto ($color:$greyLight,$font-size: $p);
   }
 
-  #menuIco{
+  #menuIco,#check_menu{
     display: none;
     //margin-left: 13rem;
   }
@@ -127,36 +135,28 @@ const policies=[
   //   xxl: 1400px
   // );
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(sm) {
+
+    // nav{
+    //   width: 1%;
+    //   z-index: 1000;
+    // }
 
     #menuIco{
       display: block;
-      margin-left: 20rem;
+      margin-left: 0rem;
       font-weight: 900;
     }
 
-    
-    
-  }
-
-  @include media-breakpoint-down(sm){
     #logo{
       height:6rem;
       width: 35%;
+
     }
-    nav{
-      background-color: $green;
-    }
+
   }
 
-  // @include media-breakpoint-down(sm){
-  //   #logo{
-  //     height:6rem;
-  //     width: 35%;
-  //   }
-  //   nav{
-  //     background-color: $green;
-  //   }
-  // }
+ 
+
 
 </style>

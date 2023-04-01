@@ -1,33 +1,61 @@
 <template>
-  <SideBar class="col-lg-2  col-md-3  col-sm-3"/>
-    <div class="col-lg-10 col-md-9 col-sm-9 px-5" >
-      <h1>"esto es h1 en el costumize"</h1>
+  <SideBar class="col-2"/>
 
-      <!-- <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
-      <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
-      <div v-if="!data.isError && !data.isLoading" >
-        <h2>Loading es: {{isLoading}}</h2>
-        <h2>{{data.prodts}}</h2>
-      </div>  -->
+    <div class="col-10" >
+    
+      <div class="img"></div>
 
-      <h2>"Esto es h2"</h2>
-      <select>
-        <option value="value1">Value 1</option>
-        <option value="value2" selected>Value 2</option>
-        <option value="value3">Value 3</option>
-      </select>
 
-    </div>
+      <div class="px-5">
+        <!-- <SelectProdButtonVue /> -->
+        <InteractChart />
+
+        <img
+          v-if="questions.isError"
+          src="@/assets/images/error.jpeg"
+          alt="error"
+        />
+        <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading" />
+        <div v-if="!questions.isError && !isLoading">
+          <CardPredictionVue class="pb-4" :questions="questions" />
+        </div>
+      </div>
+  </div>
 </template>
 
 <script setup>
-  import SideBar from '@/components/Commons/SideBar.vue'
+import CardPredictionVue from "@/components/Cards/CardPrediction.vue";
+import predictionInfo from "@/DataInformation/predictionInfo";
+import SideBar from "@/components/Commons/SideBar.vue";
+// import SelectProdButtonVue from "@/components/Buttons/SelectProdButton.vue";
+import InteractChart from "@/components/Charts/InteractChart.vue";
 
+import { ref, onMounted } from "vue";
 
+let isLoading = ref(true);
+
+let questions = ref(
+  onMounted(async () => {
+    questions.value = await predictionInfo.getAskQuestion();
+
+    if (!questions.value.isLoading) {
+      isLoading.value = false;
+    }
+  })
+);
 </script>
 
 <style lang="scss" scoped>
-  @import "@/assets/Sass/--parcial.scss";
+@import "@/assets/Sass/--parcial.scss";
 
-
+.img {
+  @extend %imagen;
+  background-image: linear-gradient(
+      to left,
+      rgba(15, 51, 135, 0.6),
+      rgb(15, 51, 135, 0.3)
+    ),
+    url("@/assets/images/IconosUserView/CAPuserView.png");
+  height: 250px;
+}
 </style>
