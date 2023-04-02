@@ -10,17 +10,17 @@
         <div v-if="!reviewsData.isError && !isLoading" class="fahter-position">
           <h2 class="title">Create a new review</h2>
             <form @submit.prevent>
-              <div>
-              <input type="text" id="name" v-model="formData.name" placeholder="Name" /> <!-- @keyup="guanaja" -->
-               <span v-if="v$.name.$error" >You need to fill this input with your name</span>
+              <div class=" inputError">
+              <input type="text" id="name" v-model="formData.name" placeholder="Name" /> 
+               <span v-if="v$.name.$error" >You need to fill with your name</span>
             </div>
-            <div>
+            <div class=" inputError">
               <input type="text"  placeholder="Email" id="email" v-model="formData.email"/>
-              <!-- <p v-if="isAlert" class="alert">You need to fill this input with your email</p> -->
+              <span v-if="v$.email.$error" >You need to fill with your email</span>
             </div>
-            <div>
-              <textarea type="text" placeholder="Please, enter your opinion about the website" id="opinion" v-model="formData.opinion" cols="20" rows="5" r ></textarea>
-              <!-- <p v-if="isAlert" class="alert">You need to fill this input with your opinion</p> -->
+            <div class=" inputError">
+              <textarea type="text" placeholder="Please, enter your opinion about the website" id="opinion" v-model="formData.opinion" cols="20" rows="5" ></textarea>
+              <span v-if="v$.opinion.$error" >You need to fill with your opinion. It needs to have a minimum of 10 characters</span>
             </div>
             <input class="submit" type="submit" value="Create Review" @click="emptyLabel"/> 
             </form>
@@ -30,18 +30,16 @@
   </template>
   
   <script setup>
-  import { reactive, ref, onMounted } from 'vue'
+  import { reactive, ref, onMounted, computed} from 'vue'
   import axios from 'axios'
   import FormReview from '@/components/Forms/FormReview.vue';
   import reviewsInfo from '@/DataInformation/reviewInfo'
   import { useVuelidate } from '@vuelidate/core'
-  import { required, email } from "@vuelidate/validators"
+  import { required, email, minLength } from "@vuelidate/validators"
 
 
   let isLoading = ref(true) 
   let  reviewsData = ref(onMounted(()=>{ reviews() }))
-
-
 
  async function reviews() {
     reviewsData.value = await reviewsInfo.getReviewsInfo()
@@ -54,7 +52,6 @@
     return reviewsData.value
   }
 
- 
   const formData = reactive({
     name: "",
     email: "",
@@ -64,24 +61,23 @@
   let isError = false
 
 
-const rules ={
-  name: {required},
+const rules = computed(() => {
+  return {
+  name: {required,  minLength:  minLength(2)},
   email: { required, email },
-  opinion: {required}
+  opinion: {required,   minLength:  minLength(10)}
 }
+}) 
 
 const v$ = useVuelidate(rules, formData)
  
-  // let isAlert = ref(false)
-
   // CREATE A REVIEW
 
-  const emptyLabel = () => {
-    const result = v$.value.$validate()
-    if(result.name != "" && result.email != "" && result.opinion != "") { 
-      createReview() 
-    }
-    
+  const emptyLabel = async () => {
+    const result = await v$.value.$validate()
+      if(result){
+        createReview()
+    } 
 }
 
   const createReview = () => {
@@ -109,17 +105,20 @@ const v$ = useVuelidate(rules, formData)
   <style lang="scss" scoped>
    @import "@/assets/Sass/--parcial.scss";
 
-   .alert {
+  span {
     color: $red;
     font-size: 0.7rem;
-    padding-left: 4rem;
    }
 
-    h2{
-        margin: 1rem;   
-    }
+  .inputError{
+   display: grid;
+  }
 
-    form{
+  h2{
+    margin: 1rem;   
+   }
+
+ form{
       width: 75%;
       padding:16px;
       border-radius:10px;

@@ -45,102 +45,98 @@
   </div>
 </template>
   
-  <script setup>
-  import {defineProps, ref } from 'vue'
-  import axios from 'axios'
+<script setup>
+import {defineProps, ref } from 'vue'
+import axios from 'axios'
 
-  
-  
- const prop = defineProps({
-    reviewsData: Object,
-    reviews: Function
-  });
-
-  const hidenEmailDelete = ref("")
-  const emailReviewInput = ref("")
-  let idReviewPost = ref("")
-
-
-  // DELETE REVIEW
-  let isError = false
-
-  let deleteReview = (email, id) => {
-    hidenEmailDelete.value = true
-    emailReview.value = email
-    idReviewPost.value = id
-  }
-
-  let checkedDataDelete = () => {
-    if(emailReview.value === emailReviewInput.value){
-      try{
-            axios.delete(`http://localhost:3000/reviews/${idReviewPost.value}`)  
-            // console.log("id será", idReview)
-             prop.reviews()
-             hidenEmailDelete.value = false
-             location.reload()
-          }catch (error) {
-              console.log(error);
-              isError = true
-          }
-          return{
-              isError
-          } 
-    }
-  }
-
-  //EDIT REVIEW
-  
-  const hidenOpinion = ref(false)
-  let emailReview = ref("")
-  let nameReview = ref("")
-  let formOpinion = ref(null)
-  const hidenEmailOpinion = ref(false)
-
-
-
-  let editReviews = (email, id, name) => {
-    hidenEmailOpinion.value = true
-    emailReview.value = email
-    idReviewPost.value = id
-    nameReview.value = name
-    
-  }
-
-  let checkedDataEdit = () => {
-    if(emailReview.value === emailReviewInput.value){ 
-      hidenOpinion.value = true
-      hidenEmailOpinion.value = false
-    }
-   }
-  
-
-    const editReview = () => {
-      try {
-        axios.put(`http://localhost:3000/reviews/${idReviewPost.value}`, {
-          name: nameReview.value,
-          email: emailReview.value,
-          opinion: formOpinion.value
-        })
-        prop.reviews()
-        hidenOpinion.value = false
-        location.reload()
-          }catch (error) {
-              console.log(error);
-              isError = true
-          }
+const prop = defineProps({
+  reviewsData: Object,
+  reviews: Function
+});
+const hidenEmailDelete = ref("")
+const emailReviewInput = ref("")
+let idReviewPost = ref("")
+// DELETE REVIEW
+let isError = false
+let deleteReview = (email, id) => {
+  hidenEmailDelete.value = true
+  emailReview.value = email
+  idReviewPost.value = id
+}
+let checkedDataDelete = () => {
+  if(emailReview.value === emailReviewInput.value){
+    try{
+          axios.delete(`http://localhost:3000/reviews/${idReviewPost.value}`)  
+          // console.log("id será", idReview)
+           prop.reviews()
+           hidenEmailDelete.value = false
+           location.reload()
+        }catch (error) {
+            console.log(error);
+            isError = true
+        }
         return{
-         isError
-    } 
-    
-    }
-    
+            isError
+        } 
+  }
+}
+//EDIT REVIEW
 
-
-  </script>
+const hidenOpinion = ref(false)
+let emailReview = ref("")
+let nameReview = ref("")
+let formOpinion = ref(null)
+const hidenEmailOpinion = ref(false)
+let editReviews = (email, id, name) => {
+  hidenEmailOpinion.value = true
+  emailReview.value = email
+  idReviewPost.value = id
+  nameReview.value = name
   
+}
+let checkedDataEdit = () => {
+  if(emailReview.value === emailReviewInput.value){ 
+    hidenOpinion.value = true
+    hidenEmailOpinion.value = false
+  }
+ }
+
+  const editReview = () => {
+    try {
+      axios.put(`http://localhost:3000/reviews/${idReviewPost.value}`, {
+        name: nameReview.value,
+        email: emailReview.value,
+        opinion: formOpinion.value
+      })
+      prop.reviews()
+      hidenOpinion.value = false
+      location.reload()
+        }catch (error) {
+            console.log(error);
+            isError = true
+        }
+      return{
+       isError
+  } 
+  }
+  
+</script>
+
   <style lang="scss" scoped>
    @import "@/assets/Sass/--parcial.scss";
 
+   span {
+    color: $red;
+    font-size: 0.7rem;
+   }
+
+   .inputEnter{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   }
+   .inputError{
+   display: grid;
+  }
   .reviews{
     margin: 0rem 0rem;
   }
@@ -181,8 +177,7 @@
   }
   input{
     border-radius: 0.5rem;
-    padding: 0.25rem ;
-    
+    padding: 0.25rem;    
    }
 
    textarea{
