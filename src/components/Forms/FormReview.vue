@@ -38,6 +38,8 @@
   <script setup>
   import {defineProps, ref } from 'vue'
   import axios from 'axios'
+
+  
   
  const prop = defineProps({
     reviewsData: Object,

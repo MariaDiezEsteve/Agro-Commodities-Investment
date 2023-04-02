@@ -7,15 +7,15 @@
           <h3 class="title">Create a new review</h3>
             <form @submit.prevent>
               <div>
-              <input type="text" id="name" v-model="formData.name" placeholder="Name" required/> <!-- @keyup="guanaja" -->
-              <!-- <p v-if="isAlert == false" class="alert">You need to fill this input with your name</p> -->
+              <input type="text" id="name" v-model="formData.name" placeholder="Name" /> <!-- @keyup="guanaja" -->
+               <span v-if="v$.name.$error" >You need to fill this input with your name</span>
             </div>
             <div>
-              <input type="text"  placeholder="Email" id="email" v-model="formData.email" required/>
+              <input type="text"  placeholder="Email" id="email" v-model="formData.email"/>
               <!-- <p v-if="isAlert" class="alert">You need to fill this input with your email</p> -->
             </div>
             <div>
-              <textarea type="text" placeholder="Please, enter your opinion about the website" id="opinion" v-model="formData.opinion" cols="20" rows="5" required ></textarea>
+              <textarea type="text" placeholder="Please, enter your opinion about the website" id="opinion" v-model="formData.opinion" cols="20" rows="5" r ></textarea>
               <!-- <p v-if="isAlert" class="alert">You need to fill this input with your opinion</p> -->
             </div>
             <input class="submit" type="submit" value="Create Review" @click="emptyLabel"/> 
@@ -36,6 +36,8 @@
   import axios from 'axios'
   import FormReview from '@/components/Forms/FormReview.vue';
   import reviewsInfo from '@/DataInformation/reviewInfo'
+  import { useVuelidate } from '@vuelidate/core'
+  import { required, email } from "@vuelidate/validators"
 
 
   let isLoading = ref(true) 
@@ -63,13 +65,22 @@
 
   let isError = false
 
+
+const rules ={
+  name: {required},
+  email: { required, email },
+  opinion: {required}
+}
+
+const v$ = useVuelidate(rules, formData)
  
   // let isAlert = ref(false)
 
   // CREATE A REVIEW
 
   const emptyLabel = () => {
-    if(formData.name != "" && formData.email != "" && formData.opinion != "") { 
+    const result = v$.value.$validate()
+    if(result.name != "" && result.email != "" && result.opinion != "") { 
       createReview() 
     }
     
