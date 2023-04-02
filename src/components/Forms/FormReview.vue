@@ -23,14 +23,24 @@
             <div v-show="hidenEmailDelete">
               <h2>Delete your Review</h2>
               <h4>Please, confirm your email address to delete your review</h4>
-              <input type="text" placeholder="Enter your email" v-model="emailReviewInput" >
-              <button class="btn2" @click="checkedDataDelete">Enter</button>              
+                  <div class="inputEnter">
+                    <div class="inputError">
+                      <input type="text" placeholder="Enter your email" v-model="emailReviewInput" >
+                      <span v-show="showError">The email address is incorrect. Please, enter the email associated with this review.</span>
+                    </div>             
+                      <button class="btn2" @click="checkedDataDelete">Enter</button> 
+                  </div>
             </div>
             <div v-show="hidenEmailOpinion">
               <h2>Edit your Review</h2>
               <h4>Please, confirm your email address to edit your review</h4>
-              <input type="text" placeholder="Enter your email" v-model="emailReviewInput" >
-              <button class="btn2" @click="checkedDataEdit">Enter</button>
+                <div class="inputEnter">
+                  <div class="inputError">
+                      <input type="text" placeholder="Enter your email" v-model="emailReviewInput" >
+                      <span v-show="showError">The email address is incorrect. Please, enter the email associated with this review.</span>
+                    </div>
+                      <button class="btn2" @click="checkedDataEdit">Enter</button>
+                </div>
             </div>
             <div v-show="hidenOpinion">
               <h2>Edit your Review</h2>
@@ -56,18 +66,21 @@ const prop = defineProps({
 const hidenEmailDelete = ref("")
 const emailReviewInput = ref("")
 let idReviewPost = ref("")
+const showError = ref("")
+
 // DELETE REVIEW
+
 let isError = false
 let deleteReview = (email, id) => {
   hidenEmailDelete.value = true
   emailReview.value = email
   idReviewPost.value = id
 }
+
 let checkedDataDelete = () => {
   if(emailReview.value === emailReviewInput.value){
     try{
           axios.delete(`http://localhost:3000/reviews/${idReviewPost.value}`)  
-          // console.log("id será", idReview)
            prop.reviews()
            hidenEmailDelete.value = false
            location.reload()
@@ -78,8 +91,11 @@ let checkedDataDelete = () => {
         return{
             isError
         } 
+  } else {
+    showError.value = true
   }
 }
+
 //EDIT REVIEW
 
 const hidenOpinion = ref(false)
@@ -87,6 +103,7 @@ let emailReview = ref("")
 let nameReview = ref("")
 let formOpinion = ref(null)
 const hidenEmailOpinion = ref(false)
+
 let editReviews = (email, id, name) => {
   hidenEmailOpinion.value = true
   emailReview.value = email
@@ -98,6 +115,8 @@ let checkedDataEdit = () => {
   if(emailReview.value === emailReviewInput.value){ 
     hidenOpinion.value = true
     hidenEmailOpinion.value = false
+  }else{
+    showError.value = true
   }
  }
 
