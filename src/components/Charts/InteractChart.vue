@@ -17,7 +17,7 @@
 
 
   let graph = () => { //esta funcion se dinamiza con un prop del producto seleccionado
-     let option = "years" //esto seria otro prop
+     let option = "months" //esto seria otro prop
 
      let optChart = "line" //esto puede ser un drop y el usuario elegir como quiere ver el chart
 
@@ -40,17 +40,17 @@
           maintainAspectRatio: false,
         }
       },
-      // {
-      //   label: 'Product Price',
-      //   data: option === "months" ? pricesPerMonthInAYear(2021) : averagePricesByYearRange (2000,2004) , //coger el año en un imput
-      //   fill: false,
-      //   borderColor: 'rgb(0, 0, 0)',
-      //   tension: 0,
-      //   options: {
-      //     responsive: true,
-      //     maintainAspectRatio: false,
-      //   }
-      // }
+      {
+        label: 'Product Price',
+        data: option === "months" ? pricesPerMonthInAYear(2021) : averagePricesByYearRange (2000,2004),
+        fill: false,
+        borderColor: 'rgb(0, 0, 0)',
+        tension: 0,
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+        }
+      }
     ]
     }
     const chartWithKey = Chart.getChart('myChart')

@@ -11,8 +11,8 @@ import bootstrap from 'bootstrap/dist/js/bootstrap.js'
 import VueSidebarMenu from 'vue-sidebar-menu'
 import 'vue-sidebar-menu/dist/vue-sidebar-menu.css'
 
-//Importar la librería vue validation
-import vuelidate from 'vuelidate'
+//Importar la librería vue validation  
+import vuelidate from 'vuelidate' //npm i en consola para quitar errores
 
 
 createApp(App).use(router,bootstrap,VueSidebarMenu, vuelidate).mount('#app')
