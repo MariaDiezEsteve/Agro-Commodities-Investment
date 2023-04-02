@@ -1,20 +1,20 @@
-<template>
+<template class="backgroundDiv">
   <CardDetailsProduct :data = "data" @nameOfProduct="getNameProduct"/>
 
-  <div class="d-flex justify-content-center pt-4">
-    <div style="width: 80%">
-      <div class="d-flex flex-row justify-content-left">
+  <div class="d-flex justify-content-center pt-4 mt-5">
+    <div style="width: 90%">
+      <div class="graphicDropsDiv d-flex flex-row justify-content-left">
         <DropDate class="mx-4" @dateSelected="getDate"/>
         <DropChart @typeSelected="getTypeChar"/>
       </div>
       <div v-if="date=='years'">
-        <CardDate class="mx-3" @rangeYears="rangeYears"/>
+        <CardDate class="mx-3 " @rangeYears="rangeYears"/>
       </div>
       <div v-else>
         <CardYearOfMonths @yearOfMonths="getYear" />
       </div>
-      <div class="d-flex justify-content-around">
-        <div style="width: 90%;">
+      <div class="graphicsDiv d-flex justify-content-around gap-4 align-items-center">
+        <div class="barChartDiv">
           <canvas id="myChart"></canvas>
         </div>
       
@@ -206,5 +206,46 @@
 <style lang="scss" scoped>
   @import "@/assets/Sass/--parcial.scss";
 
+  .barChartDiv {
+    width: 100%;
+
+  }
+ 
+  @include media-breakpoint-down(sm) {
+    .graphicDropsDiv {
+      margin-bottom: 1.5rem;
+    }
+
+  
+    .graphicsDiv {
+      direction: flex;
+      flex-wrap: wrap;
+      
+  }
+ 
+  .barChartDiv {
+    width: 145%;
+
+  }
+  }
+
+  @include media-breakpoint-down(lg) {
+    .graphicDropsDiv {
+      margin-bottom: 1.5rem;
+    }
+
+  
+    .graphicsDiv {
+      direction: flex;
+      flex-wrap: wrap;
+      
+  }
+ 
+  .barChartDiv {
+    width: 135%;
+
+  }
+
+}
   
 </style>
