@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex flex-row justify-content-left">
-    <SelectProdButton style="width: 30%"/>
+    <SelectProdButton style="width:30%" @buttonSelected="getButtonSelected"/>
     <div style="width: 60%">
       <div class="d-flex flex-row justify-content-left">
         <DropDate class="mx-4" @dateSelected="getDate"/>
@@ -63,9 +63,39 @@
     interactChart()
 
   }
+  let buts = {
+    wheat: ref(true),
+    sugar: ref(true),
+    corn: ref(true),
+    cotton: ref(true),
+    coffee: ref(true),
+  };
+  let prod = ref("wheat");
+  const getButtonSelected = (index) =>{
+    console.log("En el padre index", index)
+    prod.value = Object.keys(buts)[index];
+    console.log("prod.value",prod.value)
+    if (buts[prod.value].value == false) {
+      buts[prod.value].value = true;
+      console.log("En el if ==false", buts[prod.value].value)
+
+    } else {
+      buts[prod.value].value = false;
+    }
+
+    console.log("buts en el padre", buts)
+    createDataChart()
+
+  }
+
+
+
+
 
   onMounted(()=>{//muy importante el onMounted para coger cosas del template es aqui dentro
     interactChart()
+    //createDataChart()
+
   });
 
 
@@ -77,23 +107,38 @@
         
       const data = {
         labels: date.value === "months" ? months : rangeYear.value,
-        datasets: crateDataChart("Sugar")
+        datasets: createDataChart()
       }
     const chartWithKey = Chart.getChart('myChart')
     if (chartWithKey != undefined) {
       chartWithKey.destroy()
     }
     myChart = new Chart(ctx, {
-      type: "line",
+      type:"line", //typeChart.value,
       data: data,
     })
 
     return myChart
   }
+  let dataChart = ref([])
 
-  function crateDataChart(nameProduct){
+  function createDataChart(){
+    console.log("buts en el createDataChart", buts)
+    dataChart = []
+    for ( let key in buts) {
+      if(buts[key].value == true){
+        console.log("key", key)
+        console.log("buts[key].value",buts[key].value)
+        let prodData = crateSpecificData(key)
+        dataChart.push(prodData)
+        console.log("dataChart en if", dataChart)
+      }
+    }
 
-    let dataChart =  [{
+    console.log("dataChart fuera", dataChart)
+  }
+  function crateSpecificData(nameProduct){
+    const productData = {
           label: nameProduct +" "+'Price',
           data: date.value === "months" ? pricesPerMonthInAYear(yearOfMonths.value) : averagePricesByYearRange (rangeYear.value[0],rangeYear.value[(rangeYear.value).length-1]),
           fill: typeChart.value == "bar" ? true : false, 
@@ -104,10 +149,9 @@
             responsive: true,
             maintainAspectRatio: false,
           }
-    }]
+    }
 
-    return dataChart
-
+    return productData
 
   }
 

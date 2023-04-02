@@ -5,7 +5,7 @@
       class="d-flex flex-row justify-content-start"
       v-for="(but, prop, index) in buts"
       :key="but"
-      @click="buttonSelected(index)"
+      @click="getButtonSelected(index)"
     >
       <label class="off d-flex flex-row aling-items-center" :for="index">
         <img :src="images[index]" style="margin-top: 0.3rem;" />
@@ -40,24 +40,20 @@ let images = [
   require("@/assets/images/IconosUserView/maizBlanco-removebg-preview.png"),
 ];
 
- const emit = defineEmits(["buttonsValues"])
+ const emit = defineEmits(["buttonSelected"])
  
 
-let buttonSelected = (id) => {
-  console.log("id", id);
-  prod.value = Object.keys(buts)[id];
-  console.log("prod.value ", prod.value);
+let getButtonSelected = (index) => {
+  prod.value = Object.keys(buts)[index];
 
   if (buts[prod.value].value == false) {
     buts[prod.value].value = true;
   } else {
     buts[prod.value].value = false;
   }
-
-   emit("buttonsValues",buts) 
-
-
-  
+  console.log("buts en el hijo", buts)
+  emit("buttonSelected",index) 
+ 
 };
 </script>
 
