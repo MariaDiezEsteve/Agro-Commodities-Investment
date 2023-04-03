@@ -64,18 +64,15 @@
     productChart()
   }
 
-  const yearOfMonths = ref(2006)
+  const yearOfMonths = ref(2022)
   const getYear = (year) => {
     yearOfMonths.value = year
-    console.log("year en el padre", yearOfMonths.value)
     productChart()    
   }
 
-  let rangeYear = ref([2000, 2001, 2002, 2003, 2004,2005, 2006])
+  let rangeYear = ref([2016, 2017, 2018, 2019, 2020,2021, 2022])
   let rangeYears = (years) => {
     rangeYear.value = years
-    console.log("yearRange en el padre", rangeYear.value)
-
     productChart()
 
   }
@@ -116,7 +113,6 @@
       type: typeChart.value,
       data: dataChart,
     })
-    console.log("mounted")
     return myChart
     }
 

@@ -16,7 +16,6 @@
     //año de los meses
     const getYear = (year) => {
         emit ("yearOfMonths", year)
-        console.log("YEAR en el hijo",year)
     }
 
 </script>

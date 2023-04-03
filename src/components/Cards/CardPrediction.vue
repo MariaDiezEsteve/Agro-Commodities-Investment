@@ -77,9 +77,6 @@ function showAnswer(id) {
   idData.value = id - 1;
   click.value = true;
   quest.value = questions.value.getQuestions[idData.value].question
-
-  console.log("imprime aquí", idData.value);
-  console.log("imprime", click);
 }
 </script>
 

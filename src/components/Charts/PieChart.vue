@@ -104,10 +104,7 @@
               boxPadding: 3,
               callbacks: {
                 label: (context) => {
-                  console.log(context)
-                  console.log(context.parsed)
                   return `${context.parsed}%`
-
                 }
               }
             },

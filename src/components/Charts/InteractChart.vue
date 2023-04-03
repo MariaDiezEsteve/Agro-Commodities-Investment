@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex flex-row justify-content-left">
-    <SelectProdButton style="width:30%" @buttonSelected="getButtonSelected"/>
-    <div style="width: 60%">
+    <SelectProdButton v-if="vista != 'home'" style="width:30%" @buttonSelected="getButtonSelected"/>
+    <div :class="classChart">
       <div class="d-flex flex-row justify-content-left">
         <DropDate class="mx-4" @dateSelected="getDate"/>
         <DropChart @typeSelected="getTypeChar"/>
@@ -19,7 +19,7 @@
 </template>
   
 <script setup>
-  import {defineProps,onMounted, ref} from 'vue';
+  import {defineProps,onMounted, ref, computed} from 'vue';
   import Chart from 'chart.js/auto'; //npm install chart.js
   import DropDate from '@/components/Buttons/DropDate.vue'
   import DropChart from '@/components/Buttons/DropChart.vue'
@@ -30,14 +30,15 @@
   let buts = {
     wheat: ref(true),
     sugar: ref(true),
-    corn: ref(true),
     cotton: ref(true),
     coffee: ref(true),
+    corn: ref(true),
   };
   
 
   const prop= defineProps({
-    data: Object
+    data: Object,
+    vista: String
   })
 
 
@@ -55,19 +56,19 @@
     interactChart()
   }
 
-  const yearOfMonths = ref(2006)
+  const yearOfMonths = ref(2022)
   const getYear = (year) => {
     yearOfMonths.value = year
     interactChart()    
   }
 
-  let rangeYear = ref([2000, 2001, 2002, 2003, 2004,2005, 2006])
+  let rangeYear = ref([2016, 2017, 2018, 2019, 2020,2021, 2022])
   let rangeYears = (years) => {
     rangeYear.value = years
     interactChart()
   }
  
-  let prod = ref("wheat");
+  let prod = ref("sugar");
   const getButtonSelected = (index) =>{
     prod.value = Object.keys(buts)[index];
     if (buts[prod.value].value == false) {
@@ -187,13 +188,27 @@
     }
 
     return color
-
   }
+
+  const classChart = computed(() => {
+      let result = 'chart65';
+      if (prop.vista === "home") {
+          result = 'chart90';
+      } 
+      return result;
+    });
   
 </script>
   
 <style lang="scss" scoped>
   @import "@/assets/Sass/--parcial.scss";
+
+  .chart90{
+    width: 90%;
+  }
+  .chart65{
+    width: 65%;
+  }
 
 
 </style>

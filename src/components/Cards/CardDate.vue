@@ -48,7 +48,6 @@ const emit = defineEmits(["rangeYears"])
 //rango de años
 const getYears = (years) => {
         emit ("rangeYears", years)
-        console.log("YEARS",years)
 }
 
 

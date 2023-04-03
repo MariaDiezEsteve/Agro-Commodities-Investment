@@ -28,9 +28,9 @@ let prod = ref("wheat");
 let buts = {
   wheat: ref(true),
   sugar: ref(true),
-  corn: ref(true),
   cotton: ref(true),
   coffee: ref(true),
+  corn: ref(true),
 };
 
 let images = [
@@ -52,7 +52,6 @@ let getButtonSelected = (index) => {
   } else {
     buts[prod.value].value = false;
   }
-  console.log("buts en el hijo", buts)
   emit("buttonSelected",index) 
  
 };

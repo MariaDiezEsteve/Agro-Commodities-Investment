@@ -43,8 +43,6 @@
 
  async function reviews() {
     reviewsData.value = await reviewsInfo.getReviewsInfo()
-
-    // console.log("data", reviewsData.value)
     
     if( !reviewsData.value.isLoading){
       isLoading.value = false
