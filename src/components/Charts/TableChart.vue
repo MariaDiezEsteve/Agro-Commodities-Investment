@@ -10,22 +10,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr align=center  v-for="year in rangeYear" :key="year">
+      <tr align=center  v-for='(year, index) in rangeYear' :key='index'>
          <th>{{year}}</th>
-         <td >
-                <!-- <th>{{ parseFloat(prodt.data[0].value).toFixed(2) }} </th>
-                <th>{{ parseFloat(prodt.data[1].value).toFixed(2) }} </th> -->
-                <th>{{  yearAndData(2000, 2004) }} </th>
-                <th>"Maria"</th>
-           
-            </td>
-        </tr>
-      
-       
-
+         <th v-for="price in pricesRangeYear[index]" :key="price">{{ price }}</th>
+      </tr>
     </tbody>
-
-     
     </table>
   </center>
 
@@ -33,7 +22,7 @@
 </template>
    
 <script setup>
-  import {defineProps, onMounted} from 'vue';
+  import {defineProps, onMounted,ref} from 'vue';
 //import { LibraryTemplatePlugin } from 'webpack';
   const prop =  defineProps({
     data: Object,
@@ -41,29 +30,27 @@
     productDataName: Array,
     nameProduct: String
   })
-
   onMounted(()=>{
     if(prop.nameProduct != null){
-      yearAndData(2000, 2004)
+      yearAndData(prop.rangeYear[0],prop.rangeYear[(prop.rangeYear).length-1])
     }
 
   });
  
 
 
- 
+let pricesRangeYear = ref([])
+
 const months = ["Prices","Jan","Feb","Mar","Abr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
-// // const years = [2022, 2021, 2020, 2019, 2018]
  
 function yearAndData(year1, year2){
   console.log(year1)
   console.log(year2)
   let productData =  searchProduct (prop.nameProduct)
-  console.log("productData en yearAndData",productData)
 
   let productDataYear=[]
   let pricesInAYear=[]
-  let pricesRangeYear=[]
+  let pricesRanYear=[]
 
   while (year1<(year2+1)) {
     
@@ -71,12 +58,12 @@ function yearAndData(year1, year2){
       productDataYear = productData.filter(element => parseInt((element.date).slice(0,4)) == year1)  
       //hacemos lo mismo pero solo nos quedamos con los precios
       pricesInAYear = productDataYear.map(element =>  parseFloat((element.value)).toFixed(2))
-      pricesRangeYear.push(pricesInAYear)
+      pricesRanYear.push(pricesInAYear)
       year1++
   }
 
-  console.log("pricesRangeYear",pricesRangeYear)
-//   return prices
+  pricesRangeYear.value=pricesRanYear
+  console.log("pricesRangeYear.value",pricesRangeYear.value)
 }
 
 
