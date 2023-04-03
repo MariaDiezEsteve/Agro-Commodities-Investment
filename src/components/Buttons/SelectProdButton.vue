@@ -5,12 +5,16 @@
       class="d-flex flex-row justify-content-start"
       v-for="(but, prop, index) in buts"
       :key="but"
-      @click="buttonSelected(index)"
+      @click="getButtonSelected(index)"
     >
       <label class="off d-flex flex-row aling-items-center" :for="index">
-        <img :src="images[index]" style="margin-top: 0.3rem" />
-        <p>{{ prop }}</p>
-        <input :id="index" type="checkbox" />
+        <img :src="images[index]"/>
+        <p>{{ prop }}</p> 
+        <input          
+          :id="index"
+          type="checkbox"
+          checked
+        />
       </label>
     </li>
   </ul>
@@ -21,11 +25,11 @@ import { ref, defineEmits } from "vue";
 
 let prod = ref("wheat");
 let buts = {
-  wheat: ref(false),
-  sugar: ref(false),
-  corn: ref(false),
-  cotton: ref(false),
-  coffee: ref(false),
+  wheat: ref(true),
+  sugar: ref(true),
+  cotton: ref(true),
+  coffee: ref(true),
+  corn: ref(true),
 };
 
 let images = [
@@ -36,20 +40,19 @@ let images = [
   require("@/assets/images/IconosUserView/maizBlanco-removebg-preview.png"),
 ];
 
-const emit = defineEmits(["buttonsValues"]);
+ const emit = defineEmits(["buttonSelected"])
+ 
 
-let buttonSelected = (id) => {
-  console.log("id", id);
-  prod.value = Object.keys(buts)[id];
-  console.log("prod.value ", prod.value);
+let getButtonSelected = (index) => {
+  prod.value = Object.keys(buts)[index];
 
   if (buts[prod.value].value == false) {
     buts[prod.value].value = true;
   } else {
     buts[prod.value].value = false;
   }
-
-  emit("buttonsValues", buts);
+  emit("buttonSelected",index) 
+ 
 };
 </script>
 
@@ -75,6 +78,7 @@ img {
   flex-direction: row;
   padding-right: 1rem;
   padding-left: 1rem;
+  margin-top: 0.3rem;
 }
 
 p {

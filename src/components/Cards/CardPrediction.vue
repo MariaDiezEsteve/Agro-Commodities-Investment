@@ -1,6 +1,6 @@
 <template>
 
-  <h2>¿Any doubt?</h2>
+  <h2 class="mt-5">¿Any doubt?</h2>
   <img
     v-if="questions.isError"
     src="@/assets/images/error.jpeg"
@@ -77,9 +77,6 @@ function showAnswer(id) {
   idData.value = id - 1;
   click.value = true;
   quest.value = questions.value.getQuestions[idData.value].question
-
-  console.log("imprime aquí", idData.value);
-  console.log("imprime", click);
 }
 </script>
 
@@ -88,7 +85,8 @@ function showAnswer(id) {
 
 button {
   @include button($bg-color: $blueDark, $wth: 38rem, $colorletra: $white_color);
-  // @include drop($wth: 14rem);
+  margin-bottom: 13rem;
+  margin-top: 2rem;
 }
 li {
   height: 2rem;

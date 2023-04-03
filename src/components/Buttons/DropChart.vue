@@ -22,7 +22,6 @@
     const emit = defineEmits(["typeSelected"])
 
     let getTypeChart = (selectedType) => {
-    //console.log("evento",selectedType)
     emit("typeSelected",selectedType)     
     }
   
