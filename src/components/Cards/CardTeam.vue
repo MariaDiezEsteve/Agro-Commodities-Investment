@@ -34,7 +34,7 @@ const teams = [
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace:"https://www.linkedin.com/in/nasreddin-oufallah/",
-    enlace1:""
+    enlace1:"https://github.com/nasre21"
 
 
     
@@ -47,7 +47,7 @@ const teams = [
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace:"https://www.linkedin.com/in/zguedest/",
-    enlace1:""
+    enlace1:"https://github.com/ZGuedest"
 
     
   
@@ -60,7 +60,7 @@ const teams = [
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace:"https://www.linkedin.com/in/lucas-ibar-basaldua/",
-    enlace1:"",
+    enlace1:"https://github.com/Lucasibf5",
 
     alt: "frontend",
   },
@@ -72,7 +72,7 @@ const teams = [
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace: "https://www.linkedin.com/in/lucas-ibar-basaldua/",
-    enlace1:"",
+    enlace1:"https://github.com/JJessa",
    
     alt: "FullStack Developer",
   },
@@ -84,7 +84,7 @@ const teams = [
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace:"https://www.linkedin.com/in/mariadiezesteve/",
-    enlace1:"",
+    enlace1:"https://github.com/MariaDiezEsteve",
      alt: "fullstack",
   },
   {
@@ -95,7 +95,7 @@ const teams = [
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace:"https://www.linkedin.com/in/gorka-ibarrondo-busturia-21a317259/",
-    enlace1:"",
+    enlace1:"https://github.com/Gorka1999",
     alt: "commodities" ,
   },
 ];
