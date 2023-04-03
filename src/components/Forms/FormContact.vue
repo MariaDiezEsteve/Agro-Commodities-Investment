@@ -1,5 +1,5 @@
 <template>
- <div class="black">
+ <div class="black" @submit="onSubmit" @reset="onReset">
     <div class="form-card " >
       <div class="formTitle card-body">
         <h5 class="card-title">Contact Form</h5>
@@ -10,7 +10,8 @@
 
       <div class="cuadro row">
         <div class=" mt-4 mr-1 col-6 px-5">
-          <input
+          <input 
+            v-model="userForm.name"
             type="text"
             class="form-control p-2"
             placeholder="Enter your name"
@@ -18,6 +19,8 @@
         </div>
         <div class="  mr-1 mt-4 col-5">
           <input
+          v-model="userForm.email"
+
             type="text"
             class="form-control p-2"
             placeholder="Enter your email address"
@@ -44,18 +47,23 @@
   <!-- FORMULARIO -->
 </template>
 
-<!-- <script setup>
-const formContact = [
-  {
-    id: 1,
-    title: "Contact Form",
-    name: "",
-    email: "",
-    text: "",
-    button: "Send Message",
-  },
-];
-</script> -->
+ <script setup>
+//  import { ref } from "vue";
+// const userForm = ref({
+//   name:"",
+//   email:"",
+//   message:"",
+  
+// })
+// return{
+//   userForm,
+
+// onsubmit(){
+//   alert("black")
+// }
+// }
+
+</script> 
 
 
   
