@@ -21,9 +21,14 @@
         <PieChart :data = "data" />
 
     </div>
-
+        <div>
+          <TableChart :data = "data" 
+          :rangeYear="rangeYear" 
+          :productDataName = "productDataName"
+          :nameProduct = "nameProduct"
+          /> 
+        </div>
     </div>
-
   </div>
 </template>
   
@@ -37,6 +42,7 @@
   import CardYearOfMonths from '@/components/Cards/CardYearOfMonths.vue'
   import CardDetailsProduct from '../Cards/CardDetailsProduct.vue'
   import PieChart from '@/components/Charts/PieChart.vue'
+  import TableChart from '@/components/Charts/TableChart.vue'
 
 
 
@@ -57,6 +63,8 @@
     nameProduct.value = name
     productChart()    
   }
+
+  let productDataName =  ref(searchProduct (nameProduct))
 
   const typeChart = ref("bar")
   const getTypeChar = (selectedType) => {

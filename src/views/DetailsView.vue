@@ -6,8 +6,7 @@
       <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
       <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
       <div v-if="!data.isError && !isLoading" >
-        <BarChart :data = "data"/> 
-       <TableChart :data = "data" />  
+        <BarChart :data = "data"/>  
       </div>
     </div>
   </template>
@@ -17,7 +16,7 @@
   import {ref,onMounted} from "vue";
   import SideBar from '@/components/Commons/SideBar.vue'
   import BarChart from '@/components/Charts/BarChart.vue'
-  import TableChart from '@/components/Charts/TableChart.vue'
+
 
   
     let isLoading = ref(true) 
