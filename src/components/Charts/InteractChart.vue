@@ -3,7 +3,7 @@
     <SelectProdButton
       class="buttonsDown"
       v-if="vista != 'home'"
-      style="width: 30%"
+      style="width: 20%"
       @buttonSelected="getButtonSelected"
     />
     <div :class="classChart">     
@@ -231,7 +231,7 @@ const classChart = computed(() => {
 }
 
 .buttonsDown {
-  margin-top: 2rem;
+  margin-top: 12rem;
 
   .myChart{
 
