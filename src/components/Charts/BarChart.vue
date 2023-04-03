@@ -22,9 +22,9 @@
 
     </div>
         <div>
-          <TableChart :data = "data" 
+          <TableChart 
           :rangeYear="rangeYear" 
-          :productDataName = "productDataName"
+          :data = "data"
           :nameProduct = "nameProduct"
           /> 
         </div>
@@ -64,7 +64,6 @@
     productChart()    
   }
 
-  let productDataName =  ref(searchProduct (nameProduct))
 
   const typeChart = ref("bar")
   const getTypeChar = (selectedType) => {
@@ -133,7 +132,6 @@
     return productData
   }
   
-
 
   let averagePricesByYearRange = (year1,year2)=>{
     
