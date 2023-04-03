@@ -1,9 +1,8 @@
 <template>
-  <div class="d-flex flex-row flex-wrap-wrap justify-content-left">
+  <div class="d-flex flex-row flex-wrap justify-content-left">
     <SelectProdButton
       class="buttonsDown"
       v-if="vista != 'home'"
-      style="width: 20%"
       @buttonSelected="getButtonSelected"
     />
     <div :class="classChart">     
@@ -17,7 +16,9 @@
       <div v-else>
         <CardYearOfMonths @yearOfMonths="getYear" />
       </div>
-      <canvas id="myChart"></canvas>
+      <div id="chart">
+        <canvas id="myChart" style="width: 100%; height: 300px;"></canvas>
+      </div>
     </div>
   </div>
 </template>
@@ -129,7 +130,7 @@ function createDataChart() {
 }
 function crateSpecificData(key) {
   const productData = {
-    label: key + " " + "Price",
+    label: key,
     data:
       date.value === "months"
         ? pricesPerMonthInAYear(yearOfMonths.value, key)
@@ -144,7 +145,7 @@ function crateSpecificData(key) {
     tension: 0,
     options: {
       responsive: true,
-      maintainAspectRatio: false,
+      maintainAspectRatio: true,
     },
   };
 
@@ -231,10 +232,50 @@ const classChart = computed(() => {
 }
 
 .buttonsDown {
-  margin-top: 12rem;
+  margin-top: 6.5rem;
+  width: 20%
+}
 
-  .myChart{
+@include media-breakpoint-down(lg) {
+
+  .chart65 {
+    width: 100%;
+  }
+
+  .buttonsDown {
+    width: 100%;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
 
   }
+
+  #chart{
+    width: 100% !important;
+   // height: 300px !important;
+  }
+
+  // @include media-breakpoint-down(sm) {
+    //   canvas{
+    //     height: 200px !important; 
+    //     width: 100% !important;
+    // }
+  // }
+
+
+
+
+
 }
+
+
+
+@include media-breakpoint-only(xl) {
+
+  .buttonsDown {
+    width: 30%
+  }
+
+} 
+
+
 </style>

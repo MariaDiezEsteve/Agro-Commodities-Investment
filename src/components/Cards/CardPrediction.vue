@@ -4,7 +4,7 @@
   <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading" />
 
   <div v-if="!questions.isError && !isLoading">
-    <div class="dropdown d-flex flex-row">
+    <div class="dropdown d-flex flex-row flex-wrap">
       <button
         class="button dropdown-toggle"
         type="button"
@@ -94,4 +94,18 @@ li {
 .dopdown, h1 {
   margin-left: 3rem;
 }
+
+@include media-breakpoint-down(lg) {
+  .card {
+  width: 100%;
+  margin-left: 0rem !important;
+  margin-right: 0rem !important;
+  margin-bottom: 2rem;
+}
+
+button {
+  margin-bottom: 2rem;
+}
+}
+
 </style>

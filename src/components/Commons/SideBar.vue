@@ -10,17 +10,12 @@
             <img id="logo" src="@/assets/images/logoGif.gif" alt="Logo RawInvesting">
             <h2 id="h2_nav" class="mb-3">RawInvesting</h2>
           </router-link>
-          
-      
-
-       
-    
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item" v-for='icon in icons' :key='icon.tittle'>
-            <router-link :to="icon.rout" class="nav-link d-flex flex-row  align-items-center text-white mx-3 m-3 " >
+            <router-link :to="icon.rout" class="nav-link d-flex flex-row  align-items-center text-white m-3" >
               <img :src = "icon.src" class="m-2" :alt='icon.alt'>
-              {{icon.tittle }}
+              <p>{{icon.tittle}}</p>
             </router-link> 
 
           </li>
@@ -30,7 +25,7 @@
           <li v-for='policy in policies' :key='policy.tittle' >
             <router-link :to="policy.rout" class="text-white text-decoration-none mx-3 m-1 ">
               <img :src="policy.src" class="m-2 policies" :alt='policy.alt'>
-              {{ policy.tittle }}
+              <p>{{ policy.tittle }}</p>
             </router-link>
 
           </li>
@@ -149,10 +144,23 @@ const policies=[
     }
 
     #logo{
-      height:6rem;
-      width: 35%;
+      height: 4rem;
+      width: 137%;
+      padding-left: 0.7rem;
+      padding-right: 0rem;
+      margin-left: 0.4rem;
 
     }
+
+    p,h2{
+      display: none;
+    }
+
+    .m-3{
+      margin: 0rem !important;
+    }
+
+
 
   }
 

@@ -1,5 +1,5 @@
 <template>
-  <ul class="d-flex flex-column">
+  <ul class="d-flex flex-row flex-wrap">
     <li
       class="d-flex flex-row justify-content-start"
       v-for="(but, prop, index) in buts"
@@ -83,4 +83,39 @@ p {
 input {
   width: 1rem;
 }
+
+@include media-breakpoint-down(lg) {
+
+  .off {
+    @include button($bg-color: $blueDark, $wth: 6.2rem, $colorletra: $white_color);
+    margin-left: 0.3rem;
+    padding-right: 0.2rem;
+  }
+
+  p{
+    font-size: 1rem;
+    margin-right: 0.3rem;
+  }
+
+  img{
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+
+}
+
+@include media-breakpoint-down(md) {
+
+  p{
+    display: none;
+  }
+  h1{
+    font-size: 1.4rem;
+  }
+
+  .off{
+    width: 3rem;
+  }
+}
+
 </style>
