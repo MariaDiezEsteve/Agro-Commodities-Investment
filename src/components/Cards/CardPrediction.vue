@@ -1,6 +1,6 @@
 <template>
 
-  <h2 class="mt-5">¿Any doubt?</h2>
+  <h2 class="mt-5">Any doubt?</h2>
   <img
     v-if="questions.isError"
     src="@/assets/images/error.jpeg"

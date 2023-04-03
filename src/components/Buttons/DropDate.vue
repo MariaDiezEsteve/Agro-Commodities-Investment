@@ -10,11 +10,11 @@
   const elements = [
     {
       value: 'months',
-      text: 'months'
+      text: 'Months'
     },
     {
       value: 'years',
-      text: 'years'
+      text: 'Years'
     },
   ]
 

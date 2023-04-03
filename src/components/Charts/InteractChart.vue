@@ -138,6 +138,24 @@
 
   }
 
+  let nameProduct = ref ("")
+  function Mayuscula (Key) {      
+    let inicial = key.slice (0,1)
+    inicial = inicial.toUpperCase() 
+
+    nameProduct.value = inicial + key.slice(1)
+
+    return nameProduct
+
+
+
+
+  }
+
+
+
+
+
 
   let pricesPerMonthInAYear = (year,key)=>{
     
