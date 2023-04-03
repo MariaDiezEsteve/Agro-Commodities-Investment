@@ -1,30 +1,32 @@
 <template>
  <div class="black">
-    <div class="form-card " >
+    <div class="form-card" >
       <div class="formTitle card-body">
         <h5 class="card-title">Contact Form</h5>
         <p class="card-text">
-          If you want to contact us you can do it with this contact form
+          If you want to contact us you can do it with this contact form:
         </p>
       </div>
 
       <div class="cuadro row">
-        <div class=" mt-4 mr-1 col-6 px-5">
+        <div class="inputDiv row ">
+        <div class="input1 mt-4 mr-1 col-lg-6 col-md-6 ps-4">
           <input
             type="text"
             class="form-control p-2"
             placeholder="Enter your name"
           />
         </div>
-        <div class="  mr-1 mt-4 col-5">
+        <div class="  mr-1 mt-4 col-lg-6 col-md-6 px-3">
           <input
             type="text"
             class="form-control p-2"
             placeholder="Enter your email address"
           />
         </div>
+      </div>
 
-        <div class="mb-4 ps-5 col-11">
+        <div class="formTextDiv mb-4 ps-5 col-lg-11">
           <label for="exampleFormControlTextarea1" class="form-label"></label>
           <textarea
             class="form-control"
@@ -86,11 +88,46 @@ const formContact = [
     text-align: center;
     margin-top: 3rem;
    }
-
-   .form-card {
-    justify-self: center;
+   
+   .card-body >p {
+    margin-bottom: 1.2rem;
    }
 
+   .card-title {
+    font-weight: bold;
+   }
+
+@include media-breakpoint-down(sm) {
+  .formDiv {
+  width: 18rem;
+  //margin: 0 auto; 
+}
+
+.inputDiv {
+  display: block;
+}
+
+.input1 {
+  margin-left: -0.8rem;
+}
+.formTextDiv {
+  
+  margin-left: -1.7rem;
+
+}
+}
+@include media-breakpoint-down(lg) {
+  .input1 {
+  width: 17.5rem;
+  margin-left: -0.5rem;
+}
+.formTextDiv {
+  
+  margin-left: -1.5rem;
+
+}
+
+}
 
       </style>
 
