@@ -1,26 +1,18 @@
 <template>
 
-    <SideBar class=" col-lg-2  col-md-3"/>
-    <div class="col-lg-10 col-md-9" >
+    <SideBar class="col-2"/>
+    <div class="col-10" >
       <ImgSlider/>
-
-      <div class="px-5">
-        <h1 id="h1_home">"esto es h1 Home"</h1>
-        <h1>"esto es h1 normal"</h1>
-
+      <div class="boxContainer">
+        <h2 class="pt-3 pb-3">"Price interaction across all products"</h2>
         <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
         <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
         <div v-if="!data.isError && !isLoading" >
-          <!-- <h2>Loading es: {{isLoading}}</h2>
-          <h2>{{data.prodts}}</h2> -->
-          <InterectChart :data="data"/>
+          <InterectChart :data="data" :vista="vista"/>
         </div>
-        <!-- <img v-if="reviews.isError" src="@/assets/images/error.jpeg" alt="error">
-        <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
-        <div v-if="!reviews.isError && !isLoading" > -->
-          <FormCreate />
-        </div>
+        <FormCreate />
       </div>
+    </div>
 
 
 </template>
@@ -47,26 +39,18 @@
     }
   })) 
 
-  //Reviews
+  let vista = ref("home")
 
-  // let reviews = ref(onMounted(async () => {
-  //   reviews.value = await reviewsInfo.getReviewsInfo()
-
-  //   // console.log(review.value)
-    
-  //   if( !reviews.value.isLoading){
-  //     isLoading.value = false
-  //   }
-  // })) 
-
- 
-  
 </script>
 
 <style lang="scss" scoped> 
   @import "@/assets/Sass/--parcial.scss";
 /* si tiene error con sass poner en la consola: npm install sass-loader node-sass –save-dev.
 si es mac o linux y si es windows:  npm install sass-loader node-sass*/
+
+  .boxContainer{
+    padding-left: 8rem;
+  }
 
   #image_person{
     @include imgPerson ($url: url('../assets/images/profile.jpeg'),$wth:5%,$hght: 5rem,$margin: 2rem);
@@ -79,5 +63,6 @@ si es mac o linux y si es windows:  npm install sass-loader node-sass*/
   select{
     @include drop($wth:6%);
   }
+
 
 </style>

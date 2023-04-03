@@ -1,33 +1,53 @@
 <template>
   <SideBar class="col-2"/>
-    <div class="col-10 px-5" >
-      <h1>"esto es h1 en el costumize"</h1>
-
-      <!-- <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
-      <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
-      <div v-if="!data.isError && !data.isLoading" >
-        <h2>Loading es: {{isLoading}}</h2>
-        <h2>{{data.prodts}}</h2>
-      </div>  -->
-
-      <h2>"Esto es h2"</h2>
-      <select>
-        <option value="value1">Value 1</option>
-        <option value="value2" selected>Value 2</option>
-        <option value="value3">Value 3</option>
-      </select>
-
-    </div>
+    <div class="col-10" >
+      <div class="img"></div>
+      <div class="px-5">
+        <h1 style="margin: 2rem;">Invest in your life !</h1>
+        <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
+        <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
+        <div v-if="!data.isError && !isLoading" >
+          <InteractChart :data = "data" />
+        </div>
+        <CardPredictionVue class="p-4" />
+      </div>
+  </div>
 </template>
 
 <script setup>
-  import SideBar from '@/components/Commons/SideBar.vue'
+import CardPredictionVue from "@/components/Cards/CardPrediction.vue";
+import SideBar from "@/components/Commons/SideBar.vue";
+import info from '@/DataInformation/dataInfo'
+import InteractChart from "@/components/Charts/InteractChart.vue";
+
+import { ref, onMounted } from "vue";
+
+let isLoading = ref(true);
+
+let data =  ref(onMounted(async () => {
+  data.value = await info.getData()
+  if( !data.value.isLoading){
+    isLoading.value = false
+  }
+
+}))
+
 
 
 </script>
 
 <style lang="scss" scoped>
-  @import "@/assets/Sass/--parcial.scss";
+@import "@/assets/Sass/--parcial.scss";
 
+.img {
+  @extend %imagen;
+  background-image: linear-gradient(
+      to left,
+      rgba(15, 51, 135, 0.6),
+      rgb(15, 51, 135, 0.3)
+    ),
+    url("@/assets/images/IconosUserView/CAPuserView.png");
+  height: 250px;
+}
 
 </style>

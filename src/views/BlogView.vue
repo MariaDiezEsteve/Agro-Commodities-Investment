@@ -1,6 +1,6 @@
 <template>
   <SideBar class="col-2"/>
-    <div class="col-10 px-5" >
+    <div class="col-10 px-5">
       <h1 class="text-center p-5">Blog</h1>
         <img v-if="information.isError" src="@/assets/images/error.jpeg" alt="error">
         <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">

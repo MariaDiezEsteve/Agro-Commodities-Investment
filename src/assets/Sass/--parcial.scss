@@ -86,7 +86,7 @@ $grid-breakpoints: (
     background-color: $bg-color;
     width: $wth;
     color: $colorletra ;
-    border: $blueDark solid;
+    // border: $blueDark solid;
     height: 2.5rem;
     margin-bottom: 0.7rem;
     border-radius: 0.3rem;
@@ -126,7 +126,7 @@ $grid-breakpoints: (
 
         
         nav{
-            background-color:$blueDark;
+            background-color: $blueDark;
             //width: 500px;
             height: 100vh;
             position: -webkit-sticky;  // required for Safari
@@ -166,9 +166,7 @@ $grid-breakpoints: (
 //BREAKPOINTS
 
 @include media-breakpoint-down(sm) {}
-@include media-breakpoint-down(md) {
-    
- }
+@include media-breakpoint-down(md) {}
 @include media-breakpoint-down(lg) {}
 @include media-breakpoint-down(xl) {} 
 
