@@ -81,8 +81,6 @@ const formContact = [
       box-shadow: 0px 0px 1px 1px black;
       align-items: center;
       justify-content: center;
-        };
-
-        
-      </style>
+    }; 
+</style>
 
