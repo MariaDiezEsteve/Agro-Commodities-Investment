@@ -10,11 +10,6 @@
             <img id="logo" src="@/assets/images/logoGif.gif" alt="Logo RawInvesting">
             <h2 id="h2_nav" class="mb-3">RawInvesting</h2>
           </router-link>
-          
-      
-
-       
-    
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item" v-for='icon in icons' :key='icon.tittle'>
