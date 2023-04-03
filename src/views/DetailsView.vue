@@ -8,13 +8,7 @@
       <div v-if="!data.isError && !isLoading" >
         <BarChart :data = "data"/> 
       </div>
-
-      <div>
-        <TableChart :data = "data"/>
-      </div>
     </div>
-  
-    
   </template>
   
   <script setup>
@@ -22,7 +16,8 @@
   import {ref,onMounted} from "vue";
   import SideBar from '@/components/Commons/SideBar.vue'
   import BarChart from '@/components/Charts/BarChart.vue'
-   import TableChart from "@/components/Charts/TableChart.vue"
+
+  
     let isLoading = ref(true) 
     let data =  ref(onMounted(async () => {
       data.value = await info.getData()

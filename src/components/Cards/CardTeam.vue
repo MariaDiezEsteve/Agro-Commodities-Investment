@@ -13,9 +13,6 @@
           
           <a class="card-team" :href="team.enlace"><img class="card-image" :src="team.src1" /></a>
           <a class="card-team" :href="team.enlace1"><img class="card-image" :src="team.src2" /></a>
-
-
-          
           <!-- <a class="linkedin-team">{{ team.src1 }}</a> -->
         </div>
       </div>
