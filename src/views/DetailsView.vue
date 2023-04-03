@@ -7,7 +7,6 @@
       <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
       <div v-if="!data.isError && !isLoading" >
         <BarChart :data = "data"/> 
-        <!-- <PieChart :data = "data" /> -->
       </div>
 
       <div>
@@ -44,7 +43,6 @@
     // }
 
     h1{
-      margin: 1.5rem;
       text-align: center;
     }
 
@@ -53,6 +51,16 @@
       text-align: center;
     }
 
-  
+    @include media-breakpoint-down(sm) {
+   h1 {
+     margin: 1rem 0.3rem;
+   }
+  }
+
+  @include media-breakpoint-down(lg) {
+   h1 {
+     margin: 1.5rem 0.3rem;
+   }
+  }
   </style>
 
