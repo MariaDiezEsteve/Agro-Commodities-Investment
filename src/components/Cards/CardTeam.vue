@@ -9,6 +9,14 @@
         <div class="card-general">
           <h2 class="card-title">{{ team.name }}</h2>
           <p class="card-text">{{ team.discripion }}</p>
+          <!-- <a class="card-team">{{ team.enlace}}</a> -->
+          
+          <a class="card-team" :href="team.enlace"><img class="card-image" :src="team.src1" /></a>
+          <a class="card-team" :href="team.enlace1"><img class="card-image" :src="team.src2" /></a>
+
+
+          
+          <!-- <a class="linkedin-team">{{ team.src1 }}</a> -->
         </div>
       </div>
     </div>
@@ -19,46 +27,76 @@
 <script setup>
 const teams = [
   {
-    id: "commodities",
+    id: "1",
     name: "Nasreddin Oufallah",
-    discripion: "FullStack",
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo4CraqT0j5PeydL0CIIuXWaaB70P9SUJnujBX2Mr-xw8vjHqIAc4A1Dd1WwREAz-mQd4&usqp=CAU",
-    alt: "commodities",
+    discripion: "FullStack Development",
+    src: require("@/assets/Avatar/myAvatar.png"),
+    src1: require("@/assets/iconosRed/linkedin.png"),
+    src2:require("@/assets/iconosRed/imageGit.png"),
+    enlace:"https://www.linkedin.com/in/nasreddin-oufallah/",
+    enlace1:""
+
+
+    
   },
   {
-    id: "commodities",
-    name: "Zuceles Guedest",
-    discripion: "FullStack",
+    id: "2",
+    name: "Zuceles Guedes",
+    discripion: "FullStack Development",
     src: "https://i.pinimg.com/originals/d0/e6/59/d0e659125145e110eee3d64013050812.png",
-    alt: "commodities",
+    src1: require("@/assets/iconosRed/linkedin.png"),
+    src2:require("@/assets/iconosRed/imageGit.png"),
+    enlace:"https://www.linkedin.com/in/zguedest/",
+    enlace1:""
+
+    
+  
   },
-  {
-    id: "commodities",
+  { 
+    id: "3",
     name: "Lucas Ibar",
-    discripion: "FullStack-FrontEnd",
-    src: "https://img.freepik.com/vector-premium/caracter-chico-avatar-internet_24877-17028.jpg?w=2000",
-    alt: "commodities",
+    discripion: "FullStack Development",
+    src: require("@/assets/Avatar/lucas.png"),
+    src1: require("@/assets/iconosRed/linkedin.png"),
+    src2:require("@/assets/iconosRed/imageGit.png"),
+    enlace:"https://www.linkedin.com/in/lucas-ibar-basaldua/",
+    enlace1:"",
+
+    alt: "frontend",
   },
   {
-    id: "commodities",
+    id: "4",
     name: "Jessica Mosteiro",
-    discripion: "FullStack-FrontEnd",
+    discripion: " FullStack Development",
     src: "https://i.pinimg.com/originals/82/ab/35/82ab3533ee71daf256f23c1ccf20ad6f.jpg",
-    alt: "commodities",
+    src1: require("@/assets/iconosRed/linkedin.png"),
+    src2:require("@/assets/iconosRed/imageGit.png"),
+    enlace: "https://www.linkedin.com/in/lucas-ibar-basaldua/",
+    enlace1:"",
+   
+    alt: "FullStack Developer",
   },
   {
-    id: "commodities",
+    id: "5",
     name: "Maria Diaz",
-    discripion: "FullStack",
+    discripion: "FullStack Development",
     src: "https://i.pinimg.com/originals/42/ae/ce/42aece2eb0533ac8656fa06945f56081.png",
-    alt: "commodities",
+    src1: require("@/assets/iconosRed/linkedin.png"),
+    src2:require("@/assets/iconosRed/imageGit.png"),
+    enlace:"https://www.linkedin.com/in/mariadiezesteve/",
+    enlace1:"",
+     alt: "fullstack",
   },
   {
-    id: "commodities",
+    id: "6",
     name: "Gorka",
-    discripion: "FullStack",
+    discripion: "FullStack Development",
     src: "https://img.freepik.com/vector-premium/ilustracion-joven-estilo-hombre-guapo-barba-dibujos-animados-avatar-perfil-hipster_15870-758.jpg?w=2000",
-    alt: "commodities",
+    src1: require("@/assets/iconosRed/linkedin.png"),
+    src2:require("@/assets/iconosRed/imageGit.png"),
+    enlace:"https://www.linkedin.com/in/gorka-ibarrondo-busturia-21a317259/",
+    enlace1:"",
+    alt: "commodities" ,
   },
 ];
 </script>
@@ -78,8 +116,14 @@ const teams = [
   width: 5rem;
   border-radius: 100%;
   margin-right: 1rem;
+}
+.card-team{
+
+ .card-image{
+  width: 2rem;
+  padding-left: 0.4rem;
+ }
   
 }
-
 
 </style>
