@@ -12,7 +12,7 @@
       <div v-else>
         <CardYearOfMonths @yearOfMonths="getYear" />
       </div>
-      <canvas id="myChart"></canvas>
+        <canvas id="myChart"></canvas>
     </div>
   </div>
     
@@ -41,14 +41,11 @@
     vista: String
   })
 
-
   const date = ref("years")
   const getDate = (selectedDate) => {
     date.value = selectedDate
     interactChart()    
   }
-
- 
 
   const typeChart = ref("bar")
   const getTypeChar = (selectedType) => {
@@ -79,17 +76,12 @@
     interactChart()
   }
 
-
-
-
-
   onMounted(()=>{
     interactChart()
   });
 
 
   let interactChart = () => { 
-
       let myChart;
       const ctx = document.getElementById('myChart')
       const  months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -105,9 +97,9 @@
     myChart = new Chart(ctx, {
       type:typeChart.value,
       data: data,
-    })
-
+    })    
     return myChart
+    
   }
   let dataChart = ref([])
   function createDataChart(){
@@ -122,7 +114,7 @@
   }
   function crateSpecificData(key){
     const productData = {
-          label: key +" "+'Price',
+          label: upperCommodities(key),
           data: date.value === "months" ? pricesPerMonthInAYear(yearOfMonths.value,key) : averagePricesByYearRange (rangeYear.value[0],rangeYear.value[(rangeYear.value).length-1], key),
           fill: typeChart.value == "bar" ? true : false, 
           borderColor: getColor(key), 
@@ -133,9 +125,7 @@
             maintainAspectRatio: false,
           }
     }
-
     return productData
-
   }
 
 
@@ -186,7 +176,6 @@
         default:
             break;
     }
-
     return color
   }
 
@@ -198,6 +187,20 @@
       return result;
     });
   
+
+let nameProductCommodities = ref("")
+
+function upperCommodities(key){
+  let initial = key.slice(0, 1)
+  initial = initial.toUpperCase()
+
+  nameProductCommodities.value = initial + key.slice(1)
+
+  return nameProductCommodities.value
+
+}
+  
+
 </script>
   
 <style lang="scss" scoped>

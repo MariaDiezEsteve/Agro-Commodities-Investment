@@ -113,6 +113,8 @@
       type: typeChart.value,
       data: dataChart,
     })
+
+   
     return myChart
     }
 
@@ -195,7 +197,6 @@
     return color
 
   }
-
  
   
 </script>
