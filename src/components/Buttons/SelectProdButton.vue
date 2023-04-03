@@ -14,6 +14,7 @@
           style="width: 1rem"
           :id="index"
           type="checkbox"
+          checked
         />
       </label>
     </li>
@@ -25,11 +26,11 @@ import { ref, defineEmits} from "vue";
 
 let prod = ref("wheat");
 let buts = {
-  wheat: ref(false),
-  sugar: ref(false),
-  corn: ref(false),
-  cotton: ref(false),
-  coffee: ref(false),
+  wheat: ref(true),
+  sugar: ref(true),
+  corn: ref(true),
+  cotton: ref(true),
+  coffee: ref(true),
 };
 
 let images = [

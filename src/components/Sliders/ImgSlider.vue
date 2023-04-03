@@ -20,7 +20,7 @@ const text=["Wellcome to RawInvesting","A platform that helps you make decisions
   .img{
     @extend %imagen;
     background-image:linear-gradient(to left, rgba(15, 51, 135, 0.6), rgb(15, 51, 135,0.3)),
-        url("@/assets/images/OIP.jpeg");
+        url("@/assets/images/Agri3.jpg");
     height: 250px;
   }
 
