@@ -1,14 +1,14 @@
 <template>
  <div class="black">
-    <div class="form-card  container  m-4 col-auto m-5 w-50 " >
-      <div class="card-body">
+    <div class="form-card " >
+      <div class="formTitle card-body">
         <h5 class="card-title">Contact Form</h5>
         <p class="card-text">
           If you want to contact us you can do it with this contact form
         </p>
       </div>
 
-      <div class="cuadro row ">
+      <div class="cuadro row">
         <div class=" mt-4 mr-1 col-6 px-5">
           <input
             type="text"
@@ -66,7 +66,7 @@ const formContact = [
 
 .buttones {
   display:flex;
-    justify-content: center;
+  justify-content: center;
   a {
     @include button(
       $bg-color: $blueDark,
@@ -79,10 +79,18 @@ const formContact = [
     .cuadro { 
       // border: solid grey  0.2px; 
       box-shadow: 0px 0px 1px 1px black;
-      align-items: center;
-      justify-content: center;
+      //align-items: center;
+      //justify-content: center;
         };
+   .card-body {
+    text-align: center;
+    margin-top: 3rem;
+   }
 
-        
+   .form-card {
+    justify-self: center;
+   }
+
+
       </style>
 
