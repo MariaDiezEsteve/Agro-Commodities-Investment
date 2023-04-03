@@ -1,7 +1,7 @@
 <template>
-    <SelectProdButton />
-
-    <div style="width: 80%">
+  <div class="d-flex flex-row justify-content-left">
+    <SelectProdButton style="width: 30%"/>
+    <div style="width: 60%">
       <div class="d-flex flex-row justify-content-left">
         <DropDate class="mx-4" @dateSelected="getDate"/>
         <DropChart @typeSelected="getTypeChar"/>
@@ -14,6 +14,8 @@
       </div>
       <canvas id="myChart"></canvas>
     </div>
+  </div>
+    
 </template>
   
 <script setup>
@@ -30,6 +32,7 @@
   const prop= defineProps({
     data: Object
   })
+
 
   let nameProduct = ref("sugar")
 
@@ -62,6 +65,7 @@
   }
 
   onMounted(()=>{//muy importante el onMounted para coger cosas del template es aqui dentro
+    interactChart()
   });
 
 
@@ -73,14 +77,14 @@
         
       const data = {
         labels: date.value === "months" ? months : rangeYear.value,
-        datasets: crateDataChart()
+        datasets: crateDataChart("Sugar")
       }
     const chartWithKey = Chart.getChart('myChart')
     if (chartWithKey != undefined) {
       chartWithKey.destroy()
     }
     myChart = new Chart(ctx, {
-      type: optChart,
+      type: "line",
       data: data,
     })
 
@@ -119,7 +123,7 @@
 
   let averagePricesByYearRange = (year1,year2)=>{
     
-    let productData =  searchProduct (nameProduct)
+    let productData =  searchProduct (nameProduct.value)
   
     let sum=0,productDataYear=[], prices=[], avgs =[]
     while (year1<(year2+1)) {
@@ -162,6 +166,8 @@
   }
 
   function searchProduct (nameProduct){
+
+    console.log("nameProduct",nameProduct)
     
     let inicial = nameProduct.slice(0,1)
     inicial = inicial.toLowerCase()
