@@ -8,10 +8,9 @@
       @click="getButtonSelected(index)"
     >
       <label class="off d-flex flex-row aling-items-center" :for="index">
-        <img :src="images[index]" style="margin-top: 0.3rem;" />
-        <p style=" width: 3rem;margin-right: 1.3rem; margin-top: 0.3rem;">{{ prop }}</p> 
-        <input
-          style="width: 1rem"
+        <img :src="images[index]"/>
+        <p>{{ prop }}</p> 
+        <input          
           :id="index"
           type="checkbox"
           checked
@@ -22,7 +21,7 @@
 </template>
 
 <script setup>
-import { ref, defineEmits} from "vue";
+import { ref, defineEmits } from "vue";
 
 let prod = ref("wheat");
 let buts = {
@@ -79,5 +78,18 @@ img {
   flex-direction: row;
   padding-right: 1rem;
   padding-left: 1rem;
+  margin-top: 0.3rem;
+}
+
+p {
+  width: 3rem;
+  margin-right: 1.3rem;
+  margin-top: 00.3rem;
+}
+
+input{
+  width: 1rem;
 }
 </style>
+
+

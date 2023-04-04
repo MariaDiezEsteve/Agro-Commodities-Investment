@@ -80,9 +80,6 @@ function showAnswer(id) {
 }
 </script>
 
-
-
-
 <style lang="scss" scoped>
 @import "@/assets/Sass/--parcial.scss";
 
@@ -95,9 +92,12 @@ li {
   height: 2rem;
 }
 
+.card {
+  width: 40rem;
+  background-color: lightblue;
+}
 
-  .card{
-    width: 40rem;
-    background-color: lightblue
-  }
+.dropdown, h1 {
+  margin-left: 3rem;
+}
 </style>
