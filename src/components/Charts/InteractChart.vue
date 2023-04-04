@@ -135,28 +135,8 @@
     }
 
     return productData
-
   }
-
-  let nameProduct = ref ("")
-  function Mayuscula (Key) {      
-    let inicial = key.slice (0,1)
-    inicial = inicial.toUpperCase() 
-
-    nameProduct.value = inicial + key.slice(1)
-
-    return nameProduct
-
-
-
-
-  }
-
-
-
-
-
-
+  
   let pricesPerMonthInAYear = (year,key)=>{
     
     let productData = prop.data.prodts[key].data 
@@ -214,7 +194,7 @@
           result = 'chart90';
       } 
       return result;
-    });
+    })
   
 </script>
   
