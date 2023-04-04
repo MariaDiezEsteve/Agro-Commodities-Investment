@@ -25,7 +25,6 @@
   import SideBar from '@/components/Commons/SideBar.vue'
   import ImgSlider from '@/components/Sliders/ImgSlider.vue'
   import InterectChart from '@/components/Charts/InteractChart.vue'
-  
   import FormCreate from '@/components/Forms/FormCreate.vue'
 
 
