@@ -32,8 +32,9 @@
       <img class="redes-images" src="@/assets/images/ImagenesRss/whatssap.png" alt="">
       <img class="redes-images" src="@/assets/images/ImagenesRss/facebook.png" alt="">
       <img class="redes-images" src="@/assets/images/ImagenesRss/twitter.png" alt="">
-      <img class="redes-images" src="@/assets/images/ImagenesRss/enlaces.png" alt="">
+      <img class="redes-images" src="@/assets/images/ImagenesRss/linkedin.png" alt="">
     </div>
+
   </div>
 
   

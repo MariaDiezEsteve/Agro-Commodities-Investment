@@ -5,7 +5,7 @@
     </div>
     <p class="mt-3 text-center">Percentage of investments by product</p>
   </div>
-  
+ 
  </template>
   
 

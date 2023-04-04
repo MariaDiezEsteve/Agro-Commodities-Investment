@@ -4,11 +4,11 @@
     <div class="col-10" >
       <ImgSlider/>
       <div class="boxContainer">
-        <h2 class="pt-3 pb-3">"Price interaction across all products"</h2>
+        <h2 class="pt-3 pb-3">Price interaction across all products</h2>
         <img v-if="data.isError" src="@/assets/images/error.gif" alt="error">
         <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
         <div v-if="!data.isError && !isLoading" >
-          <InterectChart :data="data" :vista="vista"/>
+          <InteractChart :data="data" :vista="vista"/>
         </div>
         <FormCreate />
       </div>
@@ -24,7 +24,7 @@
   import {ref, onMounted} from "vue";
   import SideBar from '@/components/Commons/SideBar.vue'
   import ImgSlider from '@/components/Sliders/ImgSlider.vue'
-  import InterectChart from '@/components/Charts/InteractChart.vue'
+  import InteractChart from '@/components/Charts/InteractChart.vue'
   import FormCreate from '@/components/Forms/FormCreate.vue'
 
 
