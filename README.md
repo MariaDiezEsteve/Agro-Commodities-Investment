@@ -34,6 +34,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 DESCRIPTIONS:
+
 RawInvesting is a primary sector investment stock market website focused on Cotton,coffee, corn, sugar and wheat. With a minimalist and readable interface in a simple and very clear user-oriented way.
 
 This informative website is visually attractive (look), and the user will feel comfortable when interacting with the platform (feel) because each attribute that has been created and designed on the platform has a purpose (usability) and several Call To Action to make the purchase and sale of commodities.
@@ -54,21 +55,27 @@ Small investors.
 Our website is divided into 5 views:
 
 
-HOME:
+-HOME:
 This view is the general view of the website and shows the last month’s price of each of the commodities that make up our website and shows and you can also see a graph showing how their prices have a evolved over  the last year.
 It includes a section for reviews from investors or users of the site to be able to comment or include any opinion about the site.
 -DETAILS
 This view shows a unit chart for each of the commodities.You can select how you want to view the chart, either as a line or bar chart, and it can also include the months of a particular year, or a range of years to get the evolution of prices.In addition, it includes a cheese chart that shows the percentage of investment in the last year, made by investors, in each of the commodities.
+
 -CUSTOMIZE
  This view gives the user the possibility to select to compare the commodities he/she wants and will show in a graph the prices given a period of time, so that the historical evolution can be seen in the graph.In addition, at the bottom, it includes a part of frequently asked questions for the user
+ 
 -BLOG
 This view collects news about investments of each of the agricultural commodities that are on the page
+
 -ABOUT US
 This view is a contact page so that the user can get in touch with the website and it also shows the people who have created the website
-- COOKIES POLICY
+
+-COOKIES POLICY
 Section dedicated to cookies policy
+
 -PRIVACY POLICY
 Section dedicated to privacy policy
+
 -LEGAL NOTICE
 Section dedicated to Legal Notice
 
