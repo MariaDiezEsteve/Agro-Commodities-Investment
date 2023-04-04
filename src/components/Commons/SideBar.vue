@@ -23,7 +23,6 @@
         <ul class="mt-4">
           <li v-for='policy in policies' :key='policy.tittle' >
             <router-link :to="policy.rout" class="text-white text-decoration-none mx-3 m-1 ">
-              
               <p class="p-policies mx-4"> <img :src="policy.src" class="policies" :alt='policy.alt'> {{ policy.tittle }}</p>
             </router-link>
 

@@ -13,19 +13,20 @@
       <div v-else>
         <CardYearOfMonths @yearOfMonths="getYear" />
       </div>
+      <h2 id="tit">{{ tittle }}</h2>
       <div class="graphicsDiv d-flex justify-content-around gap-4 align-items-center">
         <div class="barChartDiv">
           <canvas id="myChart"></canvas>
         </div>
       
         <PieChart :data = "data" />
-
     </div>
         <div>
           <TableChart 
-          :rangeYear="rangeYear" 
           :data = "data"
           :nameProduct = "nameProduct"
+          :rangeYear = "rangeYear"
+          :pricesRangeYear="pricesRangeYear"
           /> 
         </div>
     </div>
@@ -51,7 +52,13 @@
     })
 
 
+  let tittle = ref ("Average prices per year")
 
+  function getTittle (){
+    if(date.value == "months"){
+      tittle.value = "Monthly prices in a year"
+    }
+  }
   const date = ref("years")
   const getDate = (selectedDate) => {
     date.value = selectedDate
@@ -61,7 +68,10 @@
   let nameProduct = ref("Sugar")
   const getNameProduct = (name) => {
     nameProduct.value = name
-    productChart()    
+    productChart() 
+    yearAndData(rangeYear.value[0],rangeYear.value[(rangeYear.value).length-1])
+  
+ 
   }
 
 
@@ -74,18 +84,22 @@
   const yearOfMonths = ref(2022)
   const getYear = (year) => {
     yearOfMonths.value = year
-    productChart()    
+    productChart()
+    
   }
 
   let rangeYear = ref([2016, 2017, 2018, 2019, 2020,2021, 2022])
   let rangeYears = (years) => {
     rangeYear.value = years
     productChart()
+    yearAndData(rangeYear.value[0],rangeYear.value[(rangeYear.value).length-1])
 
   }
 
   onMounted(()=>{
     productChart() 
+    yearAndData(rangeYear.value[0],rangeYear.value[(rangeYear.value).length-1])
+
  
   });
 
@@ -95,7 +109,7 @@
     let myChart;
     const ctx = document.getElementById('myChart')
     const  months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-      
+    getTittle ()
     const dataChart = {
       labels: date.value === "months" ? months : rangeYear.value,
       datasets: [{
@@ -121,7 +135,6 @@
       data: dataChart,
     })
 
-   
     return myChart
     }
 
@@ -203,6 +216,33 @@
     return color
 
   }
+
+
+let pricesRangeYear = ref([])
+
+ 
+function yearAndData(year1, year2){
+  console.log("nameProduct",nameProduct)
+  console.log("nameProduct.value",nameProduct.value)
+
+  let productData =  searchProduct (nameProduct)
+  let productDataYear=[]
+  let pricesInAYear=[]
+  let pricesRanYear=[]
+
+  while (year1<(year2+1)) {
+    
+      //we filter the product data in each iteration of the while for each year of the rando
+      productDataYear = productData.filter(element => parseInt((element.date).slice(0,4)) == year1)  
+      //we do the same thing but we only keep prices
+      pricesInAYear = productDataYear.map(element =>  parseFloat((element.value)).toFixed(2))
+      pricesRanYear.push(pricesInAYear)
+      year1++
+  }
+
+  pricesRangeYear.value=pricesRanYear
+  console.log("pricesRangeYear.value",pricesRangeYear.value)
+}
  
   
 </script>
@@ -213,6 +253,10 @@
   .barChartDiv {
     width: 100%;
 
+  }
+
+  #tit{
+    padding-left: 1.4rem;
   }
  
   @include media-breakpoint-down(sm) {
