@@ -16,9 +16,13 @@
       <div v-else>
         <CardYearOfMonths @yearOfMonths="getYear" />
       </div>
+<<<<<<< HEAD
       <div id="chart">
         <canvas id="myChart" style="width: 100%; height: 300px;"></canvas>
       </div>
+=======
+        <canvas id="myChart"></canvas>
+>>>>>>> d84c303401afd12283faf60b16dd6645caeb3d7e
     </div>
   </div>
 </template>
@@ -106,6 +110,7 @@ let interactChart = () => {
     labels: date.value === "months" ? months : rangeYear.value,
     datasets: dataChart,
   };
+<<<<<<< HEAD
   const chartWithKey = Chart.getChart("myChart");
   if (chartWithKey != undefined) {
     chartWithKey.destroy();
@@ -207,6 +212,100 @@ const getColor = (name) => {
       break;
     default:
       break;
+=======
+  
+
+  const prop= defineProps({
+    data: Object,
+    vista: String
+  })
+
+  const date = ref("years")
+  const getDate = (selectedDate) => {
+    date.value = selectedDate
+    interactChart()    
+  }
+
+  const typeChart = ref("bar")
+  const getTypeChar = (selectedType) => {
+    typeChart.value = selectedType
+    interactChart()
+  }
+
+  const yearOfMonths = ref(2022)
+  const getYear = (year) => {
+    yearOfMonths.value = year
+    interactChart()    
+  }
+
+  let rangeYear = ref([2016, 2017, 2018, 2019, 2020,2021, 2022])
+  let rangeYears = (years) => {
+    rangeYear.value = years
+    interactChart()
+  }
+ 
+  let prod = ref("sugar");
+  const getButtonSelected = (index) =>{
+    prod.value = Object.keys(buts)[index];
+    if (buts[prod.value].value == false) {
+      buts[prod.value].value = true;
+    } else {
+      buts[prod.value].value = false;
+    }
+    interactChart()
+  }
+
+  onMounted(()=>{
+    interactChart()
+  });
+
+
+  let interactChart = () => { 
+      let myChart;
+      const ctx = document.getElementById('myChart')
+      const  months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+      createDataChart()
+      const data = {
+        labels: date.value === "months" ? months : rangeYear.value,
+        datasets:dataChart
+      }
+    const chartWithKey = Chart.getChart('myChart')
+    if (chartWithKey != undefined) {
+      chartWithKey.destroy()
+    }
+    myChart = new Chart(ctx, {
+      type:typeChart.value,
+      data: data,
+    })    
+    return myChart
+    
+  }
+  let dataChart = ref([])
+  function createDataChart(){
+    dataChart = []
+    for ( let key in buts) {
+      if(buts[key].value == true){
+        let prodData = crateSpecificData(key)
+        // eslint-disable-next-line
+        dataChart.push(prodData)
+      }
+    }
+  }
+  function crateSpecificData(key){
+    const productData = {
+          label: upperCommodities(key),
+          data: date.value === "months" ? pricesPerMonthInAYear(yearOfMonths.value,key) : averagePricesByYearRange (rangeYear.value[0],rangeYear.value[(rangeYear.value).length-1], key),
+          fill: typeChart.value == "bar" ? true : false, 
+          borderColor: getColor(key), 
+          backgroundColor: getColor(key),
+          tension: 0,
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+          }
+    }
+    return productData
+>>>>>>> d84c303401afd12283faf60b16dd6645caeb3d7e
   }
 
   return color;
@@ -217,8 +316,76 @@ const classChart = computed(() => {
   if (prop.vista === "home") {
     result = "chart90";
   }
+<<<<<<< HEAD
   return result;
 });
+=======
+  
+  let averagePricesByYearRange = (year1,year2, key)=>{
+    
+    let productData = prop.data.prodts[key].data 
+  
+    let sum=0,productDataYear=[], prices=[], avgs =[]
+    while (year1<(year2+1)) {
+      productDataYear = productData.filter(element => parseInt((element.date).slice(0,4)) == year1)  
+      prices = productDataYear.map(element =>  parseFloat((element.value)).toFixed(2))
+      sum = 0
+      for( let i=0; i<prices.length ; i++){
+        sum = sum + parseFloat(prices[i])
+      } 
+      avgs.push(sum/prices.length)
+      year1++
+    }
+    return avgs
+  }
+
+  const getColor = (name) => {
+    let color = "rgba(0,0,0,1)"
+    switch(name) {
+        case ("wheat"):
+            color = "rgba(248, 238, 11, 1)";
+            break;
+        case ("corn"):
+            color = "rgba(252, 90, 90, 1)";
+            break;
+        case ("cotton"):
+            color = "rgba(1, 1, 88, 1)";
+            break;
+        case ("sugar"):
+            color = "rgba(27, 169, 234, 1)";
+            break;
+        case ("coffee"):
+            color = "rgba(61, 213, 152, 1)";
+            break;
+        default:
+            break;
+    }
+    return color
+  }
+
+  const classChart = computed(() => {
+      let result = 'chart65';
+      if (prop.vista === "home") {
+          result = 'chart90';
+      } 
+      return result;
+    });
+  
+
+let nameProductCommodities = ref("")
+
+function upperCommodities(key){
+  let initial = key.slice(0, 1)
+  initial = initial.toUpperCase()
+
+  nameProductCommodities.value = initial + key.slice(1)
+
+  return nameProductCommodities.value
+
+}
+  
+
+>>>>>>> d84c303401afd12283faf60b16dd6645caeb3d7e
 </script>
 
 <style lang="scss" scoped>
