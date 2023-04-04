@@ -13,13 +13,13 @@
       <div v-else>
         <CardYearOfMonths @yearOfMonths="getYear" />
       </div>
+      <h2 id="tit">{{ tittle }}</h2>
       <div class="graphicsDiv d-flex justify-content-around gap-4 align-items-center">
         <div class="barChartDiv">
           <canvas id="myChart"></canvas>
         </div>
       
         <PieChart :data = "data" />
-
     </div>
         <div>
           <TableChart 
@@ -51,7 +51,13 @@
     })
 
 
+  let tittle = ref ("fea maria")
 
+  function getTittle (){
+    if(date.value == "months"){
+      tittle.value = "boba maria"
+    }
+  }
   const date = ref("years")
   const getDate = (selectedDate) => {
     date.value = selectedDate
@@ -95,7 +101,7 @@
     let myChart;
     const ctx = document.getElementById('myChart')
     const  months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-      
+    getTittle ()
     const dataChart = {
       labels: date.value === "months" ? months : rangeYear.value,
       datasets: [{
@@ -213,6 +219,10 @@
   .barChartDiv {
     width: 100%;
 
+  }
+
+  #tit{
+    padding-left: 1.4rem;
   }
  
   @include media-breakpoint-down(sm) {
