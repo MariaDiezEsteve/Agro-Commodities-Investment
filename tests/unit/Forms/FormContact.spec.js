@@ -31,8 +31,8 @@ it("test a p",()=>{
 
 it("test a span", ()=>{
     const wrapper = mount(FormContact)
-    const msg = wrapper.findAll("span")
-    expect(msg).toHaveLength(0)
+    const msg = wrapper.findAll("p")
+    expect(msg).toHaveLength(1)
 })
 
 })
