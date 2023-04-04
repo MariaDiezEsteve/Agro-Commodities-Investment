@@ -36,6 +36,7 @@ const teams = [
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace:"https://www.linkedin.com/in/nasreddin-oufallah/",
     enlace1:"https://github.com/nasre21"
+    
   },
   {
     id: "2",
