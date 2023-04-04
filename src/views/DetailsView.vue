@@ -3,7 +3,7 @@
     <div class="col-10 px-5" >
       <h1>Agro Commodities Details</h1>
       <p>This page shows the information details about the following commodities:</p>
-      <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
+      <img v-if="data.isError" src="@/assets/images/error.gif" alt="error">
       <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
       <div v-if="!data.isError && !isLoading" >
         <BarChart :data = "data"/>  

@@ -2,7 +2,6 @@
   <nav class="d-flex flex-column flex-shrink-0 p-3 text-white">
           <input type="checkbox" id="check_menu">
           <label for="check_menu" class="checkbtn_menu">
-              <!-- <i class="fas fa-bars"></i> -->
               <img id="menuIco" src="@/assets/images/menu.svg">
           </label>
           
@@ -31,7 +30,7 @@
           </li>
         </ul>
         
-        <p class="mx-3 mt-4 raw"> &copy; RawInvesting.com</p>
+        <p id= "raw" class="mx-3 mt-4"> &copy; RawInvesting.com</p>
 
   </nav>
 </template>
@@ -124,11 +123,12 @@ const policies=[
   @include media-breakpoint-down(lg) {
 
     .m-3{
-      margin: 0rem !important;
+      margin-left: 0rem !important;
+      margin-right: 0rem !important;
     }
 
     #logo{
-      width:90%;
+      width:80%;
     }
 
     #h2_nav{
@@ -151,6 +151,12 @@ const policies=[
       padding-left: 0.5rem;
     }
 
+    #raw{
+      font-size: 0.7rem;
+      margin-left: 0rem !important;
+      margin-right: 0rem !important;
+    }
+
 
 
   }
@@ -160,18 +166,23 @@ const policies=[
 
   @include media-breakpoint-down(sm) {
 
+    .m-3{
+      margin-left: 0rem !important;
+      margin-right: 0rem !important;
+    }
+
     #menuIco{
       display: block;
-      margin-left: 0rem;
+      margin-left: 0.3rem;
       font-weight: 900;
     }
 
     #logo{
       height: 4rem;
-      width: 137%;
+      width: 150%;
       padding-left: 0.7rem;
       padding-right: 0rem;
-      margin-left: 0.4rem;
+      margin-left: 0rem;
 
     }
 
@@ -180,7 +191,15 @@ const policies=[
     }
 
     .m-3{
+      margin: 0.5rem !important;
+    }
+
+    .m-2{
       margin: 0rem !important;
+    }
+
+    .policies{
+      padding-left: 0rem;
     }
 
   }
