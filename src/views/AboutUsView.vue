@@ -33,10 +33,16 @@ import CardTeam from "@/components/Cards/CardTeam.vue"
   margin-top: 2rem;
 }
 .formDiv {
-  //margin: 0 auto;
   width: 40rem;
   margin: 0 auto;
  
 }
 
+@include media-breakpoint-down(sm) {
+  .formDiv {
+  width: 18rem;
+  margin: 0 auto;
+ 
+}
+}
 </style>
