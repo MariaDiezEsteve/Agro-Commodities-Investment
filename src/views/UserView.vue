@@ -4,7 +4,7 @@
       <div class="img"></div>
       <div class="px-5">
         <h1>Invest in your life !</h1>
-        <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
+        <img v-if="data.isError" src="@/assets/images/error.gif" alt="error">
         <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
         <div v-if="!data.isError && !isLoading" >
           <InteractChart :data = "data" />

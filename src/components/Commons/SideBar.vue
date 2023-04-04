@@ -2,7 +2,6 @@
   <nav class="d-flex flex-column flex-shrink-0 p-3 text-white">
           <input type="checkbox" id="check_menu">
           <label for="check_menu" class="checkbtn_menu">
-              <!-- <i class="fas fa-bars"></i> -->
               <img id="menuIco" src="@/assets/images/menu.svg">
           </label>
           
@@ -24,14 +23,13 @@
         <ul class="mt-4">
           <li v-for='policy in policies' :key='policy.tittle' >
             <router-link :to="policy.rout" class="text-white text-decoration-none mx-3 m-1 ">
-              <img :src="policy.src" class="m-2 policies" :alt='policy.alt'>
-              <p>{{ policy.tittle }}</p>
+              <p class="p-policies mx-4"> <img :src="policy.src" class="policies" :alt='policy.alt'> {{ policy.tittle }}</p>
             </router-link>
 
           </li>
         </ul>
         
-        <p class="mx-3 mt-4">@RawInvesting.com</p>
+        <p id= "raw" class="mx-3 mt-4"> &copy; RawInvesting.com</p>
 
   </nav>
 </template>
@@ -121,34 +119,69 @@ const policies=[
   }
 
 
-  // $grid-breakpoints: (
-  //   xs: 0,
-  //   sm: 576px,
-  //   md: 768px,
-  //   lg: 992px,
-  //   xl: 1200px,
-  //   xxl: 1400px
-  // );
+  @include media-breakpoint-down(lg) {
+
+    .m-3{
+      margin-left: 0rem !important;
+      margin-right: 0rem !important;
+    }
+
+    #logo{
+      width:80%;
+    }
+
+    #h2_nav{
+      font-size: 1rem;
+    }
+
+    p{
+      font-size: 0.9rem;
+    }
+
+    .m-2{
+      margin: 0.3rem !important;
+    }
+
+    .policies{
+      padding-left: 1.5rem;
+    }
+
+    .p-policies{
+      padding-left: 0.5rem;
+    }
+
+    #raw{
+      font-size: 0.7rem;
+      margin-left: 0rem !important;
+      margin-right: 0rem !important;
+    }
+
+
+
+  }
+
+
+ 
 
   @include media-breakpoint-down(sm) {
 
-    // nav{
-    //   width: 1%;
-    //   z-index: 1000;
-    // }
+    .m-3{
+      margin-left: 0rem !important;
+      margin-right: 0rem !important;
+    }
 
     #menuIco{
       display: block;
-      margin-left: 0rem;
+      margin-left: 0.3rem;
       font-weight: 900;
     }
 
     #logo{
       height: 4rem;
-      width: 137%;
+      width: 150%;
       padding-left: 0.7rem;
       padding-right: 0rem;
-      margin-left: 0.4rem;
+      margin-left: 0rem;
 
     }
 
@@ -157,10 +190,16 @@ const policies=[
     }
 
     .m-3{
+      margin: 0.5rem !important;
+    }
+
+    .m-2{
       margin: 0rem !important;
     }
 
-
+    .policies{
+      padding-left: 0rem;
+    }
 
   }
 

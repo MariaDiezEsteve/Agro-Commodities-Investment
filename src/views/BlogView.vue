@@ -2,7 +2,7 @@
   <SideBar class="col-2"/>
     <div class="col-10 px-5">
       <h1 class="text-center p-5">Blog</h1>
-        <img v-if="information.isError" src="@/assets/images/error.jpeg" alt="error">
+        <img v-if="information.isError" src="@/assets/images/error.gif" alt="error">
         <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
         <div v-if="!information.isError && !isLoading" >
           <CardNews  :information="information"/>
@@ -34,6 +34,15 @@
 
 <style lang="scss" scoped>
   @import "@/assets/Sass/--parcial.scss";
+
+  @include media-breakpoint-down(lg) {
+  
+
+  .px-5{
+    padding-left: 0.3rem !important;
+    padding-right: 1rem !important;
+  }
+}
 
 
 

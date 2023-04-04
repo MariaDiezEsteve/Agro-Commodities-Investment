@@ -13,10 +13,7 @@
           <!-- <a class="card-team">{{ team.enlace}}</a> -->
           
           <a class="card-team" :href="team.enlace"><img class="card-image" :src="team.src1" /></a>
-          <a class="card-team" :href="team.enlace1"><img class="card-image" :src="team.src2" /></a>
-
-
-          
+          <a class="card-team" :href="team.enlace1"><img class="card-image" :src="team.src2" /></a>          
           <!-- <a class="linkedin-team">{{ team.src1 }}</a> -->
         </div>
       </div>
@@ -113,7 +110,6 @@ const teams = [
   margin-right: 1rem;
 }
 
-
  .card-image{
   width: 2rem;
   padding-left: 0.4rem;
@@ -122,6 +118,18 @@ const teams = [
 .teamTitle {
   text-align: center;
   margin-top: 3rem;
+}
+@include media-breakpoint-down(sm) {
+  .card-grid{
+  display: block;
+}
+.card-title{
+  font-size: 1.4rem;
+}
+.card-text{
+  font-size: 1rem;
+}
+
 }
 
 </style>
