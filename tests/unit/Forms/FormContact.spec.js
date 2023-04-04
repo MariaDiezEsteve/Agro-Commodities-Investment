@@ -29,5 +29,11 @@ it("test a p",()=>{
     expect(wrapper.html()).toMatch("If you want to contact us you can do it with this contact form")
 })
 
+it("test a span", ()=>{
+    const wrapper = mount(FormContact)
+    const msg = wrapper.findAll("span")
+    expect(msg).toHaveLength(0)
+})
+
 })
 
