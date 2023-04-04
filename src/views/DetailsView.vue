@@ -3,10 +3,11 @@
     <div class="col-10 px-5" >
       <h1>Agro Commodities Details</h1>
       <p>This page shows the information details about the following commodities:</p>
-      <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
+      <img v-if="data.isError" src="@/assets/images/error.gif" alt="error">
       <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
       <div v-if="!data.isError && !isLoading" >
         <BarChart :data = "data"/>  
+        <!-- <TableChart :data = "data"/> -->
       </div>
     </div>
   </template>
@@ -15,7 +16,8 @@
   import info from '@/DataInformation/dataInfo'
   import {ref,onMounted} from "vue";
   import SideBar from '@/components/Commons/SideBar.vue'
-  import BarChart from '@/components/Charts/BarChart.vue'
+  // import TableChart from '@/components/Charts/TableChart.vue';
+  import BarChart from '@/components/Charts/BarChart.vue';
 
 
   
