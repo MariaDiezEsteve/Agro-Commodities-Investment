@@ -1,5 +1,5 @@
 <template>
-
+<h2>Monthly prices in the years range</h2>
   <center>
     <table border="1">
     <thead>
@@ -12,7 +12,7 @@
     <tbody>
       <tr align=center  v-for='(year, index) in rangeYear' :key='index'>
          <th>{{year}}</th>
-         <th v-for="price in pricesRangeYear[index]" :key="price">{{ price }}</th>
+         <td v-for="price in pricesRangeYear[index]" :key="price"> {{ price }}</td>
       </tr>
     </tbody>
     </table>
@@ -94,5 +94,25 @@ function searchProduct (nameProduct){
      .container{
       height: 100vh;
      }
+
+    th, td{
+    padding-right: 1rem;
+    }
+    center{
+      margin-top: 2rem;
+    }
+
+    tbody tr:nth-child(odd) {
+       background-color: $greyLight;
+    } 
+
+    tbody tr:nth-child(even) {
+      background-color: $white_color;
+    }
+
+    h2{
+      margin-top: 3rem;
+      padding-left: 1.9rem;
+    }
    
    </style>
