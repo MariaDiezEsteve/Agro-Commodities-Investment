@@ -37,7 +37,7 @@ it("test a span", ()=>{
 it("test a p", ()=> {
     const wrapper = mount(FormContact)
     const msg = wrapper.get("p")
-    expect(msg.html()).toMatch(" If you want to contact us you can do it with this contact form")
+    expect(msg.text()).toContain("If you want to contact us you can do it with this contact form")
 })
 
 })
