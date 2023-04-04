@@ -1,5 +1,5 @@
 <template>
-  <div class="black" @submit.prevent="onSubmit">
+  <Form class="black" @submit.prevent>
      <div class="form-card " >
        <div class="formTitle card-body">
          <h5 class="card-title">Contact Form</h5>
@@ -11,60 +11,76 @@
        <div class="cuadro row">
          <div class=" mt-4 mr-1 col-6 px-5">
            <input 
-             v-model="name"
+             v-model="formDataContact.name"
              type="text"
              class="form-control p-2"
              placeholder="Enter your name"
            />
+           <span v-if="v$.name.$error" >You need to fill with your name</span>
          </div>
          <div class="  mr-1 mt-4 col-5">
            <input
-           v-model="email"
- 
+           v-model="formDataContact.email" 
              type="text"
              class="form-control p-2"
              placeholder="Enter your email address"
            />
+           <span v-if="v$.email.$error" >You need to fill with your email</span>
          </div>
  
          <div class="mb-4 ps-5 col-11">
            <label for="exampleFormControlTextarea1" class="form-label"></label>
            <textarea
-           v-model="msg"
+           v-model="formDataContact.msg"
              class="form-control"
              placeholder="Type here your message"
              id="exampleFormControlTextarea1"
              rows="3"
            ></textarea>
+           <span v-if="v$.msg.$error" >You need to fill with your opinion. It needs to have a minimum of 10 characters</span>
          </div>
  
          <div class="buttones">
-           <a href="#" class="btn btn-primary">Send Message</a>
+           <a href="#" class="btn btn-primary" @click="onSubmit">Send Message</a>
          </div>
        </div>
      </div>
-   </div>
- 
-   <pre>
-     nombre: {{ name }}
-   </pre>
-  
+   </Form>  
    <!-- FORMULARIO -->
  </template>
  
   <script setup>
-   import { ref } from "vue";
-  const name = ref("")
-  const email = ref("")
-  const msg = ref("")
+   import { reactive, computed } from "vue";
+   import { useVuelidate } from '@vuelidate/core'
+   import { required, email, minLength } from "@vuelidate/validators"
+
+
+   const formDataContact = reactive({
+    name: "",
+    email: "",
+    msg: ""
+  })
+
+  const rules = computed(() => {
+  return {
+      name: {required,  minLength:  minLength(2)},
+      email: { required, email },
+      msg: {required,   minLength:  minLength(10)}
+}
+}) 
+
+const v$ = useVuelidate(rules, formDataContact)
+
  
- //  const onSubmit= ()=> {
- //   const form = {
- //     name: name.value,
- //     message:msg.value,
- //     email:email.value
- //   }
- //  }
+ 
+   const onSubmit = async ()=> {
+    const result = await v$.value.$validate()
+
+    if(result){
+      alert("Thanks for yout message. We will contact you soon. ")
+    }
+
+   }
  
  </script> 
  
@@ -100,9 +116,13 @@
  
     .form-card {
      justify-self: center;
-    }
- 
- 
+    } 
+
+  span {
+    color: $red;
+    font-size: 0.7rem;
+   }
+
        </style>
  
  
