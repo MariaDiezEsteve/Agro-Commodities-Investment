@@ -24,9 +24,21 @@ it("test  href",()=>{
 it("test a p",()=>{
    
     const wrapper = mount(FormContact)
-    const msg = wrapper.get("p")
+    const msg = wrapper.findAll("a")
     console.log(msg)
-    expect(wrapper.html()).toMatch("If you want to contact us you can do it with this contact form")
+    expect(msg).toHaveLength(1)
+})
+
+it("test a span", ()=>{
+    const wrapper = mount(FormContact)
+    const msg = wrapper.findAll("p")
+    expect(msg).toHaveLength(1)
+})
+it("test a p", ()=> {
+    const wrapper = mount(FormContact)
+    const msg = wrapper.get("p")
+    expect(msg.text()).toContain("If you want to contact us you can do it with this contact form")
 })
 
 })
+

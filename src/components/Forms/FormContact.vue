@@ -1,6 +1,6 @@
 <template>
   <Form class="black" @submit.prevent>
-     <div class="form-card " >
+     <div class="form-card" >
        <div class="formTitle card-body">
          <h5 class="card-title">Contact Form</h5>
          <p class="card-text">
