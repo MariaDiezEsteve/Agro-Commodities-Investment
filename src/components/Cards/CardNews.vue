@@ -30,8 +30,8 @@
     </div>
     <div class="redes">
       <img class="redes-images" src="@/assets/images/ImagenesRss/whatssap.png" alt="">
-      <img class="redes-images" src="@/assets/images/ImagenesRss/facebooklucas.png" alt="">
-      <img class="redes-images" src="@/assets/images/ImagenesRss/twitterlucas.png" alt="">
+      <img class="redes-images" src="@/assets/images/ImagenesRss/facebook.png" alt="">
+      <img class="redes-images" src="@/assets/images/ImagenesRss/twitter.png" alt="">
       <img class="redes-images" src="@/assets/images/ImagenesRss/linkedinlucas.png" alt="">
     </div>
 
@@ -108,5 +108,5 @@ defineProps({
 }
 .redes-images{
   @include ico ($color:$white_color, $wth:2%, $hgt:2rem);
-}
+}  
 </style>
