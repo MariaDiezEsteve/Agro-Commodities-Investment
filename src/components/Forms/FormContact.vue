@@ -4,7 +4,7 @@
       <div class="formTitle card-body">
         <h5 class="card-title">Contact Form</h5>
         <p class="card-text">
-          If you want to contact us you can do it with this contact form
+          If you want to contact us you can do it with this contact form:
         </p>
       </div>
 
@@ -17,7 +17,7 @@
             placeholder="Enter your name"
           />
         </div>
-        <div class="  mr-1 mt-4 col-5">
+        <div class="  mr-1 mt-4 col-lg-6 col-md-6 px-3">
           <input
           v-model="email"
 
@@ -26,8 +26,9 @@
             placeholder="Enter your email address"
           />
         </div>
+      </div>
 
-        <div class="mb-4 ps-5 col-11">
+        <div class="formTextDiv mb-4 ps-5 col-lg-11">
           <label for="exampleFormControlTextarea1" class="form-label"></label>
           <textarea
           v-model="msg"
@@ -42,7 +43,6 @@
           <a href="#" class="btn btn-primary">Send Message</a>
         </div>
       </div>
-    </div>
   </div>
 
   <pre>
@@ -97,11 +97,46 @@
     text-align: center;
     margin-top: 3rem;
    }
-
-   .form-card {
-    justify-self: center;
+   
+   .card-body >p {
+    margin-bottom: 1.2rem;
    }
 
+   .card-title {
+    font-weight: bold;
+   }
+
+@include media-breakpoint-down(sm) {
+  .formDiv {
+  width: 18rem;
+  //margin: 0 auto; 
+}
+
+.inputDiv {
+  display: block;
+}
+
+.input1 {
+  margin-left: -0.8rem;
+}
+.formTextDiv {
+  
+  margin-left: -1.7rem;
+
+}
+}
+@include media-breakpoint-down(lg) {
+  .input1 {
+  width: 17.5rem;
+  margin-left: -0.5rem;
+}
+.formTextDiv {
+  
+  margin-left: -1.5rem;
+
+}
+
+}
 
       </style>
 

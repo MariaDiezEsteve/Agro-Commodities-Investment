@@ -1,4 +1,5 @@
-<template >
+<template > 
+ <h2 class="teamTitle">MEET OUR TEAM</h2>
   <div class="card-grid">
   <div v-for="team in teams" :key="team" class="p-5" :id="team.id">
     <div class="card-teams">
@@ -38,7 +39,7 @@ const teams = [
   },
   {
     id: "2",
-    name: "Zuceles Guedes",
+    name: "Zucelys Guedes",
     discripion: "FullStack Development",
     src: "https://i.pinimg.com/originals/d0/e6/59/d0e659125145e110eee3d64013050812.png",
     src1: require("@/assets/iconosRed/linkedin.png"),
@@ -70,7 +71,7 @@ const teams = [
   },
   {
     id: "5",
-    name: "Maria Diaz",
+    name: "Maria Diez",
     discripion: "FullStack Development",
     src: "https://i.pinimg.com/originals/42/ae/ce/42aece2eb0533ac8656fa06945f56081.png",
     src1: require("@/assets/iconosRed/linkedin.png"),
@@ -81,7 +82,7 @@ const teams = [
   },
   {
     id: "6",
-    name: "Gorka",
+    name: "Gorka Ibarrondo",
     discripion: "FullStack Development",
     src: "https://img.freepik.com/vector-premium/ilustracion-joven-estilo-hombre-guapo-barba-dibujos-animados-avatar-perfil-hipster_15870-758.jpg?w=2000",
     src1: require("@/assets/iconosRed/linkedin.png"),
@@ -99,6 +100,7 @@ const teams = [
 .card-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-top: 2.5rem;
 }
 .imagtexto {
   display: flex;
@@ -109,13 +111,16 @@ const teams = [
   border-radius: 100%;
   margin-right: 1rem;
 }
-.card-team{
+
 
  .card-image{
   width: 2rem;
   padding-left: 0.4rem;
  }
   
+.teamTitle {
+  text-align: center;
+  margin-top: 3rem;
 }
 
 </style>
