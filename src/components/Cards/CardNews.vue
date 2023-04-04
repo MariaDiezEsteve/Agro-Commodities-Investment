@@ -111,8 +111,7 @@ defineProps({
 
 @include media-breakpoint-down(sm) {
   .card {
-    width: 110%;
-
+    width: 100%;
 }
 
 img {
@@ -127,13 +126,20 @@ img {
 }
 @include media-breakpoint-down(lg) {
   .card {
-    display: block;
-    
-    img {
-    height: auto;
+    width: 100%;
+}
+
+.img-fluid {
+    object-fit: cover;
+  }
+
+  .card-text {
+    padding-left: 1rem;
+    padding-right: 1em;
   }
 }
 
 
-}
+
+
 </style>
