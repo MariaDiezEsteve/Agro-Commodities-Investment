@@ -16,9 +16,7 @@
       </tr>
     </tbody>
     </table>
-  </center>
-
- 
+  </center> 
 </template>
    
 <script setup>
@@ -27,7 +25,6 @@
   const prop =  defineProps({
     data: Object,
     rangeYear: Array,
-    productDataName: Array,
     nameProduct: String
   })
   onMounted(()=>{
@@ -52,9 +49,9 @@ function yearAndData(year1, year2){
 
   while (year1<(year2+1)) {
     
-      //filtramos la data del producto en cada iteracion del while por cada año del rando
+      //we filter the product data in each iteration of the while for each year of the rando
       productDataYear = productData.filter(element => parseInt((element.date).slice(0,4)) == year1)  
-      //hacemos lo mismo pero solo nos quedamos con los precios
+      //we do the same thing but we only keep prices
       pricesInAYear = productDataYear.map(element =>  parseFloat((element.value)).toFixed(2))
       pricesRanYear.push(pricesInAYear)
       year1++
