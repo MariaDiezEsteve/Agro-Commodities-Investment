@@ -11,11 +11,11 @@
     const elements = [
     {
         value: 'line',
-        text: 'line'
+        text: 'Line'
     },
     {
         value: 'bar',
-        text: 'bar'
+        text: 'Bar'
     },
     ]
 

@@ -236,17 +236,15 @@ const classChart = computed(() => {
   width: 20%
 }
 
-@include media-breakpoint-down(lg) {
-
-  .chart65 {
-    width: 100%;
+    return productData
   }
-
-  .buttonsDown {
-    width: 100%;
-    margin-top: 0rem;
-    margin-bottom: 1rem;
-
+  
+  let pricesPerMonthInAYear = (year,key)=>{
+    
+    let productData = prop.data.prodts[key].data 
+    productData = productData.filter(element => parseInt((element.date).slice(0,4)) == year)
+    productData = productData.map(element =>  parseFloat((element.value)).toFixed(2))
+    return productData
   }
 
   #chart{
@@ -262,6 +260,18 @@ const classChart = computed(() => {
   // }
 
 
+  const classChart = computed(() => {
+      let result = 'chart65';
+      if (prop.vista === "home") {
+          result = 'chart90';
+      } 
+      return result;
+    })
+  
+</script>
+  
+<style lang="scss" scoped>
+  @import "@/assets/Sass/--parcial.scss";
 
 
 

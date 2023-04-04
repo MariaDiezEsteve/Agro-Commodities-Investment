@@ -1,6 +1,11 @@
 <template>
+
   <h2 class="mt-5">Any doubt?</h2>
-  <img v-if="questions.isError" src="@/assets/images/error.gif" alt="error" />
+  <img
+    v-if="questions.isError"
+    src="@/assets/images/error.jpeg"
+    alt="error"
+  />
   <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading" />
 
   <div v-if="!questions.isError && !isLoading">
