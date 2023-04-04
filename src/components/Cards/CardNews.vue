@@ -65,7 +65,7 @@ defineProps({
 .card {
   display: flex;
   justify-content: center;
-  width: 85%;
+  width: 85% !important;
   
   img {
     height: 100%;

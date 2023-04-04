@@ -25,13 +25,13 @@
           <li v-for='policy in policies' :key='policy.tittle' >
             <router-link :to="policy.rout" class="text-white text-decoration-none mx-3 m-1 ">
               <img :src="policy.src" class="m-2 policies" :alt='policy.alt'>
-              <p>{{ policy.tittle }}</p>
+              <p class="p-policies">{{ policy.tittle }}</p>
             </router-link>
 
           </li>
         </ul>
         
-        <p class="mx-3 mt-4">@RawInvesting.com</p>
+        <p class="mx-3 mt-4 raw"> &copy; RawInvesting.com</p>
 
   </nav>
 </template>
@@ -121,21 +121,44 @@ const policies=[
   }
 
 
-  // $grid-breakpoints: (
-  //   xs: 0,
-  //   sm: 576px,
-  //   md: 768px,
-  //   lg: 992px,
-  //   xl: 1200px,
-  //   xxl: 1400px
-  // );
+  @include media-breakpoint-down(lg) {
+
+    .m-3{
+      margin: 0rem !important;
+    }
+
+    #logo{
+      width:90%;
+    }
+
+    #h2_nav{
+      font-size: 1rem;
+    }
+
+    p{
+      font-size: 0.9rem;
+    }
+
+    .m-2{
+      margin: 0.3rem !important;
+    }
+
+    .policies{
+      padding-left: 1.5rem;
+    }
+
+    .p-policies{
+      padding-left: 0.5rem;
+    }
+
+
+
+  }
+
+
+ 
 
   @include media-breakpoint-down(sm) {
-
-    // nav{
-    //   width: 1%;
-    //   z-index: 1000;
-    // }
 
     #menuIco{
       display: block;
@@ -159,8 +182,6 @@ const policies=[
     .m-3{
       margin: 0rem !important;
     }
-
-
 
   }
 

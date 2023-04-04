@@ -35,6 +35,15 @@
 <style lang="scss" scoped>
   @import "@/assets/Sass/--parcial.scss";
 
+  @include media-breakpoint-down(lg) {
+  
+
+  .px-5{
+    padding-left: 0.3rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
 
 
 </style>
