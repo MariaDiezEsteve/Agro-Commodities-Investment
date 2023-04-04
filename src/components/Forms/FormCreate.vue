@@ -5,7 +5,7 @@
         <FormReview :reviewsData="reviewsData" :reviews="reviews"
         />
     </div>
-    <img v-if="reviewsData.isError" src="@/assets/images/error.jpeg" alt="error">
+    <img v-if="reviewsData.isError" src="@/assets/images/error.gif" alt="error">
     <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
         <div v-if="!reviewsData.isError && !isLoading" class="fahter-position">
           <h2 class="title">Create a new review</h2>
