@@ -1,28 +1,27 @@
 <template>
-
-  <h2 class="mt-5">¿Any doubt?</h2>
-  <img
-    v-if="questions.isError"
-    src="@/assets/images/error.jpeg"
-    alt="error"
-  />
+  <h2 class="mt-5">Any doubt?</h2>
+  <img v-if="questions.isError" src="@/assets/images/error.jpeg" alt="error" />
   <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading" />
 
   <div v-if="!questions.isError && !isLoading">
-    <div class="dropdown d-flex flex-row">
+    <div class="dropdown d-flex flex-row flex-wrap">
       <button
-        class="button dropdown-toggle "
+        class="button dropdown-toggle"
         type="button"
         id="dropdownMenuButton2"
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-      {{quest}}
+        {{ quest }}
       </button>
       <ul class="dropdown-menu px-2" aria-labelledby="dropdownMenu2">
         <li v-for="question in questions.getQuestions" :key="question.id">
-          <p class="dropdown-item " type="button" @click="showAnswer(question.id)">
-            {{question.question }}
+          <p
+            class="dropdown-item"
+            type="button"
+            @click="showAnswer(question.id)"
+          >
+            {{ question.question }}
           </p>
         </li>
       </ul>
@@ -30,8 +29,7 @@
       <div v-if="click == true">
         <div class="card mx-5">
           <div class="card-body">
-            <h5 class="card-title  mx-2 my-2">
-
+            <h5 class="card-title mx-2 my-2">
               {{ questions.getQuestions[idData].answer }}
             </h5>
           </div>
@@ -42,14 +40,12 @@
 </template>
 
 <script setup>
-import { ref,onMounted } from "vue";
+import { ref, onMounted } from "vue";
 import predictionInfo from "@/DataInformation/predictionInfo";
-
 
 // let prop =defineProps({
 //   questions: Object,
 // });
-
 
 let isLoading = ref(true);
 
@@ -63,20 +59,18 @@ let questions = ref(
   })
 );
 
-
 let click = ref(false);
 
 // let quest = ref(questions.value.getQuestions[0].question)
 
-let quest = ref("Ask a Question")
-
+let quest = ref("Ask a Question");
 
 let idData = ref(0);
 
 function showAnswer(id) {
   idData.value = id - 1;
   click.value = true;
-  quest.value = questions.value.getQuestions[idData.value].question
+  quest.value = questions.value.getQuestions[idData.value].question;
 }
 </script>
 
@@ -93,11 +87,25 @@ li {
 }
 
 .card {
-  width: 40rem;
+  width: 22rem;
   background-color: lightblue;
 }
 
-.dropdown, h1 {
+.dopdown, h1 {
   margin-left: 3rem;
 }
+
+@include media-breakpoint-down(lg) {
+  .card {
+  width: 100%;
+  margin-left: 0rem !important;
+  margin-right: 0rem !important;
+  margin-bottom: 2rem;
+}
+
+button {
+  margin-bottom: 2rem;
+}
+}
+
 </style>
