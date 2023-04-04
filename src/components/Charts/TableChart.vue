@@ -36,8 +36,6 @@
     }
 
   });
- 
-
 
 let pricesRangeYear = ref([])
 
@@ -87,7 +85,6 @@ function searchProduct (nameProduct){
       else{
         i++
       }
-
     }
     return dataProduct
 }
