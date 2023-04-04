@@ -9,7 +9,7 @@
         </div>
         <div class="card-general">
           <h2 class="card-title">{{ team.name }}</h2>
-          <p class="card-text">{{ team.discripion }}</p>
+          <p class="card-text">{{ team.description }}</p>
           <!-- <a class="card-team">{{ team.enlace}}</a> -->
           
           <a class="card-team" :href="team.enlace"><img class="card-image" :src="team.src1" /></a>
@@ -30,7 +30,7 @@ const teams = [
   {
     id: "1",
     name: "Nasreddin Oufallah",
-    discripion: "FullStack Development",
+    description: "FullStack Development",
     src: require("@/assets/Avatar/myAvatar.png"),
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
@@ -41,7 +41,7 @@ const teams = [
   {
     id: "2",
     name: "Zucelys Guedes",
-    discripion: "FullStack Development",
+    description: "FullStack Development",
     src: "https://i.pinimg.com/originals/d0/e6/59/d0e659125145e110eee3d64013050812.png",
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
@@ -51,7 +51,7 @@ const teams = [
   { 
     id: "3",
     name: "Lucas Ibar",
-    discripion: "FullStack Development",
+    description: "FullStack Development",
     src: require("@/assets/Avatar/lucas.png"),
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
@@ -62,7 +62,7 @@ const teams = [
   {
     id: "4",
     name: "Jessica Mosteiro",
-    discripion: " FullStack Development",
+    description: " FullStack Development",
     src: "https://i.pinimg.com/originals/82/ab/35/82ab3533ee71daf256f23c1ccf20ad6f.jpg",
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
@@ -73,7 +73,7 @@ const teams = [
   {
     id: "5",
     name: "Maria Diez",
-    discripion: "FullStack Development",
+    description: "FullStack Development",
     src: "https://i.pinimg.com/originals/42/ae/ce/42aece2eb0533ac8656fa06945f56081.png",
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
@@ -84,7 +84,7 @@ const teams = [
   {
     id: "6",
     name: "Gorka Ibarrondo",
-    discripion: "FullStack Development",
+    description: "FullStack Development",
     src: "https://img.freepik.com/vector-premium/ilustracion-joven-estilo-hombre-guapo-barba-dibujos-animados-avatar-perfil-hipster_15870-758.jpg?w=2000",
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
