@@ -1,6 +1,6 @@
 <template>
   <div class="reviews">
-    <img v-if="reviewsData.isError" src="@/assets/images/error.jpeg" alt="error">
+    <img v-if="reviewsData.isError" src="@/assets/images/error.gif" alt="error">
         <div v-if="!reviewsData.isError" >
             <div class="row" >
                 <div class="col-8" v-for="review in reviewsData.getReviews" :key="review.id" >

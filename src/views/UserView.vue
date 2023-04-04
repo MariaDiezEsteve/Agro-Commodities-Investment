@@ -3,8 +3,8 @@
     <div class="col-10" >
       <div class="img"></div>
       <div class="px-5">
-        <h1 style="margin: 2rem;">Invest in your life !</h1>
-        <img v-if="data.isError" src="@/assets/images/error.jpeg" alt="error">
+        <h1>Invest in your life !</h1>
+        <img v-if="data.isError" src="@/assets/images/error.gif" alt="error">
         <img v-if="isLoading" src="@/assets/images/spin.gif" alt="loading">
         <div v-if="!data.isError && !isLoading" >
           <InteractChart :data = "data" />
@@ -48,6 +48,22 @@ let data =  ref(onMounted(async () => {
     ),
     url("@/assets/images/IconosUserView/CAPuserView.png");
   height: 250px;
+}
+
+h1{
+  margin: 2rem;
+}
+
+@include media-breakpoint-down(lg) {
+  h1{
+    margin: 1rem;
+    font-size: 1.4rem;
+  }
+
+  .px-5{
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }
 
 </style>

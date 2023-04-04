@@ -66,7 +66,7 @@ defineProps({
 .card {
   display: flex;
   justify-content: center;
-  width: 85%;
+  width: 85% !important;
   
   img {
     height: 100%;
@@ -108,5 +108,33 @@ defineProps({
 }
 .redes-images{
   @include ico ($color:$white_color, $wth:2%, $hgt:2rem);
-}  
+}
+
+@include media-breakpoint-down(sm) {
+  .card {
+    width: 110%;
+
+}
+
+img {
+    height: auto;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+    padding-left: 1rem;
+    padding-right: 1em;
+  }
+}
+@include media-breakpoint-down(lg) {
+  .card {
+    display: block;
+    
+    img {
+    height: auto;
+  }
+}
+
+
+}
 </style>

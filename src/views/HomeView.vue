@@ -25,7 +25,6 @@
   import SideBar from '@/components/Commons/SideBar.vue'
   import ImgSlider from '@/components/Sliders/ImgSlider.vue'
   import InterectChart from '@/components/Charts/InteractChart.vue'
-  
   import FormCreate from '@/components/Forms/FormCreate.vue'
 
 
@@ -63,6 +62,18 @@ si es mac o linux y si es windows:  npm install sass-loader node-sass*/
   select{
     @include drop($wth:6%);
   }
+
+  @include media-breakpoint-down(lg) {
+  h1{
+    margin: 1rem;
+    font-size: 1.4rem;
+  }
+
+  .px-5{
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
 
 
 </style>

@@ -7,9 +7,11 @@ describe("test FormContact",()=>{
     expect(wrapper.html()).toMatch(msg) 
 })
 it("test unit",()=>{
-    const msg = ' <p class="card-text"> If you want to contact us you can do it with this contact form </p>'
+  
     const wrapper = mount(FormContact)
-    expect(wrapper.html()).toMatch(msg)
+    const msg = wrapper.get("h5")
+    const text= "Contact Form"
+    expect(msg.html()).toMatch(text)
     
 })
 it("test  href",()=>{
@@ -17,7 +19,7 @@ it("test  href",()=>{
     const wrapper = mount(FormContact)
     const msg = wrapper.get("a")
     console.log(msg)
-    expect(wrapper.html()).toMatch("Send Message")
+    expect(msg.html()).toMatch("Send Message")
 })
 it("test a p",()=>{
    

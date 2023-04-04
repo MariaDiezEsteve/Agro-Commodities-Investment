@@ -21,9 +21,14 @@
         <PieChart :data = "data" />
 
     </div>
-
+        <div>
+          <TableChart 
+          :rangeYear="rangeYear" 
+          :data = "data"
+          :nameProduct = "nameProduct"
+          /> 
+        </div>
     </div>
-
   </div>
 </template>
   
@@ -37,6 +42,7 @@
   import CardYearOfMonths from '@/components/Cards/CardYearOfMonths.vue'
   import CardDetailsProduct from '../Cards/CardDetailsProduct.vue'
   import PieChart from '@/components/Charts/PieChart.vue'
+  import TableChart from '@/components/Charts/TableChart.vue'
 
 
 
@@ -57,6 +63,7 @@
     nameProduct.value = name
     productChart()    
   }
+
 
   const typeChart = ref("bar")
   const getTypeChar = (selectedType) => {
@@ -113,6 +120,8 @@
       type: typeChart.value,
       data: dataChart,
     })
+
+   
     return myChart
     }
 
@@ -123,7 +132,6 @@
     return productData
   }
   
-
 
   let averagePricesByYearRange = (year1,year2)=>{
     
@@ -195,7 +203,6 @@
     return color
 
   }
-
  
   
 </script>
