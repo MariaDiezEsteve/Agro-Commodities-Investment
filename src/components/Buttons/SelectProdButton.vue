@@ -1,6 +1,5 @@
 <template>
-
-  <ul class="d-flex flex-column">
+  <ul class="d-flex flex-row flex-wrap">
     <li
       class="d-flex flex-row justify-content-start"
       v-for="(but, prop, index) in buts"
@@ -8,13 +7,9 @@
       @click="getButtonSelected(index)"
     >
       <label class="off d-flex flex-row aling-items-center" :for="index">
-        <img :src="images[index]"/>
-        <p>{{ prop }}</p> 
-        <input          
-          :id="index"
-          type="checkbox"
-          checked
-        />
+        <img :src="images[index]" />
+        <p>{{ prop }}</p>
+        <input :id="index" type="checkbox" checked />
       </label>
     </li>
   </ul>
@@ -40,8 +35,7 @@ let images = [
   require("@/assets/images/IconosUserView/maizBlanco-removebg-preview.png"),
 ];
 
- const emit = defineEmits(["buttonSelected"])
- 
+const emit = defineEmits(["buttonSelected"]);
 
 let getButtonSelected = (index) => {
   prod.value = Object.keys(buts)[index];
@@ -51,8 +45,7 @@ let getButtonSelected = (index) => {
   } else {
     buts[prod.value].value = false;
   }
-  emit("buttonSelected",index) 
- 
+  emit("buttonSelected", index);
 };
 </script>
 
@@ -63,8 +56,8 @@ let getButtonSelected = (index) => {
   @include button($bg-color: $blueDark, $wth: 10rem, $colorletra: $white_color);
   display: flex;
   margin-left: 3rem;
-  margin-top: 1.8rem;
-  margin-bottom: 1.8rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 h1 {
@@ -87,9 +80,42 @@ p {
   margin-top: 00.3rem;
 }
 
-input{
+input {
   width: 1rem;
 }
+
+@include media-breakpoint-down(lg) {
+
+  .off {
+    @include button($bg-color: $blueDark, $wth: 6.2rem, $colorletra: $white_color);
+    margin-left: 0.3rem;
+    padding-right: 0.2rem;
+  }
+
+  p{
+    font-size: 1rem;
+    margin-right: 0.3rem;
+  }
+
+  img{
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+
+}
+
+@include media-breakpoint-down(md) {
+
+  p{
+    display: none;
+  }
+  h1{
+    font-size: 1.4rem;
+  }
+
+  .off{
+    width: 3rem;
+  }
+}
+
 </style>
-
-

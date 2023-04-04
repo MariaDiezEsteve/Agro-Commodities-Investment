@@ -36,6 +36,7 @@ const teams = [
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace:"https://www.linkedin.com/in/nasreddin-oufallah/",
     enlace1:"https://github.com/nasre21"
+>>>>>>> AboutUs
 
 
     
@@ -49,9 +50,6 @@ const teams = [
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace:"https://www.linkedin.com/in/zguedest/",
     enlace1:"https://github.com/ZGuedest"
-
-    
-  
   },
   { 
     id: "3",
@@ -62,7 +60,6 @@ const teams = [
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace:"https://www.linkedin.com/in/lucas-ibar-basaldua/",
     enlace1:"https://github.com/Lucasibf5",
-
     alt: "frontend",
   },
   {
@@ -74,7 +71,6 @@ const teams = [
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace: "https://www.linkedin.com/in/lucas-ibar-basaldua/",
     enlace1:"https://github.com/JJessa",
-   
     alt: "FullStack Developer",
   },
   {
@@ -86,7 +82,7 @@ const teams = [
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace:"https://www.linkedin.com/in/mariadiezesteve/",
     enlace1:"https://github.com/MariaDiezEsteve",
-     alt: "fullstack",
+    alt: "fullstack",
   },
   {
     id: "6",
