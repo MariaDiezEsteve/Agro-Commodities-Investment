@@ -1,6 +1,6 @@
 <template>
-  <div class="black">
-     <div class="form-card" >
+  <Form class="black" @submit.prevent>
+     <div class="form-card " >
        <div class="formTitle card-body">
          <h5 class="card-title">Contact Form</h5>
          <p class="card-text">
@@ -9,55 +9,68 @@
        </div>
  
        <div class="cuadro row">
-         <div class="inputDiv row ">
-         <div class="input1 mt-4 mr-1 col-lg-6 col-md-6 ps-4">
-           <input
+         <div class=" mt-4 mr-1 col-6 px-5">
+           <input 
+             v-model="name"
              type="text"
              class="form-control p-2"
              placeholder="Enter your name"
            />
+           <span v-if="v$.name.$error" >You need to fill with your name</span>
          </div>
          <div class="  mr-1 mt-4 col-lg-6 col-md-6 px-3">
            <input
+           v-model="email"
+ 
              type="text"
              class="form-control p-2"
              placeholder="Enter your email address"
            />
+           <span v-if="v$.email.$error" >You need to fill with your email</span>
          </div>
        </div>
  
          <div class="formTextDiv mb-4 ps-5 col-lg-11">
            <label for="exampleFormControlTextarea1" class="form-label"></label>
            <textarea
+           v-model="msg"
              class="form-control"
              placeholder="Type here your message"
              id="exampleFormControlTextarea1"
              rows="3"
            ></textarea>
+           <span v-if="v$.msg.$error" >You need to fill with your opinion. It needs to have a minimum of 10 characters</span>
          </div>
  
          <div class="buttones">
-           <a href="#" class="btn btn-primary">Send Message</a>
+           <a href="#" class="btn btn-primary" @click="onSubmit">Send Message</a>
          </div>
        </div>
      </div>
    </div>
+ 
+   <pre>
+     nombre: {{ name }}
+   </pre>
   
    <!-- FORMULARIO -->
  </template>
  
- <!-- <script setup>
- const formContact = [
-   {
-     id: 1,
-     title: "Contact Form",
-     name: "",
-     email: "",
-     text: "",
-     button: "Send Message",
-   },
- ];
- </script> -->
+  <script setup>
+   import { ref } from "vue";
+  const name = ref("")
+  const email = ref("")
+  const msg = ref("")
+ 
+ //  const onSubmit= ()=> {
+ //   const form = {
+ //     name: name.value,
+ //     message:msg.value,
+ //     email:email.value
+ //   }
+ //  }
+ 
+ </script> 
  
  
    
@@ -88,47 +101,12 @@
      text-align: center;
      margin-top: 3rem;
     }
-    
-    .card-body >p {
-     margin-bottom: 1.2rem;
+ 
+    .form-card {
+     justify-self: center;
     }
  
-    .card-title {
-     font-weight: bold;
-    }
  
- @include media-breakpoint-down(sm) {
-   .formDiv {
-   width: 18rem;
-   //margin: 0 auto; 
- }
- 
- .inputDiv {
-   display: block;
- }
- 
- .input1 {
-   margin-left: -0.8rem;
- }
- .formTextDiv {
-   
-   margin-left: -1.7rem;
- 
- }
- }
- @include media-breakpoint-down(lg) {
-   .input1 {
-   width: 17.5rem;
-   margin-left: -0.5rem;
- }
- .formTextDiv {
-   
-   margin-left: -1.5rem;
- 
- }
- 
- }
- 
-</style>
+       </style>
  
  
