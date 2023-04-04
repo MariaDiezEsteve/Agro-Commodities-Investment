@@ -13,12 +13,9 @@
           
           <a class="card-team" :href="team.enlace"><img class="card-image" :src="team.src1" /></a>
           <a class="card-team" :href="team.enlace1"><img class="card-image" :src="team.src2" /></a>
-<<<<<<< HEAD
-=======
 
 
           
->>>>>>> AboutUs
           <!-- <a class="linkedin-team">{{ team.src1 }}</a> -->
         </div>
       </div>
@@ -37,11 +34,7 @@ const teams = [
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace:"https://www.linkedin.com/in/nasreddin-oufallah/",
-<<<<<<< HEAD
-    enlace1:""
-=======
     enlace1:"https://github.com/nasre21"
->>>>>>> AboutUs
 
 
     
@@ -54,11 +47,7 @@ const teams = [
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace:"https://www.linkedin.com/in/zguedest/",
-<<<<<<< HEAD
-    enlace1:""
-=======
     enlace1:"https://github.com/ZGuedest"
->>>>>>> AboutUs
 
     
   
@@ -71,11 +60,7 @@ const teams = [
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace:"https://www.linkedin.com/in/lucas-ibar-basaldua/",
-<<<<<<< HEAD
-    enlace1:"",
-=======
     enlace1:"https://github.com/Lucasibf5",
->>>>>>> AboutUs
 
     alt: "frontend",
   },
@@ -87,11 +72,7 @@ const teams = [
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace: "https://www.linkedin.com/in/lucas-ibar-basaldua/",
-<<<<<<< HEAD
-    enlace1:"",
-=======
     enlace1:"https://github.com/JJessa",
->>>>>>> AboutUs
    
     alt: "FullStack Developer",
   },
@@ -103,11 +84,7 @@ const teams = [
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace:"https://www.linkedin.com/in/mariadiezesteve/",
-<<<<<<< HEAD
-    enlace1:"",
-=======
     enlace1:"https://github.com/MariaDiezEsteve",
->>>>>>> AboutUs
      alt: "fullstack",
   },
   {
@@ -118,11 +95,7 @@ const teams = [
     src1: require("@/assets/iconosRed/linkedin.png"),
     src2:require("@/assets/iconosRed/imageGit.png"),
     enlace:"https://www.linkedin.com/in/gorka-ibarrondo-busturia-21a317259/",
-<<<<<<< HEAD
-    enlace1:"",
-=======
     enlace1:"https://github.com/Gorka1999",
->>>>>>> AboutUs
     alt: "commodities" ,
   },
 ];
