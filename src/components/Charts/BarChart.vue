@@ -13,7 +13,7 @@
       <div v-else>
         <CardYearOfMonths @yearOfMonths="getYear" />
       </div>
-      <h2 id="tit">{{ tittle }}</h2>
+        <h2 id="tit">{{ tittle }}</h2>
       <div class="graphicsDiv d-flex justify-content-around gap-4 align-items-center">
         <div class="barChartDiv">
           <canvas id="myChart"></canvas>
@@ -264,6 +264,9 @@ function yearAndData(year1, year2){
       margin-bottom: 1.5rem;
     }
 
+    #tit{
+      font-size: 0.7rem;
+    }
   
     .graphicsDiv {
       direction: flex;
