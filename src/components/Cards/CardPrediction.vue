@@ -26,12 +26,8 @@
             type="button"
             @click="showAnswer(question.id)"  
           >
-<<<<<<< HEAD
           <!-- When you click the question, the id question is keeping in a variable to show the answer-->
             {{ question.question }}
-=======
-          {{ question.question }}
->>>>>>> b954399348ea7217b2d9028f701d7029de38872d
           </p>
         </li>
       </ul>
