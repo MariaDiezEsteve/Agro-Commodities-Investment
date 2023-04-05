@@ -75,11 +75,21 @@ si es mac o linux y si es windows:  npm install sass-loader node-sass*/
 }
 
 @include media-breakpoint-down(sm) {
-
   .boxContainer{
-    padding-left: 1rem;
+    padding-left: 0rem;
   }
+
+  h2{
+    margin: 1rem;
+    font-size: 1rem;
+  }
+
+
 }
+
+
+
+
 
 
 </style>

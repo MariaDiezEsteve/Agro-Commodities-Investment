@@ -251,7 +251,7 @@ function yearAndData(year1, year2){
   @import "@/assets/Sass/--parcial.scss";
 
   .barChartDiv {
-    width: 100%;
+    width: 90%;
 
   }
 

@@ -28,8 +28,22 @@ const text=["Wellcome to RawInvesting","A platform that helps you make decisions
     @include texto ($color:$white_color,$font-size: $h3);
     font-weight: 500;
     width: 50%;
+  }
+
+  @include media-breakpoint-down(sm) {
+
+    p{
+      width: 100%;
+      font-size: 1rem;
+
+    }
+
+    #h1_home{
+      font-size: 2rem;
+    }
 
   }
+
 
 
 </style>

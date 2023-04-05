@@ -17,17 +17,21 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        {{ quest }}
+       <p class="quest">{{ quest }}</p> 
       </button>
       <ul class="dropdown-menu px-2" aria-labelledby="dropdownMenu2">
         <li v-for="question in questions.getQuestions" :key="question.id">
-          <p
-            class="dropdown-item"
+          <p 
+            class="dropdown-item quest"
             type="button"
             @click="showAnswer(question.id)"  
           >
+<<<<<<< HEAD
           <!-- When you click the question, the id question is keeping in a variable to show the answer-->
             {{ question.question }}
+=======
+          {{ question.question }}
+>>>>>>> b954399348ea7217b2d9028f701d7029de38872d
           </p>
         </li>
       </ul>
@@ -109,9 +113,25 @@ li {
   margin-bottom: 2rem;
 }
 
+
+
 button {
   margin-bottom: 2rem;
 }
 }
+
+@include media-breakpoint-down(sm) {
+
+  .quest{
+  font-size: 0.7rem !important;
+  //width: 10rem;
+}
+
+button {
+  height: 1.5rem;
+}
+
+}
+
 
 </style>
