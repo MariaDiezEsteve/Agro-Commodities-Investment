@@ -1,94 +1,40 @@
 <template>
   <!-- <BarChart :data = "data" @rangeYears="rangeYears" @nameOfProduct="getNameProduct"/> -->
   <h2>Monthly prices in the years range</h2>
-  <center>
-    <table border="1">
-    <thead>
-      <tr>
-        <td v-for="month in months" :key="month">
-          <th>{{ month }}</th>
-        </td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr align=center  v-for='(year, index) in rangeYear' :key='index'>
-         <th>{{year}}</th>
-         <td v-for="price in pricesRangeYear[index]" :key="price"> {{ price }}</td>
-      </tr>
-    </tbody>
+  <div id="cardH">
+    <table >
+      <thead>
+        <tr>
+          <td v-for="month in months" :key="month">
+            <th>{{ month }}</th>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for='(year, index) in rangeYear' :key='index'>
+          <th>{{year}}</th>
+          <td v-for="price in pricesRangeYear[index]" :key="price"> {{ price }}</td>
+        </tr>
+      </tbody>
     </table>
-  </center> 
+
+  </div>
+    
 </template>
    
 <script setup>
-/* eslint-disable */
-  import {defineProps, onMounted,ref} from 'vue';
-  // import BarChart from '@/components/Charts/BarChart.vue'
-//import { LibraryTemplatePlugin } from 'webpack';
-  const prop =  defineProps({
+  import {defineProps} from 'vue';
+  defineProps({
     data: Object,
     nameProduct: String,
     rangeYear: Array,
     pricesRangeYear: Array
 
   })
-  onMounted(()=>{
-    // if(prop.nameProduct != null){
-    //   yearAndData(prop.rangeYear[0],prop.rangeYear[(prop.rangeYear).length-1])
-    // }
 
-  });
-
-// let pricesRangeYear = ref([])
 
 const months = ["Prices","Jan","Feb","Mar","Abr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
  
-// function yearAndData(year1, year2){
-//   let productData =  searchProduct (prop.nameProduct)
-//   let productDataYear=[]
-//   let pricesInAYear=[]
-//   let pricesRanYear=[]
-
-//   while (year1<(year2+1)) {
-    
-//       //we filter the product data in each iteration of the while for each year of the rando
-//       productDataYear = productData.filter(element => parseInt((element.date).slice(0,4)) == year1)  
-//       //we do the same thing but we only keep prices
-//       pricesInAYear = productDataYear.map(element =>  parseFloat((element.value)).toFixed(2))
-//       pricesRanYear.push(pricesInAYear)
-//       year1++
-//   }
-
-//   pricesRangeYear.value=pricesRanYear
-//   console.log("pricesRangeYear.value",pricesRangeYear.value)
-// }
-
-
-// function searchProduct (nameProduct){   
-//   console.log("nameProduct",nameProduct) 
-//     let inicial = nameProduct.slice(0,1)
-//     inicial = inicial.toLowerCase()
-//     let nameP = inicial + nameProduct.slice(1)
-
-//     let dataProduct = 0
-
-//     let keys = Object.keys(prop.data.prodts)
-//     let values = Object.values(prop.data.prodts)
-//     let found = false
-//     let i = 0
-//     while(!found && i < keys.length){
-
-//       if(keys[i] == nameP){
-//         dataProduct = values[i].data
-//         found = true
-//       }
-//       else{
-//         i++
-//       }
-//     }
-//     return dataProduct
-// }
-
  </script>
    
    <style lang="scss" scoped>
@@ -117,5 +63,46 @@ const months = ["Prices","Jan","Feb","Mar","Abr","May","Jun","Jul","Aug","Sep","
       margin-top: 3rem;
       padding-left: 1.9rem;
     }
+
+@include media-breakpoint-down(sm) {
+
+#cardH{
+  height: 12rem !important;
+  overflow: scroll !important;
+  width: 17rem !important;
+  padding-left: 0rem;
+  
+}
+
+h2{
+  font-size: 1.2rem;
+  width: 100%;
+  padding-left: 0rem;
+  margin-bottom: 1rem;
+}
+// #cardH ::-webkit-scrollbar {
+//   -webkit-appearance: none;
+// }
+// #cardH ::-webkit-scrollbar:vertical {
+//   width: 10px;
+// }
+// #cardH ::-webkit-scrollbar-button:increment, * .cardH .cardTextCM::-webkit-scrollbar-button {
+//   display: none;
+// }
+// #cardH ::-webkit-scrollbar:horizontal {
+//   height: 10px;
+// }
+// #cardH ::-webkit-scrollbar-thumb {
+//   background-color: #797979;
+//   border-radius: 20px;
+//   border: 2px solid #f1f2f3;
+// }
+// #cardH ::-webkit-scrollbar-track {
+//   border-radius: 10px;
+// }
+
+}
+
+
    
    </style>

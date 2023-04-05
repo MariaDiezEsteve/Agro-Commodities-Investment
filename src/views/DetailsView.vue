@@ -36,10 +36,7 @@
   <style lang="scss" scoped>
     @import "@/assets/Sass/--parcial.scss";
 
-    // #app{
-    //   width: 100%;
-    // }
-
+    
     h1{
       text-align: center;
     }
@@ -49,9 +46,12 @@
       text-align: center;
     }
 
-    @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(sm) {
    h1 {
      margin: 1rem 0.3rem;
+   }
+   .px-5{
+    padding-left: 0.5rem !important;
    }
   }
 

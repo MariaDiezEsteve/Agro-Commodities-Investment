@@ -147,7 +147,8 @@ const policies=[
     }
 
     .p-policies{
-      padding-left: 0.5rem;
+      padding-left: 0rem;
+      font-size: 0.5rem;
     }
 
     #raw{
