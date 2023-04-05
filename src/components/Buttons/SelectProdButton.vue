@@ -35,6 +35,8 @@ let images = [
   require("@/assets/images/IconosUserView/maizBlanco-removebg-preview.png"),
 ];
 
+// When the user click in the button, this keep the index to send to the parent view like a emit in the following funtion
+
 const emit = defineEmits(["buttonSelected"]);
 
 let getButtonSelected = (index) => {
