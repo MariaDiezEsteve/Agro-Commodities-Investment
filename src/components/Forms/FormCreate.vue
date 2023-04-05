@@ -187,7 +187,10 @@ const v$ = useVuelidate(rules, formData)
     }
     .allForm{
       display: block;
+      width: 75%;
+      text-align: center;
    }
+   
    .fahter-position{
     position: static;
    }
@@ -195,11 +198,12 @@ const v$ = useVuelidate(rules, formData)
    form{
       width: 100%;
       padding: 3px;
-      margin-left: 0rem;
+      margin-left: 1rem;
     }
 
     input, textarea{
     width:75%;
+    margin-left: 2rem;
    }
 
    input::placeholder, textarea::placeholder{

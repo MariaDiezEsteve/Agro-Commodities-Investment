@@ -68,10 +68,16 @@ si es mac o linux y si es windows:  npm install sass-loader node-sass*/
     margin: 1rem;
     font-size: 1.4rem;
   }
-
   .px-5{
     padding-left: 1rem !important;
     padding-right: 1rem !important;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+
+  .boxContainer{
+    padding-left: 1rem;
   }
 }
 
