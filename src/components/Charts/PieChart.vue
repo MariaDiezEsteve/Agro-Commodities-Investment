@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column">
+  <div class="d-flex flex-column divMovement">
     <div class="pieChartDiv">
       <canvas id="myPieChart"></canvas>  
     </div>
@@ -28,11 +28,6 @@
     );
     console.log(myChart);
   });
-
-
- 
-
-
    
     const labels = ["Wheat", "Sugar", "Cotton", "Coffee","Corn"]
      
@@ -98,6 +93,10 @@
 
     .pieChartDiv {
       width: 85%;
+    }
+   
+    .divMovement{
+      width: 75%;
     }
 }
     @include media-breakpoint-down(lg) {

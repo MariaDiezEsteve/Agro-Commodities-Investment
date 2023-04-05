@@ -319,6 +319,10 @@ let checkedDataEdit = () => {
         font-size: 1rem;
         margin-left: 0.25rem;
   }
+  .row{
+    width: 100%;
+    margin-left: 1rem;
+  }
    }
 
   </style>

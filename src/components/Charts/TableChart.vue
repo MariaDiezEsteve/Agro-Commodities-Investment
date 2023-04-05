@@ -64,7 +64,15 @@ const months = ["Prices","Jan","Feb","Mar","Abr","May","Jun","Jul","Aug","Sep","
       padding-left: 1.9rem;
     }
 
+table{
+  width: 65rem !important; 
+}
+
 @include media-breakpoint-down(sm) {
+
+  table{
+  width: 40rem !important; 
+}
 
 #cardH{
   height: 12rem !important;
