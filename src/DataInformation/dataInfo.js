@@ -17,11 +17,11 @@ async function getData(){
       }
       
       const url={
-        wheat: "https:www.alphavantage.co/query?function=WHEAT&interval=monthly&apikey=demo",
-        sugar: "https://www.alphavantage.co/query?function=SUGAR&interval=monthly&apikey=demo",
-        corn: "https://www.alphavantage.co/query?function=CORN&interval=monthly&apikey=demo",
-        cotton: "https://www.alphavantage.co/query?function=COTTON&interval=monthly&apikey=demo",
-        coffee: "https://www.alphavantage.co/query?function=COFFEE&interval=monthly&apikey=demo"
+        wheat: "https:www.alphavantage.co/query?function=WHEAT&interval=monthly&apikey=QT70XFV8RWVYA560",
+        sugar: "https://www.alphavantage.co/query?function=SUGAR&interval=monthly&apikey=QT70XFV8RWVYA560",
+        corn: "https://www.alphavantage.co/query?function=CORN&interval=monthly&apikey=QT70XFV8RWVYA560",
+        cotton: "https://www.alphavantage.co/query?function=COTTON&interval=monthly&apikey=QT70XFV8RWVYA560",
+        coffee: "https://www.alphavantage.co/query?function=COFFEE&interval=monthly&apikey=QT70XFV8RWVYA560"
       }
     
     for (let clave in url){
