@@ -24,9 +24,10 @@
           <p 
             class="dropdown-item quest"
             type="button"
-            @click="showAnswer(question.id)"
+            @click="showAnswer(question.id)"  
           >
-          {{ question.question }}
+          <!-- When you click the question, the id question is keeping in a variable to show the answer-->
+            {{ question.question }}
           </p>
         </li>
       </ul>
@@ -37,6 +38,7 @@
             <h5 class="card-title mx-2 my-2">
               {{ questions.getQuestions[idData].answer }}
             </h5>
+            <!-- That shows the answer which is associate with the question -->
           </div>
         </div>
       </div>
@@ -50,6 +52,7 @@ import predictionInfo from "@/DataInformation/predictionInfo";
 
 let isLoading = ref(true);
 
+// This is the call for the api to get all the information
 let questions = ref(
   onMounted(async () => {
     questions.value = await predictionInfo.getAskQuestion();
@@ -62,16 +65,18 @@ let questions = ref(
 
 let click = ref(false);
 
-// let quest = ref(questions.value.getQuestions[0].question)
 
+// This is the previews button 
 let quest = ref("Ask a Question");
 
 let idData = ref(0);
 
+// This is the function which keeps the id question and show the answer joint to question
+
 function showAnswer(id) {
   idData.value = id - 1;
   click.value = true;
-  quest.value = questions.value.getQuestions[idData.value].question;
+  quest.value = questions.value.getQuestions[idData.value].question; // This show the question in the button
 }
 </script>
 
